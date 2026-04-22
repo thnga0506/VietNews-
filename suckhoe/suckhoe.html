@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sức Khỏe - VietNews</title>
+  <link rel="stylesheet" href="../assets/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,800;0,900;1,400&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <script defer src="../assets/site.js"></script>
+</head>
+<body>
+  <header>
+    <div class="header-top">
+      <div class="brand-block">
+        <a href="../index.html" class="logo">VIETNEWS</a>
+        <span class="brand-slogan">Tiếng nói · Sự thật · Thời đại</span>
+      </div>
+      <div class="header-date" id="currentDate"></div>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="../index.html">Trang Chủ</a></li>
+        <li><a href="../thoisu/thoisu.html">Thời Sự</a></li>
+        <li><a href="../giaoduc/giaoduc.html">Giáo Dục</a></li>
+        <li><a href="../suckhoe/suckhoe.html" class="active">Sức Khỏe</a></li>
+        <li><a href="../vanhoa/vanhoa.html">Văn Hóa</a></li>
+        <li><a href="../thethao/thethao.html">Thể Thao</a></li>
+        <li><a href="../congnghe/congnghe.html">Công Nghệ</a></li>
+        <li><a href="../doisong/doisong.html">Đời Sống</a></li>
+        <li><a href="../bandoc/bandoc.html">Bạn Đọc</a></li>
+        <li><a href="../dulich/dulich.html">Du Lịch</a></li>
+        <li><a href="../multimedia/multimedia.html">Multimedia</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="category-hero">
+    <img src="../assets/hero-suckhoe.jpg" alt="Sức khỏe" class="category-hero-img">
+    <div class="category-hero-inner">
+      <span class="category-hero-kicker">Chuyên mục Sức Khỏe</span>
+      <h1>Chăm sóc sức khỏe toàn diện cho cuộc sống hiện đại</h1>
+      <p class="category-hero-desc">Cập nhật liên tục những kiến thức y khoa, nghiên cứu mới, lời khuyên từ chuyên gia về dinh dưỡng, tâm lý, vận động và phòng ngừa bệnh tật — đồng hành cùng bạn và gia đình trên hành trình khỏe mạnh.</p>
+    </div>
+  </section>
+
+  <main>
+    <div class="container">
+
+      <!-- Featured article -->
+      <article class="section-feature">
+        <img src="../assets/suckhoe-vaccine.jpg" alt="Vaccine ngừa ung thư" class="section-feature-img" onclick="window.location.href='suckhoe1.html'">
+        <div class="section-feature-body">
+          <span class="section-feature-kicker">Tiêu điểm</span>
+          <h2 onclick="window.location.href='suckhoe1.html'">Sức khỏe tinh thần: Chủ đề được quan tâm hàng đầu năm 2024</h2>
+          <p class="section-feature-excerpt">Ngày càng nhiều người Việt nhận thức được tầm quan trọng của sức khỏe tinh thần trong cuộc sống hiện đại. Các chuyên gia y tế nhận định rằng chăm sóc sức khỏe tâm lý cũng quan trọng không kém sức khỏe thể chất — và cần được đưa vào chương trình y tế cộng đồng.</p>
+          <div class="section-feature-meta">
+            <span><strong>18/04/2024</strong></span>
+            <span>8 phút đọc</span>
+            <span>Bác sĩ Nguyễn Thị Hương</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Main grid with sidebar -->
+      <div class="section-with-sidebar">
+        <div class="section-main">
+          <div class="section-title">
+            <h1 style="font-family:'Playfair Display',serif;font-size:32px;color:var(--primary-dark);margin-bottom:24px;">Bài viết mới nhất</h1>
+          </div>
+          <div class="articles-grid">
+
+            <div class="article-card" onclick="window.location.href='suckhoe2.html'">
+              <img src="../assets/suckhoe-fitness.jpg" alt="Tập thể dục">
+              <div class="article-card-content">
+                <div class="article-card-category">Sức Khỏe</div>
+                <h3>Tập luyện thể dục đều đặn kéo dài tuổi thọ thêm 10 năm</h3>
+                <p>Một nghiên cứu toàn cầu trên 500.000 người cho thấy những người tập luyện thường xuyên có tuổi thọ cao hơn rất nhiều...</p>
+                <div class="article-card-footer">
+                  <span class="article-card-date">17 Tháng 4</span>
+                  <a href="suckhoe2.html" class="read-more">Đọc Thêm →</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="article-card" onclick="window.location.href='suckhoe3.html'">
+              <img src="../assets/suckhoe-nutrition.jpg" alt="Dinh dưỡng">
+              <div class="article-card-content">
+                <div class="article-card-category">Sức Khỏe</div>
+                <h3>Chế độ ăn uống lành mạnh giúp giảm nguy cơ bệnh tim mạch</h3>
+                <p>Nghiên cứu mới cho thấy những người tuân thủ chế độ ăn khoa học có nguy cơ bệnh tim giảm 40%...</p>
+                <div class="article-card-footer">
+                  <span class="article-card-date">16 Tháng 4</span>
+                  <a href="suckhoe3.html" class="read-more">Đọc Thêm →</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="article-card" onclick="window.location.href='suckhoe4.html'">
+              <img src="../assets/suckhoe-sleep.jpg" alt="Giấc ngủ">
+              <div class="article-card-content">
+                <div class="article-card-category">Sức Khỏe</div>
+                <h3>Ngủ đủ giấc: Lợi ích vô cùng quan trọng cho sức khỏe</h3>
+                <p>Bộ Y tế khuyến cáo người trưởng thành cần ngủ đủ 7-9 tiếng mỗi đêm để duy trì sức khỏe thể chất và tinh thần...</p>
+                <div class="article-card-footer">
+                  <span class="article-card-date">15 Tháng 4</span>
+                  <a href="suckhoe4.html" class="read-more">Đọc Thêm →</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="article-card" onclick="window.location.href='suckhoe5.html'">
+              <img src="../assets/suckhoe-stress.jpg" alt="Quản lý căng thẳng">
+              <div class="article-card-content">
+                <div class="article-card-category">Sức Khỏe</div>
+                <h3>Stress management: Cách quản lý căng thẳng hiệu quả</h3>
+                <p>Những phương pháp đơn giản giúp bạn vượt qua áp lực công việc và cuộc sống — từ thiền định, hít thở đến vận động nhẹ...</p>
+                <div class="article-card-footer">
+                  <span class="article-card-date">14 Tháng 4</span>
+                  <a href="suckhoe5.html" class="read-more">Đọc Thêm →</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="article-card" onclick="window.location.href='suckhoe1.html'">
+              <img src="../assets/suckhoe-mental.jpg" alt="Sức khỏe tâm lý">
+              <div class="article-card-content">
+                <div class="article-card-category">Sức Khỏe</div>
+                <h3>Sức khỏe tâm lý ngày càng được chú trọng trong xã hội hiện đại</h3>
+                <p>Các chuyên gia y tế nhận định rằng chăm sóc sức khỏe tâm lý cũng quan trọng như sức khỏe thể chất...</p>
+                <div class="article-card-footer">
+                  <span class="article-card-date">13 Tháng 4</span>
+                  <a href="suckhoe1.html" class="read-more">Đọc Thêm →</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="article-card" onclick="window.location.href='suckhoe4.html'">
+              <img src="../assets/suckhoe-disease.jpg" alt="Kiểm soát dịch bệnh">
+              <div class="article-card-content">
+                <div class="article-card-category">Sức Khỏe</div>
+                <h3>Dịch bệnh được kiểm soát tốt nhất trong 5 năm qua</h3>
+                <p>Bộ Y tế báo cáo tình hình kiểm soát dịch bệnh trên toàn quốc đã đạt được những kết quả tích cực...</p>
+                <div class="article-card-footer">
+                  <span class="article-card-date">12 Tháng 4</span>
+                  <a href="suckhoe4.html" class="read-more">Đọc Thêm →</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sidebar -->
+        <aside class="sidebar-widgets">
+          <div class="widget">
+            <h3 class="widget-title">Đọc nhiều nhất</h3>
+            <ol class="trending-list">
+              <li><a href="suckhoe1.html">Sức khỏe tinh thần: Chủ đề được quan tâm hàng đầu năm 2024<span class="trending-meta">18/04 · Sức Khỏe</span></a></li>
+              <li><a href="suckhoe2.html">Tập luyện thể dục đều đặn kéo dài tuổi thọ thêm 10 năm<span class="trending-meta">17/04 · Sức Khỏe</span></a></li>
+              <li><a href="suckhoe3.html">Chế độ ăn uống lành mạnh giúp giảm nguy cơ bệnh tim<span class="trending-meta">16/04 · Sức Khỏe</span></a></li>
+              <li><a href="suckhoe4.html">Ngủ đủ giấc: Lợi ích vô cùng quan trọng cho sức khỏe<span class="trending-meta">15/04 · Sức Khỏe</span></a></li>
+              <li><a href="suckhoe5.html">Stress management: Cách quản lý căng thẳng hiệu quả<span class="trending-meta">14/04 · Sức Khỏe</span></a></li>
+            </ol>
+          </div>
+
+          <div class="widget editor-pick">
+            <h3 class="widget-title">Tiêu điểm biên tập</h3>
+            <img src="../assets/editor-portrait.jpg" alt="Tổng biên tập" class="editor-pick-img">
+            <h4>"Sức khỏe không chỉ là vắng mặt của bệnh tật"</h4>
+            <p>WHO định nghĩa sức khỏe là trạng thái hoàn toàn thoải mái về thể chất, tinh thần và xã hội — không chỉ đơn thuần là không có bệnh.</p>
+            <span class="editor-pick-byline">— Trần Quỳnh Mai, Tổng biên tập</span>
+          </div>
+
+          <div class="widget newsletter-widget">
+            <h3 class="widget-title">Bản tin hàng ngày</h3>
+            <p>Nhận tin tức sức khỏe và lời khuyên từ chuyên gia mỗi sáng trong hộp thư của bạn.</p>
+            <form class="newsletter-form" onsubmit="event.preventDefault();this.querySelector('button').textContent='Đã đăng ký ✓';">
+              <input type="email" placeholder="Email của bạn" required>
+              <button type="submit">Đăng ký</button>
+            </form>
+          </div>
+
+          <div class="widget">
+            <h3 class="widget-title">Chủ đề nổi bật</h3>
+            <div class="tag-cloud">
+              <a href="#">#dinhduong</a>
+              <a href="#">#thethao</a>
+              <a href="#">#tamly</a>
+              <a href="#">#giacngu</a>
+              <a href="#">#stress</a>
+              <a href="#">#timmach</a>
+              <a href="#">#vaccine</a>
+              <a href="#">#thiền</a>
+              <a href="#">#ungthu</a>
+            </div>
+          </div>
+        </aside>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h4>Về VietNews</h4>
+        <ul>
+          <li><a href="#">Giới Thiệu</a></li>
+          <li><a href="#">Liên Hệ</a></li>
+          <li><a href="#">Quảng Cáo</a></li>
+          <li><a href="#">Cơ Hội Việc Làm</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Chuyên Mục</h4>
+        <ul>
+          <li><a href="../thoisu/thoisu.html">Thời Sự</a></li>
+          <li><a href="../giaoduc/giaoduc.html">Giáo Dục</a></li>
+          <li><a href="../suckhoe/suckhoe.html">Sức Khỏe</a></li>
+          <li><a href="../vanhoa/vanhoa.html">Văn Hóa</a></li>
+          <li><a href="../thethao/thethao.html">Thể Thao</a></li>
+          <li><a href="../multimedia/multimedia.html">Multimedia</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Tổng biên tập</h4>
+        <ul>
+          <li style="color:#fff;font-weight:600;font-size:15px;padding-bottom:8px;">Trần Quỳnh Mai</li>
+          <li style="font-size:13px;opacity:.85;">Nhà báo cao cấp</li>
+          <li style="font-size:13px;opacity:.85;">20+ năm kinh nghiệm</li>
+          <li><a href="mailto:tbt@vietnews.vn">tbt@vietnews.vn</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Toà soạn</h4>
+        <ul>
+          <li style="font-size:13px;opacity:.85;">58 Quán Sứ, Hoàn Kiếm, Hà Nội</li>
+          <li style="font-size:13px;opacity:.85;">ĐT: (024) 3934 5678</li>
+          <li style="font-size:13px;opacity:.85;">Hotline 24/7: 1900 1234</li>
+          <li style="font-size:13px;opacity:.85;">Email: toasoan@vietnews.vn</li>
+          <li style="font-size:12px;opacity:.7;margin-top:8px;">GPHĐBC số 456/GP-BTTTT</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 VietNews. Bản quyền thuộc về VietNews. Mọi nội dung trên trang web được bảo vệ theo luật pháp Việt Nam.</p>
+    </div>
+  </footer>
+
+  <script>
+    function updateDate() {
+      const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+      const today = new Date();
+      document.getElementById('currentDate').textContent =
+        'Thứ ' + today.toLocaleDateString('vi-VN', options);
+    }
+    updateDate();
+  </script>
+</body>
+</html>

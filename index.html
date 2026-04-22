@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VietNews - Trang Chủ</title>
+  <link rel="stylesheet" href="assets/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;0,900;1,400;1,600&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script defer src="assets/site.js"></script>
+  <style>
+    .section-title h1 {
+      animation: fadeInLeft 0.6s ease-out;
+    }
+    </style>
+</head>
+<body>
+  <script src="assets/scroll-animations.js"></script>
+  <script src="assets/header-scroll.js"></script>
+  <header>
+    <div class="header-top">
+      <a href="index.html" class="logo">VIETNEWS</a>
+      <div class="header-date" id="currentDate"></div>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Trang Chủ</a></li>
+        <li><a href="thoisu/thoisu.html">Thời Sự</a></li>
+        <li><a href="giaoduc/giaoduc.html">Giáo Dục</a></li>
+        <li><a href="suckhoe/suckhoe.html">Sức Khỏe</a></li>
+        <li><a href="vanhoa/vanhoa.html">Văn Hóa</a></li>
+        <li><a href="thethao/thethao.html">Thể Thao</a></li>
+        <li><a href="congnghe/congnghe.html">Công Nghệ</a></li>
+        <li><a href="doisong/doisong.html">Đời Sống</a></li>
+        <li><a href="bandoc/bandoc.html">Bạn Đọc</a></li>
+        <li><a href="dulich/dulich.html">Du Lịch</a></li>
+        <li><a href="multimedia/multimedia.html">Multimedia</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <div class="container">
+      <!-- Featured Section -->
+      <section class="featured-section">
+        <div class="featured-article" onclick="window.location.href='index1.html'">
+          <img src="https://via.placeholder.com/600x350/4A90E2/ffffff?text=Công+Nghệ+AI" alt="Công nghệ AI">
+          <div class="featured-article-overlay">
+            <div class="featured-article-category">Công Nghệ</div>
+            <h2>Công nghệ AI đang thay đổi cuộc sống con người như thế nào?</h2>
+          </div>
+        </div>
+
+        <div class="featured-sidebar">
+          <div class="sidebar-article" onclick="window.location.href='index2.html'">
+            <div class="sidebar-article-date">17 Tháng 4</div>
+            <h3>Khám phá vẻ đẹp tự nhiên của Vịnh Hạ Long</h3>
+            <p>Vịnh Hạ Long là một trong những kỳ quan thiên nhiên...</p>
+          </div>
+
+          <div class="sidebar-article" onclick="window.location.href='index3.html'">
+            <div class="sidebar-article-date">16 Tháng 4</div>
+            <h3>Sức khỏe tâm thần: Một cuộc chiến không ai nên phải chiến một mình</h3>
+            <p>Sức khỏe tâm thần là một phần không thể tách rời...</p>
+          </div>
+
+          <div class="sidebar-article" onclick="window.location.href='index4.html'">
+            <div class="sidebar-article-date">15 Tháng 4</div>
+            <h3>Giáo dục STEM: Chìa khóa cho tương lai</h3>
+            <p>STEM không chỉ là một xu hướng mà còn là nhu cầu...</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Thời Sự Section -->
+      <section>
+        <div class="section-title">
+          <h1>Thời Sự</h1>
+        </div>
+        <div class="articles-grid">
+          <div class="article-card" onclick="window.location.href='index1.html'">
+            <img src="https://via.placeholder.com/400x250/4A90E2/ffffff?text=Công+Nghệ+AI" alt="Công nghệ AI">
+            <div class="article-card-content">
+              <div class="article-card-category">Công Nghệ</div>
+              <h3>Công nghệ AI đang thay đổi cuộc sống con người như thế nào?</h3>
+              <p>Trí tuệ nhân tạo (AI) không còn là khái niệm viễn vông...</p>
+              <div class="article-card-footer">
+                <span class="article-card-date">18 Tháng 4</span>
+                <a href="#" class="read-more">Đọc Thêm →</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="article-card" onclick="window.location.href='index2.html'">
+            <img src="https://via.placeholder.com/400x250/27AE60/ffffff?text=Vịnh+Hạ+Long" alt="Vịnh Hạ Long">
+            <div class="article-card-content">
+              <div class="article-card-category">Du Lịch</div>
+              <h3>Khám phá vẻ đẹp tự nhiên của Vịnh Hạ Long</h3>
+              <p>Vịnh Hạ Long là một trong những kỳ quan thiên nhiên...</p>
+              <div class="article-card-footer">
+                <span class="article-card-date">17 Tháng 4</span>
+                <a href="#" class="read-more">Đọc Thêm →</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="article-card" onclick="window.location.href='index3.html'">
+            <img src="https://via.placeholder.com/400x250/E74C3C/ffffff?text=Sức+Khỏe+Tâm+Thần" alt="Sức khỏe tâm thần">
+            <div class="article-card-content">
+              <div class="article-card-category">Sức Khỏe</div>
+              <h3>Sức khỏe tâm thần: Một cuộc chiến không ai nên phải chiến một mình</h3>
+              <p>Sức khỏe tâm thần là một phần không thể tách rời...</p>
+              <div class="article-card-footer">
+                <span class="article-card-date">16 Tháng 4</span>
+                <a href="#" class="read-more">Đọc Thêm →</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="article-card" onclick="window.location.href='index4.html'">
+            <img src="https://via.placeholder.com/400x250/F39C12/ffffff?text=Giáo+Dục+STEM" alt="Giáo dục STEM">
+            <div class="article-card-content">
+              <div class="article-card-category">Giáo Dục</div>
+              <h3>Giáo dục STEM: Chìa khóa cho tương lai</h3>
+              <p>STEM không chỉ là một xu hướng giáo dục mà còn là...</p>
+              <div class="article-card-footer">
+                <span class="article-card-date">15 Tháng 4</span>
+                <a href="#" class="read-more">Đọc Thêm →</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="article-card" onclick="window.location.href='index5.html'">
+            <img src="https://via.placeholder.com/400x250/9B59B6/ffffff?text=Áo+Dài+Truyền+Thống" alt="Áo dài Việt Nam">
+            <div class="article-card-content">
+              <div class="article-card-category">Văn Hóa</div>
+              <h3>Sự trở lại của thời trang truyền thống Việt Nam</h3>
+              <p>Trong những năm gần đây, chúng ta đang chứng kiến...</p>
+              <div class="article-card-footer">
+                <span class="article-card-date">14 Tháng 4</span>
+                <a href="#" class="read-more">Đọc Thêm →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Công Nghệ Section -->
+      <section>
+        <div class="section-title">
+          <h1>Công Nghệ</h1>
+        </div>
+        <div class="articles-grid">
+          <div class="article-card" onclick="window.location.href='article-detail.html?id=tech1'">
+            <img src="https://via.placeholder.com/400x250/8B7355/ffffff?text=AI" alt="AI">
+            <div class="article-card-content">
+              <div class="article-card-category">Công Nghệ</div>
+              <h3>Trí tuệ nhân tạo đạt mức mới trong y tế chẩn đoán</h3>
+              <p>Các nhà khoa học đã phát triển hệ thống AI có khả năng chẩn đoán chính xác hơn bác sĩ...</p>
+              <div class="article-card-footer">
+                <span class="article-card-date">10 Tháng 4</span>
+                <a href="#" class="read-more">Đọc Thêm →</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="article-card" onclick="window.location.href='article-detail.html?id=tech2'">
+            <img src="https://via.placeholder.com/400x250/8B7355/ffffff?text=Smartphone" alt="Smartphone">
+            <div class="article-card-content">
+              <div class="article-card-category">Công Nghệ</div>
+              <h3>Smartphone mới với chip xử lý siêu mạnh sắp ra mắt</h3>
+              <p>Hãng công nghệ hàng đầu vừa công bố các thông số kỹ thuật ấn tượng cho flagship mới...</p>
+              <div class="article-card-footer">
+                <span class="article-card-date">9 Tháng 4</span>
+                <a href="#" class="read-more">Đọc Thêm →</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="article-card" onclick="window.location.href='article-detail.html?id=tech3'">
+            <img src="https://via.placeholder.com/400x250/8B7355/ffffff?text=Cloud" alt="Cloud">
+            <div class="article-card-content">
+              <div class="article-card-category">Công Nghệ</div>
+              <h3>Dịch vụ đám mây trở thành xu hướng chủ yếu trong doanh nghiệp</h3>
+              <p>Theo khảo sát mới, hơn 80% doanh nghiệp đã chuyển sang sử dụng dịch vụ đám mây...</p>
+              <div class="article-card-footer">
+                <span class="article-card-date">8 Tháng 4</span>
+                <a href="#" class="read-more">Đọc Thêm →</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="article-card" onclick="window.location.href='article-detail.html?id=tech4'">
+            <img src="https://via.placeholder.com/400x250/8B7355/ffffff?text=5G" alt="5G">
+            <div class="article-card-content">
+              <div class="article-card-category">Công Nghệ</div>
+              <h3>Mạng 5G mở rộng phủ sóng đến các vùng nông thôn</h3>
+              <p>Các nhà mạng lớn đang tăng tốc triển khai mạng 5G với mục tiêu phủ sóng toàn quốc...</p>
+              <div class="article-card-footer">
+                <span class="article-card-date">7 Tháng 4</span>
+                <a href="#" class="read-more">Đọc Thêm →</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="article-card" onclick="window.location.href='article-detail.html?id=tech5'">
+            <img src="https://via.placeholder.com/400x250/8B7355/ffffff?text=Khoa+Học" alt="Khoa học">
+            <div class="article-card-content">
+              <div class="article-card-category">Công Nghệ</div>
+              <h3>Phát hiện công nghệ pin sạc nhanh nhân 10 lần</h3>
+              <p>Nhà khoa học Việt Nam vừa phát hiện công nghệ pin mới có khả năng sạc điện cực nhanh...</p>
+              <div class="article-card-footer">
+                <span class="article-card-date">6 Tháng 4</span>
+                <a href="#" class="read-more">Đọc Thêm →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h4>Về VietNews</h4>
+        <ul>
+          <li><a href="#">Giới Thiệu</a></li>
+          <li><a href="#">Liên Hệ</a></li>
+          <li><a href="#">Quảng Cáo</a></li>
+          <li><a href="#">Cơ Hội Việc Làm</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Chuyên Mục</h4>
+        <ul>
+          <li><a href="thoisu/thoisu.html">Thời Sự</a></li>
+          <li><a href="giaoduc/giaoduc.html">Giáo Dục</a></li>
+          <li><a href="suckhoe/suckhoe.html">Sức Khỏe</a></li>
+          <li><a href="vanhoa/vanhoa.html">Văn Hóa</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Theo Dõi</h4>
+        <ul>
+          <li><a href="#">Facebook</a></li>
+          <li><a href="#">Twitter</a></li>
+          <li><a href="#">YouTube</a></li>
+          <li><a href="#">Instagram</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Điều Khoản</h4>
+        <ul>
+          <li><a href="#">Điều Khoản Sử Dụng</a></li>
+          <li><a href="#">Chính Sách Bảo Mật</a></li>
+          <li><a href="#">Quy Tắc Ứng Xử</a></li>
+          <li><a href="#">Tuyên Bố Về Cookie</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 VietNews. Bản quyền thuộc về VietNews. Mọi nội dung trên trang web được bảo vệ theo luật pháp Việt Nam.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Display current date
+    const dateElement = document.getElementById('currentDate');
+    if (dateElement) {
+      const today = new Date();
+      const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+      dateElement.textContent = today.toLocaleDateString('vi-VN', options);
+    }
+  </script>
+</body>
+</html>
