@@ -1809,9 +1809,10 @@ footer {
 
 .mm-credits-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  grid-template-columns: repeat(5, 1fr); /* 5 cột cố định, luôn cùng một hàng */
   gap: 25px;
   font-size: 13px;
+  align-items: start; /* căn theo đỉnh để cột cao thấp khác nhau vẫn gọn */
 }
 
 .mm-credits-list div strong {
@@ -1822,6 +1823,15 @@ footer {
   text-transform: uppercase;
   margin-bottom: 6px;
   font-weight: 600;
+}
+
+.mm-credits-list {
+  align-items: flex-start; /* căn theo đỉnh */
+}
+
+.mm-credits-list > div {
+  flex: 1 1 0;       /* các cột co giãn đều nhau */
+  min-width: 0;      /* tránh tràn */
 }
 
 /* ==================== MULTIMEDIA CHAPTER PAGE ==================== */
