@@ -284,8 +284,8 @@
       '<div class="widget editor-pick">' +
       '  <h3 class="widget-title">Tiêu điểm biên tập</h3>' +
       '  <img class="editor-pick-img" src="' + base + 'multimedia/images/hero-mekong.jpg" alt="Phóng sự miền Tây" />' +
-      '  <h4>Miền Tây đang rơi: Phóng sự 5 kỳ về vùng đất đang đổi thay</h4>' +
-      '  <p>Sáu tháng đi qua 8 tỉnh ĐBSCL, loạt phóng sự đặc biệt của chúng tôi khắc hoạ chân dung một vùng đất đang chuyển mình giữa biến đổi khí hậu và làn sóng di cư.</p>' +
+      '  <h4>Longform: Ở lại hay rời đi: Ngã rẽ nào cho người miền Tây</h4>' +
+      '  <p>Sáu tháng đi qua 8 tỉnh Đồng bằng sông Cửu Long, loạt phóng sự đặc biệt của chúng tôi khắc hoạ chân dung một vùng đất đang chuyển mình giữa biến đổi khí hậu và làn sóng di cư.</p>' +
       '  <div class="editor-pick-byline">Trần Quỳnh Mai · Tổng biên tập</div>' +
       '</div>'
     ));
@@ -303,7 +303,7 @@
     ));
 
     // Widget: Tag cloud
-    var tags = ['Việt Nam', cat.name, 'Kinh tế', 'Chính sách', 'Phân tích', 'Bình luận', 'Multimedia', '2024'];
+    var tags = ['Việt Nam', cat.name, 'Kinh tế', 'Chính sách', 'Phân tích', 'Bình luận', 'Multimedia', '2026'];
     var tagHtml = tags.map(function (t) { return '<a href="#">' + t + '</a>'; }).join('');
     aside.appendChild(el(
       '<div class="widget">' +
@@ -375,7 +375,7 @@
     }
 
     // Tags at the bottom (before back-link)
-    var tags = ['#' + (catName.replace(/\s+/g, '')), '#VietNews', '#2024', '#TinTuc', '#PhanTich'];
+    var tags = ['#' + (catName.replace(/\s+/g, '')), '#VietNews', '#2026', '#TinTuc', '#PhanTich'];
     var tagsEl = el(
       '<div class="article-tags">' +
       tags.map(function (t) { return '<a href="#">' + t + '</a>'; }).join('') +
@@ -433,9 +433,8 @@
         '  <div>' +
         '    <h4 style="font-family:\'Playfair Display\',serif;color:#f0d39b;margin:0 0 16px;font-size:13px;letter-spacing:2.5px;text-transform:uppercase;border-bottom:1px solid rgba(240,211,155,0.3);padding-bottom:10px;">Toà soạn</h4>' +
         '    <div style="font-size:13px;color:#bbb;line-height:1.9;">' +
-        '      <div><strong style="color:#fff;">Địa chỉ:</strong> 58 Quán Sứ, Hoàn Kiếm, Hà Nội</div>' +
-        '      <div><strong style="color:#fff;">VP phía Nam:</strong> 234 Nguyễn Thị Minh Khai, Q.3, TP.HCM</div>' +
-        '      <div><strong style="color:#fff;">Điện thoại:</strong> (024) 3936-8888</div>' +
+        '      <div><strong style="color:#fff;">Địa chỉ:</strong> Khu đô thị Đại học Quốc gia TP.HCM, Phường Linh Xuân, TP. Thủ Đức, TP. HCM </div>' +
+        '      <div><strong style="color:#fff;">Điện thoại:</strong> 024 3974 6567</div>' +
         '      <div><strong style="color:#fff;">Đường dây nóng:</strong> 0912 345 678 (24/7)</div>' +
         '      <div><strong style="color:#fff;">Email:</strong> toasoan@vietnews.vn</div>' +
         '    </div>' +
@@ -449,7 +448,7 @@
     var bottom = footer.querySelector('.footer-bottom');
     if (bottom) {
       bottom.innerHTML =
-        '<p style="margin:0 0 6px;">© 2024 VietNews. Bản quyền thuộc về Báo điện tử VietNews.</p>' +
+        '<p style="margin:0 0 6px;">© 2026 VietNews. Bản quyền thuộc về Báo điện tử VietNews.</p>' +
         '<p style="margin:0;font-size:11px;color:#888;">Giấy phép báo chí điện tử số 123/GP-BTTTT do Bộ Thông tin & Truyền thông cấp ngày 15/03/2020. Tổng biên tập: <strong style="color:#f0d39b;">Trần Quỳnh Mai</strong>.</p>';
     }
   }
@@ -482,7 +481,7 @@
       '    <div>' +
       '      <div style="font-size:11px;letter-spacing:4px;text-transform:uppercase;color:#cbdba0;font-weight:700;margin-bottom:14px;">— Phóng sự đặc biệt —</div>' +
       '      <h2 style="font-family:\'Playfair Display\',serif;font-size:44px;font-weight:800;line-height:1.1;margin:0 0 18px;letter-spacing:0.3px;">Miền Tây đang rơi<br/><em style="font-style:italic;color:#cbdba0;">— 5 chương phóng sự điều tra</em></h2>' +
-      '      <p style="font-family:\'Lora\',serif;font-size:17px;line-height:1.7;color:rgba(255,255,255,0.92);margin:0 0 26px;">Hành trình 6 tháng qua 8 tỉnh Đồng bằng sông Cửu Long. Câu chuyện về đất, nước, sinh kế và con người trước biến đổi khí hậu và làn sóng di cư.</p>' +
+      '      <p style="font-family:\'Lora\',serif;font-size:17px;line-height:1.7;color:rgba(255,255,255,0.92);margin:0 0 26px;">Hành trình sáu tháng qua 8 tỉnh đồng bằng sông Cửu Long. Câu chuyện về đất, nước, sinh kế và con người trước biến đổi khí hậu và làn sóng di cư.</p>' +
       '      <a href="multimedia/multimedia.html" style="display:inline-flex;align-items:center;gap:12px;padding:14px 28px;background:#fff;color:#31511E;text-decoration:none;font-weight:700;font-size:13px;letter-spacing:2px;text-transform:uppercase;border-radius:3px;transition:transform 0.3s;">Xem toàn bộ phóng sự <span>→</span></a>' +
       '    </div>' +
       '    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">' +
