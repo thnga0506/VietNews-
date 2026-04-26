@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Chương 5: Lối ra nào cho miền Tây? - Multimedia | VietNews</title>
+<title>Chương 5: Lối ra nào cho Đồng bằng sông Cửu Long - Multimedia | VietNews</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;0,900;1,400;1,600&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
@@ -14,149 +14,58 @@
 
 <div class="reading-progress" id="readingProgress"></div>
 
- <header>
-  <!-- TOP BAR -->
-  <div class="header-top">
-
-    <!-- LOGO -->
+<header class="site-header" style="background:#1a1a1a;border-bottom:1px solid rgba(255,255,255,0.1);">
+  <div class="header-top" style="border-bottom:none;">
     <div class="brand-block">
-      <a href="../index.html" class="logo">Viet<em>News</em></a>
+      <a href="../index.html" class="logo">Viet<em style="font-style:italic;color:#914F1E;">News</em></a>
       <span class="brand-slogan">Tiếng nói · Sự thật · Thời đại</span>
     </div>
-
-    <!-- NGÀY THÁNG (giữa) -->
-    <div class="header-center">
-      <span class="header-date" id="header-date"></span>
-    </div>
-
-    <!-- TIỆN ÍCH (phải) -->
-    <div class="header-utils">
-      <button class="util-btn" id="search-toggle" title="Tìm kiếm">
-        <svg width="17" height="17" viewBox="0 0 24 24" fill="none"
-             stroke="currentColor" stroke-width="2">
-          <circle cx="11" cy="11" r="8"/>
-          <path d="m21 21-4.35-4.35"/>
-        </svg>
-      </button>
-
-      <button class="util-btn notif-btn" title="Thông báo">
-        <svg width="17" height="17" viewBox="0 0 24 24" fill="none"
-             stroke="currentColor" stroke-width="2">
-          <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
-          <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
-        </svg>
-        <span class="notif-dot"></span>
-      </button>
-
-      <button class="btn-login" id="btn-login">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
-             stroke="currentColor" stroke-width="2">
-          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-          <circle cx="12" cy="7" r="4"/>
-        </svg>
-        Đăng nhập
-      </button>
-    </div>
-  </div>
-
-  <!-- SEARCH BAR (ẩn mặc định) -->
-  <div class="search-bar" id="search-bar">
-    <div class="search-bar-inner">
-      <input type="text" placeholder="Tìm kiếm tin tức..."
-             id="search-input" autocomplete="off"/>
-      <button class="search-submit">
-        <svg width="17" height="17" viewBox="0 0 24 24" fill="none"
-             stroke="currentColor" stroke-width="2">
-          <circle cx="11" cy="11" r="8"/>
-          <path d="m21 21-4.35-4.35"/>
-        </svg>
-      </button>
-      <button class="search-close" id="search-close">✕</button>
-    </div>
-  </div>
-
-  <!-- NAV -->
-  <nav>
-  <ul>
-    <li><a href="../index.html">Trang chủ</a></li>
-    <li><a href="../thoisu/thoisu.html">Thời sự</a></li>
-    <li><a href="../giaoduc/giaoduc.html">Giáo dục</a></li>
-    <li><a href="../suckhoe/suckhoe.html">Sức khỏe</a></li>
-    <li><a href="../vanhoa/vanhoa.html">Văn hóa</a></li>
-    <li><a href="../thethao/thethao.html">Thể thao</a></li>
-    <li><a href="../congnghe/congnghe.html">Công nghệ</a></li>
-    <li><a href="../doisong/doisong.html">Đời sống</a></li>
-    <li><a href="../bandoc/bandoc.html">Bạn đọc</a></li>
-    <li><a href="../dulich/dulich.html">Du lịch</a></li>
-    <li><a href="multimedia.html">Multimedia</a></li>
-  </ul>
-</nav>
-
-  <!-- MODAL ĐĂNG NHẬP -->
- <div class="modal-overlay" id="modal-overlay" style="display:none">
-    <div class="modal">
-      <button class="modal-close" id="modal-close">✕</button>
-      <div class="modal-logo">Viet<em>News</em></div>
-      <p class="modal-sub">Đăng nhập để trải nghiệm đầy đủ tính năng</p>
-      <div class="modal-body">
-        <input type="text"
-               placeholder="Email hoặc số điện thoại"
-               class="modal-input"/>
-        <input type="password"
-               placeholder="Mật khẩu"
-               class="modal-input"/>
-        <button class="modal-btn-primary">Đăng nhập</button>
-        <div class="modal-divider"><span>hoặc</span></div>
-        <button class="modal-btn-google">
-          <svg width="18" height="18" viewBox="0 0 24 24">
-            <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
-            <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
-            <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"/>
-            <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
-          </svg>
-          Tiếp tục với Google
-        </button>
-        <p class="modal-register">
-          Chưa có tài khoản? <a href="#">Đăng ký ngay</a>
-        </p>
-      </div>
-    </div>
+    <nav class="main-nav">
+      <ul style="display:flex;gap:24px;list-style:none;margin:0;padding:0;">
+        <li><a href="../index.html" style="color:#fff;text-decoration:none;font-size:13px;letter-spacing:1.5px;text-transform:uppercase;">Trang chủ</a></li>
+        <li><a href="multimedia.html" style="color:#cbdba0;text-decoration:none;font-size:13px;letter-spacing:1.5px;text-transform:uppercase;font-weight:600;">Multimedia</a></li>
+        <li><a href="../thoisu/thoisu.html" style="color:#fff;text-decoration:none;font-size:13px;letter-spacing:1.5px;text-transform:uppercase;">Thời sự</a></li>
+        <li><a href="../vanhoa/vanhoa.html" style="color:#fff;text-decoration:none;font-size:13px;letter-spacing:1.5px;text-transform:uppercase;">Văn hoá</a></li>
+      </ul>
+    </nav>
   </div>
 </header>
 
 <!-- Hero -->
 <section class="mm-chapter-hero">
-  <img src="images/chuong5-loira.jpg" alt="Lối ra nào cho miền Tây" />
+  <img src="images/chuong5-loira.jpg" alt="Lối ra nào cho Đồng bằng sông Cửu Long" />
   <div class="mm-chapter-hero-inner">
     <div class="mm-chapter-label">
       <span class="num">05</span>
       <span>Chương cuối / 5 · Phóng sự điều tra</span>
     </div>
-    <h1>Lối ra nào cho miền Tây?</h1>
-    <p>Sau bốn chương kể về đất, về ruộng, về sinh kế và con người — đã đến lúc trả lời câu hỏi khó nhất: miền Tây có thể hồi sinh, và bằng cách nào?</p>
+    <h1>Lối ra nào cho Đồng bằng sông Cửu Long</h1>
+    <p>Sau bốn chương kể về đất, về ruộng, về sinh kế và con người, đã đến lúc trả lời câu hỏi khó nhất: miền Tây có thể hồi sinh, và bằng cách nào?</p>
   </div>
 </section>
 
 <!-- Body -->
 <article class="mm-body">
 
-  <p class="lead">Không có một công thức duy nhất cho <strong>ĐBSCL</strong>. Nhưng sau hai thập kỷ vật lộn với biến đổi khí hậu và làn sóng di cư, các nhà khoa học, nhà hoạch định chính sách và chính những nông dân miền Tây đã bắt đầu thống nhất một điều: giải pháp không nằm ở việc "chống lại" thiên nhiên, mà ở việc <strong>sống cùng</strong> nó — một cách khôn ngoan hơn.</p>
+  <p class="lead">Khi thiên nhiên ngày càng khắc nghiệt và cuộc sống ngày một khó khăn hơn. Câu hỏi đặt ra giờ đây không còn là làm sao để giữ người dân ở lại quê hương, mà là làm sao để họ có thể sống tốt dù lựa chọn ở lại hay rời đi. 
+Điều này đòi hỏi một cách tiếp cận khác, sâu hơn và thực chất hơn.
+</p>
 
-  <p>Ngày 17/11/2017, Chính phủ ban hành Nghị quyết 120/NQ-CP về phát triển bền vững ĐBSCL thích ứng với biến đổi khí hậu. Đây là văn bản đầu tiên chính thức thừa nhận rằng vùng này phải "thuận thiên" — không còn cố gắng duy trì mô hình canh tác cũ, mà phải tái cấu trúc toàn diện theo hướng thích ứng.</p>
+  <p>Ngày 17/11/2017, Chính phủ ban hành Nghị quyết 120/NQ-CP về phát triển bền vững ĐBSCL thích ứng với biến đổi khí hậu. Đây là văn bản đầu tiên chính thức thừa nhận rằng vùng này phải "thuận thiên", không còn cố gắng duy trì mô hình canh tác cũ, mà phải tái cấu trúc toàn diện theo hướng thích ứng.</p>
 
   <figure class="mm-figure">
     <img src="images/modern-farm.jpg" alt="Nông nghiệp hiện đại tại ĐBSCL" />
-    <figcaption>Mô hình tôm-lúa tại huyện Thạnh Phú, Bến Tre — một trong những hướng canh tác "thuận thiên" đang được nhân rộng tại ĐBSCL. Ảnh: Nguyễn Minh Quang.</figcaption>
+    <figcaption>Mô hình tôm-lúa tại huyện Thạnh Phú, Bến Tre — một trong những hướng canh tác thuận thiên đang được nhân rộng tại ĐBSCL. Ảnh: Nguyễn Minh Quang.</figcaption>
   </figure>
 
-  <h2><span class="num">PHẦN 01</span><span class="num-line">"Thuận thiên" — từ khẩu hiệu đến ruộng đồng</span></h2>
+  <h2><span class="num">PHẦN 01</span><span class="num-line">Tìm đường cứu đất</span></h2>
 
-  <p>Bảy năm sau khi Nghị quyết 120 ra đời, những thay đổi đầu tiên đã bắt đầu hiện rõ trên đồng ruộng. Tại huyện Thạnh Phú (Bến Tre), mô hình <strong>tôm-lúa luân canh</strong> — trồng lúa mùa mưa, nuôi tôm mùa khô — đã giúp hơn 12.000 hộ thoát nghèo. Thu nhập trung bình tăng từ 45 triệu đồng/ha/năm (chỉ trồng lúa) lên 120–180 triệu đồng/ha/năm.</p>
+  <p>Sau 7 năm triển khai Nghị quyết 120, mô hình lúa - tôm luân canh tại huyện Thạnh Phú, Bến Tre đã giúp hơn 12.000 hộ thoát nghèo. Bằng cách trồng lúa mùa mưa và nuôi tôm mùa khô, thu nhập nông dân tăng vọt từ 45 triệu lên mức 120 đến 180 triệu đồng mỗi hecta một năm. Việc chuyển đổi từ độc canh lúa sang thích ứng với xâm nhập mặn đã biến thách thức thành lợi thế kinh tế rõ rệt.</p>
 
-  <p>Anh Nguyễn Văn Hùng, một nông dân 38 tuổi ở xã An Thạnh, kể: "Trước đây mỗi năm tôi trồng 3 vụ lúa. Vụ nào gặp mặn thì mất trắng. Giờ tôi chỉ trồng 1 vụ lúa, 7 tháng còn lại nuôi tôm. Tôm thích nước mặn — mà nước mặn thì miễn phí."</p>
+  <p>Anh Nguyễn Văn Hùng, một nông dân 38 tuổi ở xã An Thạnh, kể: "Trước đây tôi trồng ba vụ lúa nhưng thường xuyên mất trắng vì mặn. Bây giờ tôi chỉ làm một vụ lúa, thời gian còn lại chuyển sang nuôi tôm. Con tôm rất hợp với nước mặn, mà nguồn nước này thì ở quê mình sẵn có và miễn phí."</p>
 
   <div class="mm-highlight">
-    <strong>Nguyên lý "thuận thiên":</strong> thay vì đầu tư khổng lồ vào đê bao, cống ngăn mặn để giữ vùng ngọt hoá nhân tạo, ĐBSCL chấp nhận sự đan xen của ba hệ sinh thái tự nhiên — <strong>nước ngọt, nước lợ, nước mặn</strong> — và bố trí cây trồng, vật nuôi phù hợp với từng vùng.
+    <strong>Nguyên lý thuận thiên:</strong> thay vì đầu tư khổng lồ vào đê bao, cống ngăn mặn để giữ vùng ngọt hoá nhân tạo, ĐBSCL chấp nhận sự đan xen của ba hệ sinh thái tự nhiên <strong>nước ngọt, nước lợ, nước mặn</strong> để bố trí cây trồng, vật nuôi phù hợp với từng vùng.
   </div>
 
   <div class="mm-stat-inline">
@@ -165,55 +74,51 @@
     <div><span class="big">40%</span><span class="small">Giảm lượng nước<br/>tưới tiêu cần thiết</span></div>
   </div>
 
-  <h2><span class="num">PHẦN 02</span><span class="num-line">Công nghệ — đòn bẩy mới</span></h2>
+  <h2><span class="num">PHẦN 02</span><span class="num-line">Công nghệ: đòn bẩy mới</span></h2>
 
-  <p>Nếu "thuận thiên" là triết lý, thì <strong>công nghệ</strong> là công cụ để hiện thực hoá triết lý đó. Từ năm 2020, tại ĐBSCL đã xuất hiện hàng chục mô hình nông nghiệp công nghệ cao — từ tưới nhỏ giọt tiết kiệm nước, cảm biến đo độ mặn theo thời gian thực, đến drone phun thuốc chính xác.</p>
+  <p>Nếu thuận thiên là triết lý thì công nghệ chính là công cụ quan trọng giúp người nông dân hiện thực hóa mục tiêu phát triển nông nghiệp thông minh. Điển hình tại huyện Cù Lao Dung, tỉnh Sóc Trăng, việc ứng dụng hệ thống tưới tiêu tiết kiệm điều khiển qua điện thoại di động đã tạo ra bước ngoặt lớn trong canh tác cây ăn trái. Thay vì phải mất hàng tuần để tưới thủ công cho diện tích lớn, các nhà vườn giờ đây chỉ cần hơn một giờ đồng hồ để hoàn thành công việc thông qua những thao tác đơn giản trên ứng dụng. Giải pháp này không chỉ giúp tiết kiệm nguồn nước, giảm chi phí sản xuất mà còn bảo vệ cấu trúc đất tự nhiên, giúp cây trồng phát triển tươi tốt và giảm thiểu sự phụ thuộc vào các điều kiện khắc nghiệt của môi trường.  </p>
 
   <figure class="mm-figure">
     <img src="images/chuong5-loira.jpg" alt="Công nghệ trong nông nghiệp" />
     <figcaption>Hệ thống giám sát độ mặn tự động tại cánh đồng tôm-lúa huyện An Minh, Kiên Giang. Dữ liệu được gửi về điện thoại nông dân mỗi 15 phút. Ảnh: Lê Thanh Hải.</figcaption>
   </figure>
 
-  <p>Tại Sóc Trăng, Hợp tác xã tôm giống Hoàng Long đã đầu tư hệ thống quản lý trại bằng IoT (Internet of Things). Mỗi ao tôm được gắn cảm biến đo pH, nhiệt độ, oxy hoà tan. Khi có bất thường, hệ thống tự động báo động qua ứng dụng điện thoại. "Trước kia một người chỉ trông được 2–3 ao. Bây giờ một người quản 15 ao — mà ít rủi ro hơn," anh Hoàng, giám đốc HTX, nói.</p>
+  <p>Tại làng du lịch Long Ẩn, công nghệ số đang trở thành cầu nối đưa sản phẩm nông sản và dịch vụ du lịch địa phương đến gần hơn với du khách thông qua các nền tảng mạng xã hội như Facebook hay Zalo. Song song với việc quảng bá, ngành nông nghiệp huyện còn đang đẩy mạnh triển khai phần mềm nhật ký sản xuất điện tử để thay thế phương pháp ghi chép tay truyền thống. Hệ thống này cho phép quản lý vùng canh tác và truy xuất nguồn gốc một cách minh bạch, đáp ứng các tiêu chuẩn khắt khe phục vụ công tác xuất khẩu.</p>
 
-  <p>Nhưng công nghệ không tự nhiên đến được với nông dân. Rào cản lớn nhất, theo TS. Võ Hồng Tú (ĐH Cần Thơ), không phải là tiền, mà là <strong>năng lực sử dụng</strong>. "Một hệ thống cảm biến giá 15–20 triệu đồng, nông dân có thể mua được. Nhưng để hiểu dữ liệu, điều chỉnh chế độ nuôi — cần kiến thức. Mà kiến thức thì không mua bằng tiền."</p>
+  <p>Chia sẻ về hiệu quả của việc thay đổi phương thức lao động, anh Ông Minh Thường, một nhà vườn tại thị trấn Cù Lao Dung bộc bạch: "Trước đây nếu muốn tưới hết khu vườn thì gia đình tôi phải tốn từ một tuần lễ trở lên. Còn bây giờ khi áp dụng công nghệ, tôi chỉ mất khoảng một đến hai giờ và chi phí giảm đi rất nhiều, giúp tôi tận dụng được thời gian để tập trung vào các khâu kỹ thuật khác như cắt tỉa hay tạo tán cho cây."</p>
+
+  <p>Dù sở hữu tiềm năng lớn, công nghệ vẫn khó bám rễ nơi đồng ruộng nếu thiếu đi năng lực làm chủ của người sản xuất.  Tiến sĩ Võ Hồng Tú (ĐH Cần Thơ) cho biết, rào cản lớn nhất hiện nay không nằm ở chi phí đầu tư mà chính là kỹ năng sử dụng. Một hệ thống cảm biến hiện nay chỉ có giá từ 15 đến 20 triệu đồng. "Nông dân có thể đủ sức mua một hệ thống cảm biến thông minh, nhưng để thấu hiểu dữ liệu và điều chỉnh chế độ nuôi trồng phù hợp thì cần có kiến thức chuyên môn. Đó chính là giá trị bền vững mà chúng ta không thể mua được bằng tiền." - bà nhận định.</p>
 
   <div class="mm-pullquote">
     <blockquote>"Miền Tây không thiếu đất, không thiếu nước, không thiếu con người. Miền Tây thiếu một hệ sinh thái tri thức đủ mạnh để biến những tài nguyên đó thành sinh kế bền vững."</blockquote>
     <cite>TS. Võ Hồng Tú · Đại học Cần Thơ · 2024</cite>
   </div>
 
-  <h2><span class="num">PHẦN 03</span><span class="num-line">Giữ người trẻ — bài toán khó nhất</span></h2>
+  <h2><span class="num">PHẦN 03</span><span class="num-line">Giữ người trẻ: bài toán khó nhất</span></h2>
 
-  <p>Mọi giải pháp kinh tế sẽ vô nghĩa nếu không giải được bài toán con người. Và bài toán khó nhất của miền Tây hôm nay là: <strong>làm sao giữ được lớp trẻ</strong> — hoặc ít nhất, tạo điều kiện để họ trở về khi đã tích luỹ đủ vốn và kinh nghiệm.</p>
+  <p>Mọi giải pháp kinh tế sẽ vô nghĩa nếu không giải được bài toán con người. Và bài toán khó nhất của miền Tây hôm nay là: <strong>làm sao giữ được lớp trẻ</strong> hoặc ít nhất, tạo điều kiện để họ trở về khi đã tích luỹ đủ vốn và kinh nghiệm.</p>
 
-  <p>Tỉnh Đồng Tháp đã thử nghiệm một chương trình gọi là <strong>"Khởi nghiệp từ quê"</strong> từ năm 2019. Các bạn trẻ dưới 35 tuổi, có ý tưởng kinh doanh nông nghiệp, được vay vốn ưu đãi (lãi suất 3%/năm), được hỗ trợ kỹ thuật, được kết nối thị trường. Đến năm 2023, đã có 847 dự án được hỗ trợ, tạo việc làm cho hơn 6.000 lao động địa phương.</p>
+  <p>Giải pháp căn cơ để giữ chân người trẻ không phải là các biện pháp hành chính cứng nhắc, mà là tạo ra những không gian nghề nghiệp tương xứng với trình độ của họ. Thay vì chỉ tập trung vào nông nghiệp thô, Đồng bằng cần đẩy mạnh phát triển công nghiệp chế biến sâu, dịch vụ logistics và kinh tế số ngay tại các đô thị vệ tinh trong vùng. Khi những "mỏ vàng" nông sản được gắn thêm hàm lượng công nghệ và giá trị thương hiệu, người trẻ sẽ tìm thấy cơ hội để ứng dụng tri thức về quản trị, marketing hay kỹ thuật vào chính đặc sản quê nhà. Đây chính là cách để họ vừa có thể phát triển sự nghiệp, vừa không phải rời xa gốc rễ của mình.</p>
 
   <div class="mm-highlight">
-    <strong>Trường hợp tiêu biểu:</strong> Võ Thị Ngọc Hà (29 tuổi, Tháp Mười) từng làm kế toán tại TP.HCM. Năm 2020 cô về quê mở trang trại sen kết hợp du lịch trải nghiệm. Doanh thu năm đầu: 400 triệu đồng. Năm 2023: hơn 2,2 tỷ đồng, tạo việc làm thường xuyên cho 18 người trong xã.
+    Báo cáo nghiên cứu <strong>"Tính dễ bị tổn thương về sinh kế của lao động di cư nông thôn tại Đồng bằng sông Cửu Long"</strong> của TS. Võ Hồng Tú chỉ rõ việc nâng cao năng lực thích ứng cho người dân cần được ưu tiên hơn là các biện pháp ngăn chặn di cư đơn thuần. Theo đó, giải pháp cốt lõi là tập trung cải thiện nguồn vốn con người thông qua việc nâng cao học vấn cho giới trẻ và đào tạo nghề chuyên môn cho lao động lớn tuổi nhằm gia tăng năng lực cạnh tranh. Song song với việc củng cố nguồn vốn tài chính, nghiên cứu cũng đề xuất việc khuyến khích người dân tham gia các tổ chức xã hội để khắc phục sự yếu kém về mạng lưới thông tin sinh kế. Đặc biệt, việc bảo vệ các nhóm dễ bị tổn thương trước tác động của thiên tai hay quá trình cơ giới hóa sẽ giúp giải quyết tận gốc những lực đẩy khiến người dân phải rời đi, từ đó tạo nền tảng cho sự ổn định cuộc sống ngay tại địa phương.
   </div>
 
   <h2><span class="num">PHẦN 04</span><span class="num-line">Điều miền Tây cần, và điều miền Tây có</span></h2>
 
-  <p>Sau sáu tháng đi qua 8 tỉnh miền Tây, chúng tôi đã gặp hàng trăm con người — nông dân, chuyên gia, cán bộ địa phương, người trẻ ra đi và người trẻ trở về. Mỗi câu chuyện khác nhau, nhưng tất cả đều hướng đến một kết luận chung: <strong>miền Tây không cần phép màu. Miền Tây cần sự kiên nhẫn.</strong></p>
+  <p>Sau sáu tháng đi qua 8 tỉnh miền Tây, chúng tôi đã gặp hàng trăm con người, từ nông dân, chuyên gia, cán bộ địa phương, người trẻ ra đi và người trẻ trở về. Mỗi câu chuyện khác nhau, nhưng tất cả đều hướng đến một kết luận chung: <strong>miền Tây không cần phép màu, Miền Tây cần sự kiên nhẫn.</strong></p>
 
-  <p>Kiên nhẫn với đất — để đất có thời gian phục hồi sau những năm canh tác vắt kiệt. Kiên nhẫn với nước — để sống cùng mặn và cùng lũ, thay vì cố ngăn chúng. Kiên nhẫn với chính sách — vì chuyển đổi cơ cấu cây trồng, vật nuôi là việc của cả thập kỷ, không phải vài năm. Và kiên nhẫn với con người — cho họ lý do để ở lại, và cánh cửa mở rộng cho ngày trở về.</p>
+  <p>Đó là sự kiên nhẫn với đất để đất có đủ thời gian phục hồi sau những năm dài canh tác vắt kiệt tài nguyên. Đó là sự kiên nhẫn với nước để học cách sống chung cùng mặn và lũ thay vì cố gắng ngăn chặn chúng bằng các biện pháp cưỡng ép. Đó là sự kiên nhẫn với chính sách vì việc chuyển đổi cơ cấu cây trồng hay vật nuôi là hành trình của cả thập kỷ chứ không thể hoàn thiện trong vài năm. Và sự kiên nhẫn với con người để cho họ những lý do xứng đáng để ở lại và cánh cửa mở rộng cho ngày trở về.</p>
 
   <figure class="mm-figure">
     <img src="images/hero-mekong.jpg" alt="Đồng bằng sông Cửu Long nhìn từ trên cao" />
     <figcaption>ĐBSCL nhìn từ trên cao. Bất chấp mọi thách thức, vùng đất này vẫn là <strong>vựa lương thực lớn nhất Việt Nam</strong> — đóng góp 56% sản lượng lúa, 70% thuỷ sản và 60% trái cây của cả nước. Ảnh: Trần Nam Phong.</figcaption>
   </figure>
 
-  <h2><span class="num">LỜI KẾT</span><span class="num-line">Miền Tây — hành trình còn tiếp diễn</span></h2>
-
-  <p>Ở cuối chuyến đi, chúng tôi trở lại Cà Mau — nơi bắt đầu loạt bài này. Bà Hồng Nhi, người phụ nữ 47 tuổi ở xã Tân Thành, gọi điện mời ăn bữa cơm cuối. Trên mâm có cá kho, canh chua bông súng, và một đĩa tôm rằn mới luộc. "Tôm này của thằng Duy đó. Nó nuôi vụ đầu, cho má một ít."</p>
-
-  <p>Thằng Duy — là Võ Thanh Duy (27 tuổi), người trẻ trở về quê mở tiệm điện lạnh, nay đã bắt đầu thử nuôi thêm tôm công nghệ cao trên mảnh đất 2.000 m² mẹ anh cho mượn. Tiệm điện lạnh vẫn chạy, nhưng anh muốn có thêm một con đường nữa — <em>một con đường quay lại với nghề nông, theo cách của thế hệ mới.</em></p>
-
-  <p>Khi mặt trời lặn xuống phía kênh Ông Đốc, bà Nhi đứng ở bến sông, nhìn ra xa. "Cô biết không, hồi trẻ, tui từng nghĩ sông Cửu Long sẽ chảy mãi. Giờ tui mới hiểu — dòng sông nào cũng cần con người chăm sóc nó. Đất nào cũng vậy thôi."</p>
+  <h2><span class="num">LỜI KẾT</span><span class="num-line">Hành trình còn tiếp diễn</span></h2>
 
   <div class="mm-highlight" style="border-left-color:#914F1E;">
-    <strong>Miền Tây hôm nay đang đứng ở một ngã rẽ lịch sử.</strong> Một bên là con đường cũ — canh tác vắt kiệt, di cư ồ ạt, làng quê vắng người. Bên kia là con đường mới — <strong>thuận thiên, công nghệ, và cộng đồng</strong>. Con đường nào sẽ thắng, không phụ thuộc vào thời tiết hay thị trường. Nó phụ thuộc vào lựa chọn của từng nông dân, từng cán bộ, từng người trẻ hôm nay.
+    Đồng bằng được bồi đắp nghìn năm, nhưng có thể mất đi rất nhanh. Khi đất không còn là chỗ dựa, con người buộc phải tìm lối khác. <strong>Điều cần giữ lại là cơ hội sống tốt dù ở lại hay rời đi.</strong>
   </div>
 
   <p style="text-align:center;font-style:italic;color:#914F1E;margin-top:50px;font-size:17px;">— Hết loạt phóng sự điều tra 5 kỳ —</p>
@@ -224,7 +129,7 @@
 <nav class="mm-nav">
   <a href="chuong4.html">
     <span class="direction">← Chương trước</span>
-    <span class="title">Người ở lại</span>
+    <span class="title">Ở lại hay rời đi: những lựa chọn không hề dễ dàng</span>
   </a>
   <a href="multimedia.html" class="right">
     <span class="direction">Trở về trang chủ</span>
@@ -266,32 +171,4 @@ window.addEventListener('scroll', () => {
 });
 </script>
 </body>
-  <script>
-  // Hiển thị ngày tháng tiếng Việt
-  const days = ['Chủ nhật','Thứ hai','Thứ ba','Thứ tư','Thứ năm','Thứ sáu','Thứ bảy'];
-  const now = new Date();
-  document.getElementById('header-date').textContent =
-    `${days[now.getDay()]}, ${now.getDate()} tháng ${now.getMonth()+1}, ${now.getFullYear()}`;
-
-  // Search toggle
-  const searchToggle = document.getElementById('search-toggle');
-  const searchBar = document.getElementById('search-bar');
-  const searchClose = document.getElementById('search-close');
-  searchToggle.addEventListener('click', () => {
-    searchBar.classList.toggle('open');
-    if (searchBar.classList.contains('open'))
-      document.getElementById('search-input').focus();
-  });
-  searchClose.addEventListener('click', () => searchBar.classList.remove('open'));
-
-  // Login modal
-  const btnLogin = document.getElementById('btn-login');
-  const overlay = document.getElementById('modal-overlay');
-  const modalClose = document.getElementById('modal-close');
-  btnLogin.addEventListener('click', () => overlay.classList.add('open'));
-  modalClose.addEventListener('click', () => overlay.classList.remove('open'));
-  overlay.addEventListener('click', (e) => {
-    if (e.target === overlay) overlay.classList.remove('open');
-  });
-</script>
 </html>
