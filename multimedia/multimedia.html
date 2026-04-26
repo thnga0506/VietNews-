@@ -10,6 +10,7 @@
   <script defer src="../assets/site.js"></script>
 </head>
 <body>
+ 
    <header>
   <!-- TOP BAR -->
   <div class="header-top">
@@ -355,13 +356,13 @@
     }, { threshold: 0.4 });
     document.querySelectorAll('.mm-stat-number').forEach(el => statObs.observe(el));
   </script>
-</body>
   <script>
   // Hiển thị ngày tháng tiếng Việt
   const days = ['Chủ nhật','Thứ hai','Thứ ba','Thứ tư','Thứ năm','Thứ sáu','Thứ bảy'];
   const now = new Date();
   document.getElementById('header-date').textContent =
     `${days[now.getDay()]}, ${now.getDate()} tháng ${now.getMonth()+1}, ${now.getFullYear()}`;
+
 
   // Search toggle
   const searchToggle = document.getElementById('search-toggle');
@@ -374,6 +375,7 @@
   });
   searchClose.addEventListener('click', () => searchBar.classList.remove('open'));
 
+
   // Login modal
   const btnLogin = document.getElementById('btn-login');
   const overlay = document.getElementById('modal-overlay');
@@ -384,4 +386,5 @@
     if (e.target === overlay) overlay.classList.remove('open');
   });
 </script>
+</body>
 </html>
