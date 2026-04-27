@@ -14,115 +14,23 @@
 
 <div class="reading-progress" id="readingProgress"></div>
 
- <header>
-  <!-- TOP BAR -->
-  <div class="header-top">
-
-    <!-- LOGO -->
+<header class="site-header" style="background:#1a1a1a;border-bottom:1px solid rgba(255,255,255,0.1);">
+  <div class="header-top" style="border-bottom:none;">
     <div class="brand-block">
-      <a href="../index.html" class="logo">Viet<em>News</em></a>
+      <a href="../index.html" class="logo">Viet<em style="font-style:italic;color:#914F1E;">News</em></a>
       <span class="brand-slogan">Tiếng nói · Sự thật · Thời đại</span>
     </div>
-
-    <!-- NGÀY THÁNG (giữa) -->
-    <div class="header-center">
-      <span class="header-date" id="header-date"></span>
-    </div>
-
-    <!-- TIỆN ÍCH (phải) -->
-    <div class="header-utils">
-      <button class="util-btn" id="search-toggle" title="Tìm kiếm">
-        <svg width="17" height="17" viewBox="0 0 24 24" fill="none"
-             stroke="currentColor" stroke-width="2">
-          <circle cx="11" cy="11" r="8"/>
-          <path d="m21 21-4.35-4.35"/>
-        </svg>
-      </button>
-
-      <button class="util-btn notif-btn" title="Thông báo">
-        <svg width="17" height="17" viewBox="0 0 24 24" fill="none"
-             stroke="currentColor" stroke-width="2">
-          <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
-          <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
-        </svg>
-        <span class="notif-dot"></span>
-      </button>
-
-      <button class="btn-login" id="btn-login">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
-             stroke="currentColor" stroke-width="2">
-          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-          <circle cx="12" cy="7" r="4"/>
-        </svg>
-        Đăng nhập
-      </button>
-    </div>
-  </div>
-
-  <!-- SEARCH BAR (ẩn mặc định) -->
-  <div class="search-bar" id="search-bar">
-    <div class="search-bar-inner">
-      <input type="text" placeholder="Tìm kiếm tin tức..."
-             id="search-input" autocomplete="off"/>
-      <button class="search-submit">
-        <svg width="17" height="17" viewBox="0 0 24 24" fill="none"
-             stroke="currentColor" stroke-width="2">
-          <circle cx="11" cy="11" r="8"/>
-          <path d="m21 21-4.35-4.35"/>
-        </svg>
-      </button>
-      <button class="search-close" id="search-close">✕</button>
-    </div>
-  </div>
-
-  <!-- NAV -->
-  <nav>
-  <ul>
-    <li><a href="../index.html">Trang chủ</a></li>
-    <li><a href="../thoisu/thoisu.html">Thời sự</a></li>
-    <li><a href="../giaoduc/giaoduc.html">Giáo dục</a></li>
-    <li><a href="../suckhoe/suckhoe.html">Sức khỏe</a></li>
-    <li><a href="../vanhoa/vanhoa.html">Văn hóa</a></li>
-    <li><a href="../thethao/thethao.html">Thể thao</a></li>
-    <li><a href="../congnghe/congnghe.html">Công nghệ</a></li>
-    <li><a href="../doisong/doisong.html">Đời sống</a></li>
-    <li><a href="../bandoc/bandoc.html">Bạn đọc</a></li>
-    <li><a href="../dulich/dulich.html">Du lịch</a></li>
-    <li><a href="multimedia.html">Multimedia</a></li>
-  </ul>
-</nav>
-
-  <!-- MODAL ĐĂNG NHẬP -->
- <div class="modal-overlay" id="modal-overlay" style="display:none">
-    <div class="modal">
-      <button class="modal-close" id="modal-close">✕</button>
-      <div class="modal-logo">Viet<em>News</em></div>
-      <p class="modal-sub">Đăng nhập để trải nghiệm đầy đủ tính năng</p>
-      <div class="modal-body">
-        <input type="text"
-               placeholder="Email hoặc số điện thoại"
-               class="modal-input"/>
-        <input type="password"
-               placeholder="Mật khẩu"
-               class="modal-input"/>
-        <button class="modal-btn-primary">Đăng nhập</button>
-        <div class="modal-divider"><span>hoặc</span></div>
-        <button class="modal-btn-google">
-          <svg width="18" height="18" viewBox="0 0 24 24">
-            <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
-            <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
-            <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"/>
-            <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
-          </svg>
-          Tiếp tục với Google
-        </button>
-        <p class="modal-register">
-          Chưa có tài khoản? <a href="#">Đăng ký ngay</a>
-        </p>
-      </div>
-    </div>
+    <nav class="main-nav">
+      <ul style="display:flex;gap:24px;list-style:none;margin:0;padding:0;">
+        <li><a href="../index.html" style="color:#fff;text-decoration:none;font-size:13px;letter-spacing:1.5px;text-transform:uppercase;">Trang chủ</a></li>
+        <li><a href="multimedia.html" style="color:#cbdba0;text-decoration:none;font-size:13px;letter-spacing:1.5px;text-transform:uppercase;font-weight:600;">Multimedia</a></li>
+        <li><a href="../thoisu/thoisu.html" style="color:#fff;text-decoration:none;font-size:13px;letter-spacing:1.5px;text-transform:uppercase;">Thời sự</a></li>
+        <li><a href="../vanhoa/vanhoa.html" style="color:#fff;text-decoration:none;font-size:13px;letter-spacing:1.5px;text-transform:uppercase;">Văn hoá</a></li>
+      </ul>
+    </nav>
   </div>
 </header>
+
 <!-- Hero -->
 <section class="mm-chapter-hero">
   <img src="images/chuong4-ngare.jpg" alt="Ngã rẽ của lớp trẻ miền Tây" />
@@ -156,12 +64,12 @@
 
   <h2><span class="num">PHẦN 01</span><span class="num-line">Những bản "làng khóa cửa"</span></h2>
 
-  <p>Tại xã Tân Thành, huyện Cái Nước, Cà Mau, trưởng ấp Lê Văn Hoàng chỉ tay về phía con đường bê tông mới trải: "Cả ấp có 186 hộ. Giờ chỉ còn khoảng 40% là người trẻ. Số còn lại là ông bà và các cháu nhỏ. Nhiều nhà khoá cửa cả năm, Tết mới về."</p>
+  <p>Tại xã Tân Thành, huyện Cái Nước, Cà Mau, trưởng ấp Lê Văn Hoàng chỉ tay về phía con đường bê tông mới trải: : “Cả ấp có 186 hộ nhưng giờ lực lượng lao động trẻ chỉ còn khoảng 40%, phần còn lại đa số là người già và các cháu nhỏ. Nhiều gia đình khóa cửa đi làm ăn xa biền biệt cả năm trời, chỉ đến dịp Tết ngôi nhà mới thực sự có hơi người”.</p>
 
-  <p>Hoàng gọi đây là <strong>"làng khoá cửa"</strong> — một khái niệm đang dần trở nên quen thuộc ở ĐBSCL. Khi cha mẹ đi làm công nhân ở các khu công nghiệp phía Nam, ông bà ở lại trông cháu. Khi ông bà già yếu, các cháu được gửi về cho họ hàng, hoặc theo cha mẹ ra thành phố học trường công nhân.</p>
+  <p>Ông Hoàng gọi đây là "làng khoá cửa", một khái niệm đang dần trở nên quen thuộc ở Đồng Bằng Sông Cửu Long. Khi cha mẹ đi làm công nhân ở các khu công nghiệp phía Nam, ông bà ở lại trông cháu. Khi ông bà già yếu, các cháu được gửi về cho họ hàng, hoặc theo cha mẹ ra thành phố học trường công nhân.</p>
 
   <div class="mm-highlight">
-    <strong>Thống kê từ Sở LĐ-TB&XH Cà Mau (2023):</strong> Toàn tỉnh có hơn <strong>180.000 lao động đi làm việc ngoài tỉnh</strong>, tập trung tại Bình Dương (38%), TP.HCM (27%), Đồng Nai (18%). Thu nhập bình quân 7–12 triệu đồng/tháng — gấp 3 lần làm nông ở quê, nhưng phải xa nhà 10–11 tháng mỗi năm.
+    <strong>Thống kê từ Sở Lao động - Thương binh & Xã hội Cà Mau (2023):</strong> Toàn tỉnh có hơn <strong>180.000 lao động đi làm việc ngoài tỉnh</strong>, tập trung tại Bình Dương (38%), TP.HCM (27%), Đồng Nai (18%). Thu nhập bình quân 7–12 triệu đồng/tháng, gấp 3 lần làm nông ở quê, nhưng phải xa nhà 10 – 11 tháng mỗi năm.
   </div>
 
   <h2><span class="num">PHẦN 02</span><span class="num-line">Ba chân dung, ba lựa chọn</span></h2>
@@ -183,7 +91,7 @@
       <div class="mm-character-body">
         <div class="mm-character-name">Nguyễn Thị Dần</div>
         <div class="mm-character-meta">42 tuổi · quê Cà Mau</div>
-        <p> Suốt 15 năm ròng rã bám trụ với xưởng may tại Khu công nghiệp Sóng Thần, chị Dần cùng chồng đã chấp nhận đánh đổi sự gần gũi gia đình để đổi lấy tương lai của con trẻ. Gửi con lại quê nhà cho má chăm sóc, mỗi tháng anh chị cố gắng chắt bóp gửi về 5 - 6 triệu đồng. Với chị, đó là sự lựa chọn duy nhất để con không phải bỏ học vì cái nghèo. "Tôi không đi thi cũng không biết lấy gì để nuôi con ăn học." - chị chia sẻ</p>
+        <p> Suốt 15 năm ròng rã bám trụ với xưởng may tại Khu công nghiệp Sóng Thần, chị Dần cùng chồng đã chấp nhận đánh đổi sự gần gũi gia đình để đổi lấy tương lai của con trẻ. Gửi con lại quê nhà cho má chăm sóc, mỗi tháng anh chị cố gắng chắt bóp gửi về 5 - 6 triệu đồng. Với chị, đó là sự lựa chọn duy nhất để con không phải bỏ học vì cái nghèo. "Tôi không đi thi cũng không biết lấy gì để nuôi con ăn học". - chị chia sẻ</p>
       </div>
     </div>
 
@@ -192,14 +100,14 @@
       <div class="mm-character-body">
         <div class="mm-character-name">Võ Thanh Duy</div>
         <div class="mm-character-meta">27 tuổi · quê Sóc Trăng</div>
-        <p>Sau nửa thập kỷ bám trụ nơi đất khách Bình Dương, anh Duy quyết định chọn một lối đi khác: trở về. Gom góp vốn liếng và cái nghề điện lạnh học được sau những giờ làm mệt mỏi, anh mở một tiệm nhỏ nơi chợ huyện nghèo. Dù số tiền kiếm được hằng tháng giờ đây chẳng còn dư dả như xưa, chỉ bằng 2/3 so với thời làm thợ phố, nhưng bù lại, căn nhà nhỏ của anh luôn rộn rã tiếng cười. "Dù thu nhập ít đi một chút, nhưng tôi còn có thời gian để chăm sóc vợ con" – anh chia sẻ với ánh mắt lấp lánh niềm vui.</p>
+        <p>Sau nửa thập kỷ bám trụ nơi đất khách Bình Dương, anh Duy quyết định chọn một lối đi khác: trở về. Gom góp vốn liếng và cái nghề điện lạnh học được sau những giờ làm mệt mỏi, anh mở một tiệm nhỏ nơi chợ huyện nghèo. Dù số tiền kiếm được hằng tháng giờ đây chẳng còn dư dả như xưa, chỉ bằng 2/3 so với thời làm thợ phố, nhưng bù lại, căn nhà nhỏ của anh luôn rộn rã tiếng cười. "Dù thu nhập ít đi một chút, nhưng tôi còn có thời gian để chăm sóc vợ con". – anh chia sẻ với ánh mắt lấp lánh niềm vui.</p>
       </div>
     </div>
   </div>
 
   <div class="mm-pullquote">
-    <blockquote>"Người trẻ miền Tây không phải bỏ quê — họ đi tìm một đồng lương mà quê hương không còn đủ sức trả."</blockquote>
-    <cite>TS. Võ Hồng Tú · Đại học Cần Thơ · Nghiên cứu Di dân ĐBSCL 2023</cite>
+    <blockquote>"Người trẻ miền Tây không phải bỏ quê, họ đi tìm một đồng lương mà quê hương không còn đủ sức trả."</blockquote>
+    <cite>TS. Võ Hồng Tú · Đại học Cần Thơ </cite>
   </div>
 
   <h2><span class="num">PHẦN 03</span><span class="num-line">Tương lai không còn nằm trên ruộng</span></h2>
@@ -213,7 +121,7 @@
 
   <p>Dữ liệu thực tế cho thấy, tỉ trọng thu nhập từ nông nghiệp trong các hộ nghèo đang sụt giảm mạnh. Thay vào đó, nguồn sống của nhiều gia đình giờ đây phụ thuộc vào những khoản tiền gửi về từ phương xa. Di cư, từ một quyết định tạm thời để vượt qua khó khăn, nay đã trở thành một chiến lược sinh tồn dài hạn. Trong bối cảnh việc làm tại chỗ khan hiếm, trình độ kỹ năng hạn chế và canh tác không còn hiệu quả, rời quê trở thành con đường duy nhất để người dân tiếp tục mưu sinh.</p>
   
-  <p>Tuy nhiên, cuộc rời đi này không hẳn là một sự đổi đời rực rỡ. Phần lớn lao động di cư từ ĐBSCL vẫn nằm ở nhóm "trũng" về kỹ năng. Thống kê năm 2024 phác họa một thực trạng đáng lo ngại: gần 15% người di cư chưa học hết tiểu học, và chỉ khoảng 20% trong số họ có bằng tốt nghiệp trung học phổ thông.</p>
+  <p>Tuy nhiên, cuộc rời đi này không hẳn là một sự đổi đời rực rỡ. Phần lớn lao động di cư từ Đồng Bằng sông Cửu Long vẫn nằm ở nhóm "trũng" về kỹ năng. Thống kê năm 2024 phác họa một thực trạng đáng lo ngại: gần 15% người di cư chưa học hết tiểu học, và chỉ khoảng 20% trong số họ có bằng tốt nghiệp trung học phổ thông.</p>
 
  
 
@@ -472,13 +380,13 @@
       <div class="nameplate-title">Nhân Lực & Học Vấn</div>
       <div class="nameplate-meta">
         Nguồn: LMS 2024 · Tính toán NHTG<br>
-        Thứ Bảy, 26 tháng 4 năm 2025
+      
       </div>
     </div>
     <div class="rule-band"></div>
 
     <div class="article">
-      <div class="article-kicker">Hình 26 · Phân tích dữ liệu</div>
+      <div class="article-kicker">Phân tích dữ liệu</div>
       <h1 class="article-headline">
         Trình độ học vấn mong muốn:<br>
         <em>Bằng cấp hiện có và yếu tố giới tính, hôn nhân</em>
@@ -513,7 +421,7 @@
       <div class="source-bar">
         <strong>Nguồn:</strong>
         <span>Tính toán của chuyên gia NHTG dựa trên dữ liệu LMS 2024</span>
-        <span>Hình 26</span>
+        
       </div>
 
     
@@ -676,8 +584,11 @@
     </body>
     </html>
       
-    </strong> Đến năm 2023, khoảng <strong>38% số hộ gia đình</strong> ở nông thôn ĐBSCL thuộc dạng "hộ người già neo đơn" hoặc "hộ ông bà trông cháu". Đây là hậu quả trực tiếp của làn sóng di cư lao động kéo dài hai thập kỷ.
+    </strong> Đến năm 2023, khoảng 38% số hộ gia đình ở nông thôn Đồng Bằng sông Cửu Long thuộc dạng "hộ người già neo đơn" hoặc "hộ ông bà trông cháu". Đây là hậu quả trực tiếp của làn sóng di cư lao động kéo dài hai thập kỷ.
+  
+    
   </div>
+
   <p>Tại các điểm đến như Bình Dương hay TP.HCM, họ chủ yếu gia nhập vào đội ngũ lao động phổ thông trong các xưởng may, giày da hay công trường xây dựng. Đây là những ngành nghề có thu nhập thấp, dễ bị thay thế bởi công nghệ và ít cơ hội thăng tiến. Rõ ràng, di cư trong bối cảnh này không phải là sự tận dụng cơ hội để bứt phá, mà là một cuộc tháo chạy khỏi sự bế tắc nơi quê nhà.</p>
 
 
@@ -715,37 +626,81 @@
 </nav>
 
 <!-- Footer -->
-<footer style="background:#1a1a1a;color:#d9d1b8;padding:50px 40px;margin-top:60px;">
-  <div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:40px;">
-    <div>
-      <div class="brand-block" style="margin-bottom:14px;">
-        <span class="logo" style="font-size:26px;">Viet<em style="font-style:italic;color:#914F1E;">News</em></span>
-        <span class="brand-slogan">Tiếng nói · Sự thật · Thời đại</span>
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h4>Tòa soạn VietNews</h4>
+        <ul>
+          <li>Tổng biên tập: <strong style="color:#fff">Trần Quỳnh Mai</strong></li>
+          <li>Khu đô thị Đại học Quốc gia TP.HCM, Phường Linh Xuân, TP. Thủ Đức, TP. HCM</li>
+          <li>Hotline: 024 3974 6567</li>
+          <li>Email: toasoan@vietnews.vn</li>
+          <li>GPBC số: 1234/GP-BTTTT</li>
+        </ul>
       </div>
-      <p style="font-size:13px;color:#aaa;line-height:1.7;">Nhật báo điện tử uy tín Việt Nam. Đưa tin trung thực, phân tích sâu sắc.</p>
+      <div class="footer-section">
+        <h4>Chuyên Mục</h4>
+        <ul>
+          <li><a href="../thoisu/thoisu.html">Thời Sự</a></li>
+          <li><a href="../giaoduc/giaoduc.html">Giáo Dục</a></li>
+          <li><a href="../suckhoe/suckhoe.html">Sức Khỏe</a></li>
+          <li><a href="../vanhoa/vanhoa.html">Văn Hóa</a></li>
+          <li><a href="multimedia.html">Multimedia</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Theo Dõi</h4>
+        <ul>
+          <li><a href="#">Facebook</a></li>
+          <li><a href="#">YouTube</a></li>
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">TikTok</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Điều Khoản</h4>
+        <ul>
+          <li><a href="#">Điều Khoản Sử Dụng</a></li>
+          <li><a href="#">Chính Sách Bảo Mật</a></li>
+          <li><a href="#">Quy Tắc Ứng Xử</a></li>
+          <li><a href="#">Liên Hệ Quảng Cáo</a></li>
+        </ul>
+      </div>
     </div>
-    <div>
-      <h4 style="font-family:'Playfair Display',serif;color:#cbdba0;margin-bottom:14px;font-size:15px;letter-spacing:2px;text-transform:uppercase;">Toà soạn</h4>
-      <p style="font-size:13px;color:#aaa;line-height:1.8;">Tổng biên tập: <strong style="color:#cbdba0;">Trần Quỳnh Mai</strong><br/>58 Quán Sứ, Hoàn Kiếm, Hà Nội<br/>(024) 3936-8888<br/>toasoan@vietnews.vn</p>
+    <div class="footer-bottom">
+      <p>&copy; 2024 VietNews. Bản quyền thuộc về Báo điện tử VietNews.</p>
     </div>
-    <div>
-      <h4 style="font-family:'Playfair Display',serif;color:#cbdba0;margin-bottom:14px;font-size:15px;letter-spacing:2px;text-transform:uppercase;">Chuyên mục</h4>
-      <ul style="list-style:none;padding:0;margin:0;font-size:13px;line-height:2;">
-        <li><a href="../thoisu/thoisu.html" style="color:#aaa;text-decoration:none;">Thời sự</a></li>
-        <li><a href="../vanhoa/vanhoa.html" style="color:#aaa;text-decoration:none;">Văn hoá</a></li>
-        <li><a href="multimedia.html" style="color:#cbdba0;text-decoration:none;font-weight:600;">Multimedia</a></li>
-      </ul>
-    </div>
-  </div>
-  <div style="max-width:1200px;margin:40px auto 0;padding-top:24px;border-top:1px solid #333;text-align:center;font-size:12px;color:#777;">© 2024 VietNews. Giấy phép báo chí số 123/GP-BTTTT.</div>
-</footer>
+  </footer>
 
-<script>
-window.addEventListener('scroll', () => {
-  const h = document.documentElement;
-  const scrolled = (h.scrollTop / (h.scrollHeight - h.clientHeight)) * 100;
-  document.getElementById('readingProgress').style.width = scrolled + '%';
-});
-</script>
+  <script>
+    (function(){
+      const el = document.getElementById('currentDate');
+      if (!el) return;
+      el.textContent = new Date().toLocaleDateString('vi-VN', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+    })();
+    const header = document.querySelector('header');
+    const prog = document.getElementById('readProg');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 40) header.classList.add('scrolled'); else header.classList.remove('scrolled');
+      const h = document.documentElement;
+      prog.style.width = ((h.scrollTop) / (h.scrollHeight - h.clientHeight) * 100) + '%';
+    });
+    const fmt = (n, d) => { const s = d ? n.toFixed(d) : Math.floor(n).toString(); return s.replace(/\B(?=(\d{3})+(?!\d))/g, '.'); };
+    const anim = (el) => {
+      const target = parseFloat(el.dataset.count);
+      const suffix = el.dataset.suffix || '';
+      const decimals = parseInt(el.dataset.decimals || '0', 10);
+      const dur = 1800; const start = performance.now();
+      const tick = (now) => {
+        const p = Math.min(1, (now - start) / dur);
+        const e = 1 - Math.pow(1 - p, 3);
+        el.textContent = fmt(target * e, decimals) + suffix;
+        if (p < 1) requestAnimationFrame(tick);
+      };
+      requestAnimationFrame(tick);
+    };
+    const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { anim(e.target); io.unobserve(e.target); }}), { threshold: 0.4 });
+    document.querySelectorAll('[data-count]').forEach(el => io.observe(el));
+  </script>
 </body>
 </html>
