@@ -193,6 +193,345 @@
         âm thầm giữ cho cuộc sống người không rơi xuống đáy.
       </p>
       [Biểu đồ dân số sống dưới ngưỡng nghèo]
+      <!DOCTYPE html>
+    <html lang="vi">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bảng A2.4 – Tỷ lệ dân số sống dưới ngưỡng nghèo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --ink:        #1e1608;
+        --paper:      #f5efe0;
+        --paper2:     #ede4cc;
+        --rule:       #c9b98a;
+        --brown:      #7a5c2e;
+        --brown-lt:   #b38b4d;
+        --green-dk:   #1d4a2e;
+        --green-md:   #2e7d52;
+        --green-lt:   #5ba87a;
+        --yellow:     #d4a017;
+        --yellow-lt:  #f0c94e;
+        --yellow-pal: #f7e49a;
+      }
+      *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+      body { background: var(--paper); color: var(--ink); font-family: 'IBM Plex Sans', sans-serif; }
+
+
+      .article { max-width: 900px; margin: 0 auto; padding: 32px 24px 0; }
+
+
+      .tbl-title {
+        font-family: 'Playfair Display', serif;
+        font-size: clamp(1.8rem, 4vw, 2.6rem);
+        font-weight: 700;
+        color: var(--green-dk);
+        line-height: 1.25;
+        margin-bottom: 20px;
+        padding-bottom: 12px;
+        border-bottom: 2px solid var(--green-dk);
+      }
+      .tbl-title em { font-style: italic; color: var(--brown); }
+
+
+      .tbl-wrap { overflow-x: auto; }
+
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: .72rem;
+        table-layout: auto;
+      }
+
+
+      /* Header */
+      thead th {
+        background: var(--green-dk);
+        color: var(--yellow-pal);
+        padding: 8px 10px;
+        font-weight: 600;
+        font-size: .65rem;
+        letter-spacing: .02em;
+        line-height: 1.4;
+        vertical-align: bottom;
+        border-right: 1px solid rgba(255,255,255,.12);
+        white-space: normal;
+        word-break: break-word;
+        text-align: center;
+        min-width: 90px;
+      }
+      thead th:first-child { text-align: left; min-width: 180px; }
+      thead th:nth-child(2) { min-width: 48px; }
+      thead th:last-child { border-right: none; }
+
+
+      /* Body */
+      tbody tr { border-bottom: 1px solid var(--rule); transition: background .12s; }
+      tbody tr:hover { background: var(--yellow-pal) !important; }
+
+
+      tbody td {
+        padding: 6px 8px;
+        vertical-align: middle;
+        line-height: 1.3;
+      }
+      td.name {
+        color: var(--brown);
+        font-size: .72rem;
+        word-break: keep-all;
+        overflow-wrap: break-word;
+      }
+      td.name.first-row { color: var(--green-dk); font-weight: 500; }
+      td.year {
+        text-align: center;
+        color: var(--brown-lt);
+        font-weight: 600;
+        font-size: .68rem;
+        white-space: nowrap;
+      }
+      td.num {
+        text-align: center;
+        font-variant-numeric: tabular-nums;
+        font-size: .72rem;
+        white-space: nowrap;
+      }
+
+
+      /* Baseline */
+      tr.row-baseline td { background: #e8f0e8; font-weight: 600; color: var(--green-dk); border-bottom: 2px solid var(--rule); }
+      tr.row-baseline td.year { color: var(--green-md); }
+      tr.row-baseline:hover td { background: var(--yellow-pal) !important; }
+
+
+      /* Alt groups */
+      tr.grp-b { background: var(--paper2); }
+
+
+      /* Source */
+      .source-block {
+        background: var(--green-dk);
+        color: var(--yellow-pal);
+        font-size: .68rem;
+        padding: 10px 16px;
+        border-top: 2px solid var(--yellow);
+        line-height: 1.65;
+        margin-top: 0;
+      }
+      .source-block strong { color: var(--yellow-lt); }
+    </style>
+    </head>
+    <body>
+    <div class="article">
+      <h1 class="tbl-title">
+        Tỷ lệ dân số sống dưới <em>ngưỡng nghèo</em>
+      </h1>
+
+
+      <div class="tbl-wrap">
+        <table>
+          <colgroup>
+            <col class="c-name">
+            <col class="c-year">
+            <col class="c-num">
+            <col class="c-num">
+            <col class="c-num">
+            <col class="c-num">
+          </colgroup>
+          <thead>
+            <tr>
+              <th></th>
+              <th></th>
+              <th>Trong trường hợp không có cú sốc</th>
+              <th>Tác động trực tiếp</th>
+              <th>Tác động trực tiếp và lân cận</th>
+              <th>Tác động tỷ lệ theo khoảng cách</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Cơ sở -->
+            <tr class="row-baseline">
+              <td class="name first-row">Cơ sở</td>
+              <td class="year">2024</td>
+              <td class="num">24,91</td>
+              <td class="num">24,91</td>
+              <td class="num">24,91</td>
+              <td class="num">24,91</td>
+            </tr>
+
+
+            <!-- Lũ lụt 2020 -->
+            <tr class="grp-a">
+              <td class="name first-row" rowspan="2">Lũ lụt (2020)</td>
+              <td class="year">2030</td>
+              <td class="num">18,40</td>
+              <td class="num">19,60</td>
+              <td class="num">23,83</td>
+              <td class="num">20,22</td>
+            </tr>
+            <tr class="grp-a">
+              <td class="year">2050</td>
+              <td class="num">5,77</td>
+              <td class="num">9,06</td>
+              <td class="num">28,28</td>
+              <td class="num">11,24</td>
+            </tr>
+
+
+            <!-- Lũ lụt 2050 SSP 2-4.5 -->
+            <tr class="grp-b">
+              <td class="name first-row" rowspan="2">Lũ lụt 2050 SSP 2-4.5 (AEP)</td>
+              <td class="year">2030</td>
+              <td class="num">18,40</td>
+              <td class="num">19,58</td>
+              <td class="num">23,81</td>
+              <td class="num">20,26</td>
+            </tr>
+            <tr class="grp-b">
+              <td class="year">2050</td>
+              <td class="num">5,77</td>
+              <td class="num">9,00</td>
+              <td class="num">28,60</td>
+              <td class="num">11,04</td>
+            </tr>
+
+
+            <!-- Lũ lụt 2050 SSP 5-8.5 -->
+            <tr class="grp-a">
+              <td class="name first-row" rowspan="2">Lũ lụt 2050 SSP 5-8.5 (AEP)</td>
+              <td class="year">2030</td>
+              <td class="num">18,40</td>
+              <td class="num">19,64</td>
+              <td class="num">24,33</td>
+              <td class="num">20,28</td>
+            </tr>
+            <tr class="grp-a">
+              <td class="year">2050</td>
+              <td class="num">5,77</td>
+              <td class="num">9,62</td>
+              <td class="num">28,98</td>
+              <td class="num">12,12</td>
+            </tr>
+
+
+            <!-- Hạn hán -->
+            <tr class="grp-b">
+              <td class="name first-row" rowspan="2">Hạn hán</td>
+              <td class="year">2030</td>
+              <td class="num">18,40</td>
+              <td class="num">21,46</td>
+              <td class="num">31,00</td>
+              <td class="num">23,41</td>
+            </tr>
+            <tr class="grp-b">
+              <td class="year">2050</td>
+              <td class="num">5,77</td>
+              <td class="num">12,75</td>
+              <td class="num">61,72</td>
+              <td class="num">20,56</td>
+            </tr>
+
+
+            <!-- Bão 2020 -->
+            <tr class="grp-a">
+              <td class="name first-row" rowspan="2">Bão 2020</td>
+              <td class="year">2030</td>
+              <td class="num">18,40</td>
+              <td class="num">18,44</td>
+              <td class="num">19,40</td>
+              <td class="num">18,46</td>
+            </tr>
+            <tr class="grp-a">
+              <td class="year">2050</td>
+              <td class="num">5,77</td>
+              <td class="num">5,85</td>
+              <td class="num">7,66</td>
+              <td class="num">5,95</td>
+            </tr>
+
+
+            <!-- Bão 2050 SSP 5-8.5 -->
+            <tr class="grp-b">
+              <td class="name first-row" rowspan="2">Bão 2050 SSP 5-8.5</td>
+              <td class="year">2030</td>
+              <td class="num">18,40</td>
+              <td class="num">18,54</td>
+              <td class="num">21,44</td>
+              <td class="num">18,72</td>
+            </tr>
+            <tr class="grp-b">
+              <td class="year">2050</td>
+              <td class="num">5,77</td>
+              <td class="num">6,13</td>
+              <td class="num">13,55</td>
+              <td class="num">6,47</td>
+            </tr>
+
+
+            <!-- Xâm nhập mặn RCP 4.5 -->
+            <tr class="grp-a">
+              <td class="name first-row" rowspan="2">Xâm nhập mặn 2050 RCP 4.5 với LS</td>
+              <td class="year">2030</td>
+              <td class="num">18,40</td>
+              <td class="num">26,17</td>
+              <td class="num">35,11</td>
+              <td class="num">30,10</td>
+            </tr>
+            <tr class="grp-a">
+              <td class="year">2050</td>
+              <td class="num">5,77</td>
+              <td class="num">24,67</td>
+              <td class="num">27,41</td>
+              <td class="num">25,67</td>
+            </tr>
+
+
+            <!-- Xâm nhập mặn RCP 8.5 LS -->
+            <tr class="grp-b">
+              <td class="name first-row" rowspan="2">Xâm nhập mặn 2050 RCP 8.5 với LS</td>
+              <td class="year">2030</td>
+              <td class="num">18,40</td>
+              <td class="num">26,63</td>
+              <td class="num">35,95</td>
+              <td class="num">31,50</td>
+            </tr>
+            <tr class="grp-b">
+              <td class="year">2050</td>
+              <td class="num">5,77</td>
+              <td class="num">26,25</td>
+              <td class="num">28,58</td>
+              <td class="num">27,01</td>
+            </tr>
+
+
+            <!-- Xâm nhập mặn RCP 8.5 ESLR -->
+            <tr class="grp-a">
+              <td class="name first-row" rowspan="2">Xâm nhập mặn 2050 RCP 8.5 với ESLR</td>
+              <td class="year">2030</td>
+              <td class="num">18,40</td>
+              <td class="num">26,67</td>
+              <td class="num">37,01</td>
+              <td class="num">31,14</td>
+            </tr>
+            <tr class="grp-a">
+              <td class="year">2050</td>
+              <td class="num">5,77</td>
+              <td class="num">26,95</td>
+              <td class="num">29,90</td>
+              <td class="num">27,86</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+
+    <div class="source-block" style="max-width:900px;margin:0 auto;">
+      <strong>Nguồn:</strong> Tính toán của chuyên gia NHTG dựa trên dữ liệu mô phỏng khí hậu và kinh tế xã hội.
+    </div>
+    </body>
+    </html>
 
       <figure class="mm-figure">
         <img src="images/saltwater.jpg" alt="Xâm nhập mặn tại ĐBSCL">
@@ -246,6 +585,365 @@
         không còn là một quyết định bất thường, mà đang dần trở thành một lựa chọn quen thuộc.
       </p>
       đồ họa
+       <!DOCTYPE html>
+    <html lang="vi">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bảng ES.2 – Tỷ lệ hộ không có đất nông nghiệp</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --ink:        #1e1608;
+        --paper:      #f5efe0;
+        --paper2:     #ede4cc;
+        --rule:       #c9b98a;
+        --brown:      #7a5c2e;
+        --brown-lt:   #b38b4d;
+        --green-dk:   #1d4a2e;
+        --green-md:   #2e7d52;
+        --green-lt:   #5ba87a;
+        --yellow:     #d4a017;
+        --yellow-lt:  #f0c94e;
+        --yellow-pal: #f7e49a;
+      }
+
+
+      *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+
+      body {
+        background: var(--paper);
+        color: var(--ink);
+        font-family: 'IBM Plex Sans', sans-serif;
+        min-height: 100vh;
+      }
+
+
+      .article {
+        max-width: 760px;
+        margin: 0 auto;
+        padding: 32px 24px 48px;
+      }
+
+
+      /* ── Title ── */
+      .tbl-kicker {
+        font-size: .7rem;
+        font-weight: 600;
+        color: var(--yellow);
+        background: var(--green-dk);
+        display: inline-block;
+        padding: 2px 9px;
+        letter-spacing: .1em;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+      }
+      .tbl-title {
+        font-family: 'Playfair Display', serif;
+        font-size: clamp(1.5rem, 3.5vw, 2.2rem);
+        font-weight: 700;
+        color: var(--green-dk);
+        line-height: 1.25;
+        margin-bottom: 6px;
+        width: 100%;
+      }
+      .tbl-title em { font-style: italic; color: var(--brown); }
+
+
+      /* ── Column header label ── */
+      .col-header-label {
+        font-family: 'IBM Plex Sans', sans-serif;
+        font-size: .72rem;
+        font-weight: 600;
+        color: var(--brown);
+        text-align: right;
+        padding: 12px 0 6px;
+        border-bottom: 2px solid var(--green-dk);
+        letter-spacing: .04em;
+        margin-bottom: 0;
+      }
+
+
+      /* ── Table ── */
+      .tbl-wrap {
+        overflow-x: auto;
+        margin-top: 0;
+      }
+
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: .88rem;
+      }
+
+
+      /* Header row */
+      thead tr {
+        background: var(--green-dk);
+        color: var(--yellow-pal);
+      }
+      thead th {
+        font-family: 'IBM Plex Sans', sans-serif;
+        font-weight: 600;
+        font-size: .75rem;
+        letter-spacing: .04em;
+        padding: 10px 14px;
+        text-align: left;
+        border: none;
+        white-space: nowrap;
+      }
+      thead th:not(:first-child) {
+        text-align: center;
+      }
+
+
+      /* Body rows */
+      tbody tr {
+        border-bottom: 1px solid var(--rule);
+        transition: background .15s;
+      }
+      tbody tr:hover { background: var(--yellow-pal); }
+      tbody tr:nth-child(even) { background: var(--paper2); }
+      tbody tr:nth-child(even):hover { background: var(--yellow-pal); }
+
+
+      tbody td {
+        padding: 11px 14px;
+        vertical-align: middle;
+        color: var(--ink);
+        line-height: 1.35;
+      }
+      tbody td:not(:first-child) {
+        text-align: center;
+        font-variant-numeric: tabular-nums;
+        white-space: nowrap;
+      }
+
+
+      /* Region name cell */
+      .region-name {
+        font-weight: 400;
+        color: var(--brown);
+        font-size: .85rem;
+      }
+
+
+      /* Total row */
+      .row-total td {
+        background: var(--green-dk) !important;
+        color: var(--yellow-lt) !important;
+        font-weight: 700;
+        border-top: 2px solid var(--yellow);
+        border-bottom: none;
+      }
+      .row-total:hover td { background: var(--green-md) !important; }
+
+
+      /* Value cell coloring */
+      .val {
+        display: inline-block;
+        padding: 2px 0;
+        border-radius: 2px;
+        font-weight: 500;
+      }
+
+
+      /* Mini bar */
+      .bar-cell {
+        min-width: 120px;
+        padding: 8px 14px;
+        vertical-align: middle;
+      }
+      .bar-wrap {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+      .bar-track {
+        flex: 1;
+        height: 6px;
+        background: var(--rule);
+        border-radius: 3px;
+        overflow: hidden;
+      }
+      .bar-fill {
+        height: 100%;
+        border-radius: 3px;
+        transition: width .6s ease;
+      }
+      .bar-num {
+        font-size: .75rem;
+        font-variant-numeric: tabular-nums;
+        color: var(--brown);
+        min-width: 28px;
+        text-align: right;
+      }
+
+
+      /* ── Subtitle for column group ── */
+      .sub-header {
+        background: var(--paper2);
+      }
+      .sub-header th {
+        font-size: .68rem;
+        font-weight: 500;
+        color: var(--brown-lt);
+        padding: 5px 14px;
+        text-align: center;
+        letter-spacing: .06em;
+        text-transform: uppercase;
+        border-bottom: 1px solid var(--rule);
+      }
+      .sub-header th:first-child { text-align: left; }
+
+
+      /* ── Source ── */
+      .source-block {
+        background: var(--green-dk);
+        color: var(--yellow-pal);
+        font-size: .68rem;
+        padding: 10px 16px;
+        border-top: 2px solid var(--yellow);
+        line-height: 1.65;
+        margin-top: 0;
+      }
+      .source-block strong { color: var(--yellow-lt); }
+      .source-block .note { opacity: .8; margin-top: 4px; }
+
+
+      /* Trend arrows */
+      .arrow-up   { color: var(--brown);    font-size: .7rem; margin-left: 2px; }
+      .arrow-high { color: var(--green-dk); font-size: .7rem; margin-left: 2px; }
+
+
+      /* Responsive */
+      @media (max-width: 560px) {
+        .bar-cell { display: none; }
+        table { font-size: .8rem; }
+        thead th, tbody td { padding: 8px 10px; }
+      }
+    </style>
+    </head>
+    <body>
+    <div class="article">
+
+
+      <h1 class="tbl-title">
+        Tỷ lệ hộ gia đình không có hoặc<br>
+        <em>gần như không có đất nông nghiệp</em><br>
+        ở nông thôn, theo vùng và năm
+      </h1>
+
+
+      <div class="col-header-label">
+        Không có hoặc gần như không có đất nông &nbsp;&nbsp;
+      </div>
+
+
+      <div class="tbl-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th style="width:38%">Vùng</th>
+              <th>2006</th>
+              <th>2016</th>
+              <th>2022</th>
+              <th class="bar-cell" style="text-align:left; padding-left:14px">Xu hướng 2022</th>
+            </tr>
+            <tr class="sub-header">
+              <th>—</th>
+              <th>Tổng / Nữ</th>
+              <th>Tổng / Nữ</th>
+              <th>Tổng / Nữ</th>
+              <th class="bar-cell"></th>
+            </tr>
+          </thead>
+          <tbody id="tblBody">
+          </tbody>
+        </table>
+      </div>
+
+
+      <div class="source-block">
+        <strong>Nguồn:</strong> Tính toán của chuyên gia NHTG dựa trên dữ liệu KSMSDC ở Việt Nam 2006, 2016 và 2022.<br>
+        <div class="note"><strong>Ghi chú:</strong> Hộ gia đình gần như không có đất nông nghiệp được định nghĩa là hộ có ít hơn 0,1 ha đất nông nghiệp.</div>
+      </div>
+
+
+    </div>
+
+
+    <script>
+    const rows = [
+      { name: 'Đồng bằng sông Hồng',            y06: '7,3 / 14,1',  y16: '19,0 / 17,5', y22: '41,3 / 17,6', val22: 41.3 },
+      { name: 'Trung du và miền núi phía Bắc',   y06: '4,3 / 6,8',   y16: '5,8 / 6,2',   y22: '13,5 / 9,5',  val22: 13.5 },
+      { name: 'Bắc Trung bộ và Duyên hải miền Trung', y06: '14,7 / 6,8', y16: '16,3 / 7,8', y22: '30,4 / 8,5', val22: 30.4 },
+      { name: 'Tây Nguyên',                      y06: '9,4 / 1,5',   y16: '11,8 / 2,2',  y22: '21,4 / 1,3',  val22: 21.4 },
+      { name: 'Đông Nam bộ',                     y06: '45,1 / 1,7',  y16: '60,1 / 2,6',  y22: '75,2 / 1,7',  val22: 75.2 },
+      { name: 'Đồng bằng sông Cửu Long',         y06: '27,8 / 2,6',  y16: '32,1 / 2,1',  y22: '40,0 / 3,0',  val22: 40.0 },
+    ];
+
+
+    const total = { name: 'Trung bình toàn quốc', y06: '16,4 / 7,1', y16: '22,2 / 7,7', y22: '36,7 / 8,6', val22: 36.7, isTotal: true };
+
+
+    const MAX = 80;
+    const tbody = document.getElementById('tblBody');
+
+
+    // Color scale for val22
+    function barColor(v) {
+      if (v >= 60) return '#1d4a2e';
+      if (v >= 35) return '#7a5c2e';
+      if (v >= 20) return '#d4a017';
+      return '#5ba87a';
+    }
+
+
+    function makeRow(r) {
+      const tr = document.createElement('tr');
+      if (r.isTotal) tr.classList.add('row-total');
+
+
+      const pct = Math.min((r.val22 / MAX) * 100, 100);
+      const color = r.isTotal ? '#f0c94e' : barColor(r.val22);
+
+
+      tr.innerHTML = `
+        <td class="region-name">${r.name}</td>
+        <td><span class="val">${r.y06}</span></td>
+        <td><span class="val">${r.y16}</span></td>
+        <td><span class="val">${r.y22}</span></td>
+        <td class="bar-cell">
+          <div class="bar-wrap">
+            <div class="bar-track">
+              <div class="bar-fill" style="width:0%;background:${color}" data-pct="${pct}"></div>
+            </div>
+            <span class="bar-num">${r.val22}%</span>
+          </div>
+        </td>
+      `;
+      return tr;
+    }
+
+
+    rows.forEach(r => tbody.appendChild(makeRow(r)));
+    tbody.appendChild(makeRow(total));
+
+
+    // Animate bars on load
+    requestAnimationFrame(() => {
+      setTimeout(() => {
+        document.querySelectorAll('.bar-fill').forEach(el => {
+          el.style.width = el.dataset.pct + '%';
+        });
+      }, 200);
+    });
+    </script>
+    </body>
+    </html>
 
     </article>
 
