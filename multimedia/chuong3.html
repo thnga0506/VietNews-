@@ -157,7 +157,319 @@
         <br><br>
         <strong style="font-size:13px; letter-spacing:1.5px; text-transform:uppercase">&mdash; Ngân hàng Thế giới</strong>
       </div>
+    <!DOCTYPE html>
+    <html lang="vi">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hình 38 – Xu hướng nghèo với những cú sốc khác nhau</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+    <style>
+      :root {
+        --ink:        #1e1608;
+        --paper:      #f5efe0;
+        --paper2:     #ede4cc;
+        --rule:       #c9b98a;
+        --brown:      #7a5c2e;
+        --brown-lt:   #b38b4d;
+        --green-dk:   #1d4a2e;
+        --green-md:   #2e7d52;
+        --green-lt:   #5ba87a;
+        --yellow:     #d4a017;
+        --yellow-lt:  #f0c94e;
+        --yellow-pal: #f7e49a;
+      }
+      *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+      body { background: var(--paper); color: var(--ink); font-family: 'IBM Plex Sans', sans-serif; }
 
+      .article { max-width: 960px; margin: 0 auto; padding: 28px 24px 40px; }
+
+      .fig-title {
+        font-family: 'Playfair Display', serif;
+        font-size: clamp(2.6rem, 5vw, 3.6rem);
+        font-weight: 700;
+        color: var(--green-dk);
+        line-height: 1.25;
+        margin-bottom: 24px;
+        padding-bottom: 10px;
+        border-bottom: 2px solid var(--green-dk);
+      }
+      .fig-title em { font-style: italic; color: var(--brown); }
+
+      /* 2×2 grid */
+      .grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 28px 32px;
+        margin-bottom: 20px;
+      }
+      @media (max-width: 640px) { .grid { grid-template-columns: 1fr; } }
+
+      .panel-label {
+        font-family: 'IBM Plex Sans', sans-serif;
+        font-size: .72rem;
+        font-weight: 600;
+        color: var(--brown-lt);
+        letter-spacing: .06em;
+        text-transform: uppercase;
+        margin-bottom: 8px;
+      }
+
+      .canvas-wrap { position: relative; height: 240px; }
+
+      /* Y-axis label rotated */
+      .y-label {
+        position: absolute;
+        left: -12px;
+        top: 50%;
+        transform: translateY(-50%) rotate(-90deg);
+        font-size: .58rem;
+        color: var(--brown-lt);
+        white-space: nowrap;
+        transform-origin: center center;
+        writing-mode: vertical-rl;
+        text-orientation: mixed;
+        transform: rotate(180deg);
+        left: -8px;
+        font-size: .6rem;
+        line-height: 1.2;
+        max-width: 14px;
+      }
+
+      /* Legend */
+      .legend {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px 24px;
+        margin-top: 4px;
+        padding: 14px 0 10px;
+        border-top: 1px solid var(--rule);
+      }
+      .legend-item {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: .7rem;
+        color: var(--ink);
+      }
+      .legend-line {
+        width: 28px;
+        height: 3px;
+        flex-shrink: 0;
+        border-radius: 2px;
+        position: relative;
+      }
+      .legend-line.dashed::after {
+        content: '';
+        position: absolute;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background: repeating-linear-gradient(90deg, transparent 0, transparent 4px, var(--paper) 4px, var(--paper) 7px);
+      }
+      .legend-line.dotted::after {
+        content: '';
+        position: absolute;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background: repeating-linear-gradient(90deg, transparent 0, transparent 2px, var(--paper) 2px, var(--paper) 5px);
+      }
+
+      /* Source */
+      .source-block {
+        font-size: .67rem;
+        color: var(--brown);
+        line-height: 1.6;
+        padding-top: 10px;
+        border-top: 1px solid var(--rule);
+      }
+      .source-block strong { color: var(--green-dk); }
+    </style>
+    </head>
+    <body>
+    <div class="article">
+      <h1 class="fig-title">Xu hướng nghèo với <em>những cú sốc khác nhau</em></h1>
+
+      <div class="grid">
+        <div>
+          <div class="panel-label">a) Lũ lụt</div>
+          <div class="canvas-wrap"><canvas id="c1"></canvas></div>
+        </div>
+        <div>
+          <div class="panel-label">b) Hạn hán</div>
+          <div class="canvas-wrap"><canvas id="c2"></canvas></div>
+        </div>
+        <div>
+          <div class="panel-label">c) Bão</div>
+          <div class="canvas-wrap"><canvas id="c3"></canvas></div>
+        </div>
+        <div>
+          <div class="panel-label">d) Xâm nhập mặn</div>
+          <div class="canvas-wrap"><canvas id="c4"></canvas></div>
+        </div>
+      </div>
+
+      <div class="legend">
+        <div class="legend-item">
+          <div class="legend-line" style="background:var(--green-dk)"></div>
+          <span>Không chịu tác động bởi cú sốc</span>
+        </div>
+        <div class="legend-item">
+          <div class="legend-line" style="background:var(--green-lt)"></div>
+          <span>Tác động trực tiếp</span>
+        </div>
+        <div class="legend-item">
+          <div class="legend-line" style="background:var(--yellow)"></div>
+          <span>Tác động trực tiếp và lân cận</span>
+        </div>
+        <div class="legend-item">
+          <div class="legend-line" style="background:var(--brown-lt)"></div>
+          <span>Tác động tỷ lệ theo khoảng cách</span>
+        </div>
+      </div>
+
+      <div class="source-block">
+        <strong>Nguồn:</strong> Tính toán của chuyên gia NHTG.<br>
+        <strong>Ghi chú:</strong> Kịch bản lũ lụt được giả định theo kịch bản khí hậu SSP2-4.5 với mức phát thải trung bình; Kịch bản hạn hán sử dụng mức độ rủi ro biến đổi khí hậu bằng kịch bản xấu nhất SSP5-8.5 với mức phát thải rất cao; Kịch bản xâm nhập mặn sử dụng RCP 4.5 kết hợp với sụt lún đất. Trong tất cả các kịch bản, thu nhập được điều chỉnh theo tăng trưởng GDP.
+      </div>
+    </div>
+
+    <script>
+    (function() {
+      const years = [2024,2027,2030,2033,2036,2039,2042,2045,2048];
+
+      const C = {
+        base:   { color: '#1d4a2e', dash: [],      width: 2.5 },  // green-dk solid
+        direct: { color: '#5ba87a', dash: [6,3],   width: 2 },    // green-lt dashed
+        nearby: { color: '#d4a017', dash: [2,3],   width: 2 },    // yellow dotted
+        dist:   { color: '#b38b4d', dash: [8,3,2,3], width: 2 },  // brown-lt dash-dot
+      };
+
+      // Baseline (no shock) — same across all panels
+      const BASE = [24.91, 22, 19.5, 17, 14.5, 12, 10, 8, 6];
+
+      // Panel data: [direct, nearby, dist]
+      const panels = [
+        { // a) Lũ lụt
+          maxY: 35,
+          direct: [24.91, 22.5, 20,   18,   15.5, 13,   11,   9,   7  ],
+          nearby: [24.91, 23,   22,   21,   19.5, 17,   15,   13,  10 ],
+          dist:   [24.91, 22,   20,   18,   15.5, 13,   11.5, 9.5, 7.5],
+        },
+        { // b) Hạn hán
+          maxY: 70,
+          direct: [24.91, 23,   22,   21,   20,   19,   17,   14,  11 ],
+          nearby: [24.91, 28,   33,   40,   48,   55,   60,   63,  62 ],
+          dist:   [24.91, 23.5, 22.5, 22,   21,   20,   19,   16,  13 ],
+        },
+        { // c) Bão
+          maxY: 30,
+          direct: [24.91, 22,   20,   18,   15.5, 13.5, 11.5, 9.5, 7.5],
+          nearby: [24.91, 22.5, 20.5, 18.5, 16,   14,   12,   10,  8  ],
+          dist:   [24.91, 22,   20,   17.5, 15.5, 13.5, 12,   10,  8  ],
+        },
+        { // d) Xâm nhập mặn
+          maxY: 40,
+          direct: [24.91, 25.5, 26,   26.5, 27,   27,   27,   26.5, 26],
+          nearby: [24.91, 26,   28,   30,   31,   32,   32,   31,   30 ],
+          dist:   [24.91, 25.5, 26,   27,   27.5, 27.5, 27,   26.5, 26],
+        },
+      ];
+
+      const tooltipBase = {
+        backgroundColor: '#1d4a2e',
+        titleColor: '#f0c94e',
+        bodyColor: '#f5efe0',
+        borderColor: '#d4a017',
+        borderWidth: 1,
+        padding: 8,
+        cornerRadius: 2,
+        callbacks: { label: ctx => ' ' + ctx.dataset.label + ': ' + ctx.raw.toFixed(2) + '%' }
+      };
+
+      function makeDataset(label, data, style) {
+        return {
+          label,
+          data,
+          borderColor: style.color,
+          borderWidth: style.width,
+          borderDash: style.dash,
+          pointRadius: 0,
+          pointHoverRadius: 4,
+          pointHoverBackgroundColor: style.color,
+          tension: 0.4,
+          fill: false,
+        };
+      }
+
+      const labels = ['Không chịu tác động', 'Tác động trực tiếp', 'Tác động trực tiếp & lân cận', 'Tác động theo khoảng cách'];
+
+      panels.forEach((p, i) => {
+        const ctx = document.getElementById('c' + (i+1)).getContext('2d');
+        new Chart(ctx, {
+          type: 'line',
+          data: {
+            labels: years,
+            datasets: [
+              makeDataset(labels[0], BASE,     C.base),
+              makeDataset(labels[1], p.direct, C.direct),
+              makeDataset(labels[2], p.nearby, C.nearby),
+              makeDataset(labels[3], p.dist,   C.dist),
+            ]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            animation: { duration: 900, easing: 'easeOutQuart' },
+            interaction: { mode: 'index', intersect: false },
+            scales: {
+              x: {
+                grid: { color: 'rgba(201,185,138,.25)' },
+                border: { color: '#c9b98a' },
+                ticks: {
+                  color: '#7a5c2e',
+                  font: { size: 9 },
+                  maxRotation: 45,
+                }
+              },
+              y: {
+                min: 0,
+                max: p.maxY,
+                grid: { color: 'rgba(201,185,138,.3)' },
+                border: { color: '#c9b98a', dash: [3,3] },
+                ticks: {
+                  color: '#7a5c2e',
+                  font: { size: 9 },
+                  callback: v => v,
+                  maxTicksLimit: 7,
+                },
+                title: {
+                  display: true,
+                  text: 'Tỷ lệ dân số dưới chuẩn nghèo (%)',
+                  color: '#b38b4d',
+                  font: { size: 8, family: "'IBM Plex Sans', sans-serif" },
+                }
+              }
+            },
+            plugins: {
+              legend: { display: false },
+              tooltip: tooltipBase,
+            }
+          },
+          plugins: [{
+            id: 'customDash',
+            beforeDatasetDraw(chart, args) {
+              const ds = args.meta.dataset;
+              const style = Object.values(C)[args.index];
+              if (style && style.dash.length) {
+                ds.options.borderDash = style.dash;
+              }
+            }
+          }]
+        });
+      });
+    })();
+    </script>
+    </body>
+    </html>
       <p>
         Trước đây, người miền Tây sống dựa vào quy luật của tự nhiên. Mùa nước nổi về khi nào, xuống khi nào,
         tất cả đều có thể đoán được. Nhưng những năm gần đây, quy luật ấy bị phá vỡ. Nước mặn đi sâu hơn. Mùa
@@ -277,6 +589,216 @@
         Tuy nhiên, dù có nhiều nỗ lực thích ứng, lúa đang dần mất đi vai trò trung tâm trong sinh kế của người dân, chỉ còn đóng góp khoảng 17% vào năm 2022. 
         Điều này phản ánh rõ áp lực kinh tế buộc người nông dân phải rời bỏ mô hình truyền thống.
       </p>
+    <!DOCTYPE html>
+        <html lang="vi">
+        <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Hình 16 – Đặc điểm địa lý hộ làm nghề thủy sản</title>
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+        <style>
+          :root {
+            --ink:       #1e1608;
+            --paper:     #f5efe0;
+            --rule:      #c9b98a;
+            --brown:     #7a5c2e;
+            --brown-lt:  #b38b4d;
+            --green-dk:  #1d4a2e;
+            --green-md:  #2e7d52;
+            --green-lt:  #5ba87a;
+            --yellow:    #d4a017;
+            --yellow-lt: #f0c94e;
+            --yellow-pal:#f7e49a;
+          }
+          *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+          body { background: var(--paper); color: var(--ink); font-family: 'IBM Plex Sans', sans-serif; }
+          .article { max-width: 820px; margin: 0 auto; padding: 28px 24px 40px; }
+          .fig-label { font-size: .72rem; font-weight: 600; color: var(--green-md); margin-bottom: 4px; letter-spacing: .05em; }
+          .fig-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.7rem, 3vw, 2.2rem);
+            font-weight: 700; color: var(--green-dk);
+            margin-bottom: 24px; padding-bottom: 10px;
+            border-bottom: 2px solid var(--rule); line-height: 1.3;
+          }
+          .panel { margin-bottom: 32px; }
+          .panel-sublabel {
+            font-size: .68rem; font-weight: 600; color: var(--brown-lt);
+            letter-spacing: .07em; text-transform: uppercase; margin-bottom: 14px;
+          }
+          .canvas-wrap { position: relative; }
+          .legend { display: flex; flex-wrap: wrap; gap: 8px 20px; margin-top: 14px; padding-top: 10px; border-top: 1px solid var(--rule); }
+          .legend-item { display: flex; align-items: center; gap: 6px; font-size: .7rem; color: var(--ink); }
+          .legend-swatch { width: 13px; height: 13px; border-radius: 2px; flex-shrink: 0; }
+          .divider { border: none; border-top: 1px solid var(--rule); margin: 0 0 32px; }
+          .note-block { font-size: .68rem; color: var(--brown); line-height: 1.65; margin-top: 8px; padding-top: 10px; border-top: 1px solid var(--rule); }
+          .note-block strong { color: var(--green-dk); }
+        </style>
+        </head>
+        <body>
+        <div class="article">
+          <div class="fig-title">Đặc điểm địa lý của hộ gia đình làm nghề thủy sản</div>
+
+
+          <div class="panel">
+            <div class="panel-sublabel">Tỷ lệ hộ gia đình làm nghề thủy sản</div>
+            <div class="canvas-wrap" style="height:380px"><canvas id="chartTop"></canvas></div>
+            <div class="legend" id="legend1"></div>
+          </div>
+
+
+          <hr class="divider">
+
+
+          <div class="panel">
+            <div class="panel-sublabel">Tỷ lệ hộ nông thôn trong số các hộ làm nghề thủy sản</div>
+            <div class="canvas-wrap" style="height:280px"><canvas id="chartBot"></canvas></div>
+          </div>
+
+
+          <div class="note-block">
+            <strong>Ghi chú:</strong> Tính toán của chuyên gia NHTG dựa trên dữ liệu LMS 2024, tính toán dựa trên đàn mẫu chính (không bao gồm mẫu chuyên đề bổ sung về thủy sản).
+            Hộ gia đình làm nghề thủy sản là hộ có ít nhất một thành viên làm nghề đánh bắt, nuôi trồng hoặc chế biến thủy sản.
+            Các hộ có thành viên tham gia nhiều hoạt động thủy sản được phân loại theo việc làm tốn nhiều thời gian nhất.
+            Theo địa giới 13 tỉnh cũ trước khi sát nhập năm 2025.
+          </div>
+        </div>
+
+
+        <script>
+        (function() {
+          const C = {
+            danhBat:   '#7a5c2e',
+            nuoiTrong: '#5ba87a',
+            cheBien:   '#d4a017',
+          };
+          const SECTORS = [
+            { key: 'danhBat',   label: 'Đánh bắt thủy sản' },
+            { key: 'nuoiTrong', label: 'Nuôi trồng thủy sản' },
+            { key: 'cheBien',   label: 'Chế biến thủy sản' },
+          ];
+          const provinces = ['Cà Mau','Bạc Liêu','Kiên Giang','MKD region','Hậu Giang','Đồng Tháp','Sóc Trăng','Trà Vinh','An Giang','Cần Thơ','Tiền Giang','Vĩnh Long','Long An','Bến Tre'];
+          const leftData = {
+            danhBat:   [30,15,10,8,4,3,3,3,2,2,2,1,1,1],
+            nuoiTrong: [25,12,16,4,5,4,4,3,3,3,3,2,2,1],
+            cheBien:   [ 8, 5, 3,2,2,1,1,1,1,1,1,1,0,0],
+          };
+
+
+          const tooltipBase = {
+            backgroundColor:'#1d4a2e', titleColor:'#f0c94e', bodyColor:'#f5efe0',
+            borderColor:'#d4a017', borderWidth:1, padding:10, cornerRadius:2,
+          };
+
+
+          // TOP chart
+          const ctxT = document.getElementById('chartTop').getContext('2d');
+          new Chart(ctxT, {
+            type: 'bar',
+            data: {
+              labels: provinces,
+              datasets: SECTORS.map(s => ({
+                label: s.label, data: leftData[s.key],
+                backgroundColor: C[s.key], borderWidth: 0,
+              }))
+            },
+            options: {
+              indexAxis: 'y', responsive: true, maintainAspectRatio: false,
+              animation: { duration: 900, easing: 'easeOutQuart' },
+              scales: {
+                x: {
+                  stacked: true, min: 0, max: 70,
+                  grid: { color: 'rgba(201,185,138,.3)' }, border: { color: '#c9b98a' },
+                  ticks: { color: '#7a5c2e', callback: v => v + '%', font: { size: 10 } }
+                },
+                y: {
+                  stacked: true, grid: { display: false }, border: { color: '#c9b98a' },
+                  ticks: { color: '#7a5c2e', font: { size: 10, weight: '500' } }
+                }
+              },
+              plugins: {
+                legend: { display: false },
+                tooltip: { ...tooltipBase, callbacks: { label: ctx => ' ' + ctx.dataset.label + ': ' + ctx.raw + '%' } }
+              }
+            },
+            plugins: [{
+              id: 'mkdLabel',
+              afterDatasetsDraw(chart) {
+                const { ctx, scales: { x } } = chart;
+                const idx = provinces.indexOf('MKD region');
+                const bar = chart.getDatasetMeta(0).data[idx];
+                const total = leftData.danhBat[idx] + leftData.nuoiTrong[idx] + leftData.cheBien[idx];
+                ctx.save();
+                ctx.fillStyle = '#7a5c2e';
+                ctx.font = "600 10px 'IBM Plex Sans', sans-serif";
+                ctx.textAlign = 'left'; ctx.textBaseline = 'middle';
+                ctx.fillText('13,4%', x.getPixelForValue(total) + 6, bar.y);
+                ctx.restore();
+              }
+            }]
+          });
+
+
+          // BOTTOM chart
+          const rightLabels = ['Đánh bắt\nthủy sản','Nuôi trồng\nthủy sản','Chế biến\nthủy sản'];
+          const ruralPct = [80, 87, 70];
+          const ctxB = document.getElementById('chartBot').getContext('2d');
+          new Chart(ctxB, {
+            type: 'bar',
+            data: {
+              labels: rightLabels,
+              datasets: [{ label: 'Tỷ lệ hộ nông thôn (%)', data: ruralPct, backgroundColor: [C.danhBat, C.nuoiTrong, C.cheBien], borderWidth: 0, barPercentage: 0.45 }]
+            },
+            options: {
+              responsive: true, maintainAspectRatio: false,
+              animation: { duration: 900, easing: 'easeOutQuart' },
+              scales: {
+                x: {
+                  grid: { display: false }, border: { color: '#c9b98a' },
+                  ticks: { color: '#7a5c2e', font: { size: 10, weight: '500' }, callback: function(val) { return this.getLabelForValue(val).split('\n'); } }
+                },
+                y: {
+                  min: 0, max: 100,
+                  grid: { color: 'rgba(201,185,138,.3)' }, border: { color: '#c9b98a', dash: [4,3] },
+                  ticks: { color: '#7a5c2e', callback: v => v + '%', stepSize: 10, font: { size: 10 } }
+                }
+              },
+              plugins: {
+                legend: { display: false },
+                tooltip: { ...tooltipBase, callbacks: { label: ctx => ' Nông thôn: ' + ctx.raw + '%' } }
+              }
+            },
+            plugins: [{
+              id: 'barLabels',
+              afterDatasetsDraw(chart) {
+                const { ctx } = chart;
+                chart.data.datasets[0].data.forEach((val, i) => {
+                  const bar = chart.getDatasetMeta(0).data[i];
+                  ctx.save();
+                  ctx.fillStyle = '#ffffff';
+                  ctx.font = "bold 14px 'IBM Plex Sans', sans-serif";
+                  ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+                  ctx.fillText(val + '%', bar.x, bar.y + bar.height / 2);
+                  ctx.restore();
+                });
+              }
+            }]
+          });
+
+
+          // Legend
+          const legendEl = document.getElementById('legend1');
+          SECTORS.forEach(s => {
+            const item = document.createElement('div');
+            item.className = 'legend-item';
+            item.innerHTML = '<div class="legend-swatch" style="background:' + C[s.key] + '"></div><span>' + s.label + '</span>';
+            legendEl.appendChild(item);
+          });
+        })();
+        </script>
+        </body>
+        </html>
 
       <h2>
         <span class="num num-line">Cú đánh thứ ba</span>
@@ -294,6 +816,401 @@
           Đây là lựa chọn của nhiều bạn trẻ khác trong vùng, họ tìm kiếm những công việc phi nông nghiệp có thu nhập thấp nhưng ổn định, thay vì tiếp tục gắn bó với nông nghiệp truyền thống ngày càng bấp bênh.
          </p> 
       
+    <!DOCTYPE html>
+        <html lang="vi">
+        <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Cơ cấu ngành nghề các công việc mới – LMS 2024</title>
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Source+Serif+4:opsz,wght@8..60,300;8..60,400;8..60,600&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+        <style>
+          :root {
+            --ink:        #1e1608;
+            --paper:      #f5efe0;
+            --paper2:     #ede4cc;
+            --rule:       #c9b98a;
+            --brown:      #7a5c2e;
+            --brown-lt:   #b38b4d;
+            --green-dk:   #1d4a2e;
+            --green-md:   #2e7d52;
+            --green-lt:   #5ba87a;
+            --yellow:     #d4a017;
+            --yellow-lt:  #f0c94e;
+            --yellow-pal: #f7e49a;
+            --white:      #ffffff;
+          }
+
+
+          *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+
+          body {
+            background: var(--paper);
+            color: var(--ink);
+            font-family: 'Source Serif 4', Georgia, serif;
+            min-height: 100vh;
+          }
+
+
+          .article {
+            max-width: 1060px;
+            margin: 0 auto;
+            padding: 32px 24px 48px;
+            background: transparent;
+          }
+
+
+          .article-headline {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+            font-weight: 700;
+            line-height: 1.25;
+            color: var(--green-dk);
+            margin-bottom: 8px;
+          }
+          .article-headline em { font-style: italic; color: var(--brown); }
+
+
+          .article-deck {
+            font-size: .93rem;
+            color: var(--brown);
+            border-left: 3px solid var(--yellow);
+            padding-left: 12px;
+            margin-bottom: 28px;
+            line-height: 1.6;
+          }
+
+
+          /* ── Two-panel grid ── */
+          .charts-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+            border: none;
+            background: transparent;
+            margin-bottom: 0;
+          }
+
+
+          @media (max-width: 680px) {
+            .charts-grid { grid-template-columns: 1fr; }
+            .chart-panel:first-child { border-right: none; border-bottom: none; }
+          }
+
+
+          .chart-panel {
+            padding: 22px 20px 16px;
+            background: transparent;
+          }
+          .chart-panel:first-child {
+            border-right: none;
+          }
+
+
+          .panel-sublabel {
+            font-family: 'IBM Plex Sans', sans-serif;
+            font-size: .68rem;
+            font-weight: 600;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+            color: var(--white);
+            background: var(--green-dk);
+            display: inline-block;
+            padding: 2px 8px;
+            margin-bottom: 14px;
+          }
+
+
+          .canvas-wrap {
+            position: relative;
+            height: 340px;
+          }
+
+
+          /* ── Shared legend below both panels ── */
+          .legend-wrap {
+            background: transparent;
+            border: none;
+            padding: 12px 20px;
+          }
+          .legend {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px 20px;
+          }
+          .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            font-family: 'IBM Plex Sans', sans-serif;
+            font-size: .7rem;
+            color: var(--ink);
+          }
+          .legend-swatch {
+            width: 13px;
+            height: 13px;
+            flex-shrink: 0;
+            border-radius: 2px;
+            border: 1px solid rgba(0,0,0,.12);
+          }
+
+
+          /* ── Source block ── */
+          .source-block {
+            background: var(--green-dk);
+            color: var(--yellow-pal);
+            font-family: 'IBM Plex Sans', sans-serif;
+            font-size: .68rem;
+            padding: 10px 16px;
+            border-top: 2px solid var(--yellow);
+            line-height: 1.65;
+          }
+          .source-block strong { color: var(--yellow-lt); }
+          .source-block .note { opacity: .8; margin-top: 4px; }
+
+
+          .chart-block {
+            margin: 0 -24px;
+            background: transparent;
+          }
+          .fig-label {
+            font-family: 'IBM Plex Sans', sans-serif;
+            font-size: .75rem;
+            font-weight: 600;
+            color: var(--green-md);
+            margin-bottom: 6px;
+          }
+          .fig-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--green-dk);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--rule);
+            line-height: 1.35;
+          }
+        </style>
+        </head>
+        <body>
+
+
+        <div class="article">
+          <h1 class="article-headline">
+            Cơ cấu ngành nghề của các công việc mới<br>
+            <em>sau khi thay đổi công việc</em>
+          </h1>
+          <p class="article-deck">
+            Dữ liệu LMS 2024 cho thấy xu hướng chuyển dịch lao động từ nông nghiệp và thủy sản
+            sang công nghiệp và dịch vụ khác, rõ rệt hơn ở nhóm tuổi 20–30 so với nhóm 30–40.
+          </p>
+
+
+    
+
+
+          <div class="chart-block">
+          <div class="charts-grid">
+            <!-- Left panel: 20–30 -->
+            <div class="chart-panel">
+              <div class="panel-sublabel">Người lao động 20 đến 30 tuổi</div>
+              <div class="canvas-wrap">
+                <canvas id="chart1"></canvas>
+              </div>
+            </div>
+
+
+            <!-- Right panel: 30–40 -->
+            <div class="chart-panel">
+              <div class="panel-sublabel">Người lao động 30 đến 40 tuổi</div>
+              <div class="canvas-wrap">
+                <canvas id="chart2"></canvas>
+              </div>
+            </div>
+          </div>
+
+
+          <!-- Shared legend -->
+          <div class="legend-wrap">
+            <div class="legend" id="sharedLegend"></div>
+          </div>
+
+
+          <div class="source-block">
+            <strong>Nguồn:</strong> Tính toán của chuyên gia NHTG dựa trên dữ liệu LMS 2024.<br>
+            <div class="note">
+              <strong>Ghi chú:</strong> Đồ thị biểu thị cơ cấu ngành các công việc mà người lao động chuyển sang sau khi thay đổi công việc.
+              Mỗi cột sử dụng dữ liệu của nhóm tuổi tương ứng trong giai đoạn tương ứng.
+              Nhóm tuổi 20–29 trong giai đoạn 2009–2014 tương đương nhóm tuổi 30–39 trong giai đoạn 2019–2024.
+            </div>
+          </div>
+          </div><!-- /chart-block -->
+        </div>
+
+
+        <script>
+        (function() {
+        Chart.defaults.font.family = "'IBM Plex Sans', sans-serif";
+        Chart.defaults.font.size   = 11;
+        Chart.defaults.color       = '#7a5c2e';
+
+
+        // Palette: xanh lá, vàng, nâu, trắng — no blues
+        const COLORS = {
+          thuySan:    '#1d4a2e',   // green-dk  — Thủy sản
+          nongNghiep: '#5ba87a',   // green-lt  — Nông nghiệp
+          congNghiep: '#ffffff',   // white     — Công nghiệp
+          xayDung:    '#d4a017',   // yellow    — Xây dựng
+          thuongMai:  '#1e1608',   // ink black — Thương mại
+          dichVuKhac: '#2e7d52',   // green-md  — Dịch vụ khác
+        };
+
+
+        const SECTORS = [
+          { key: 'thuySan',    label: 'Thủy sản' },
+          { key: 'nongNghiep', label: 'Nông nghiệp' },
+          { key: 'congNghiep', label: 'Công nghiệp' },
+          { key: 'xayDung',    label: 'Xây dựng' },
+          { key: 'thuongMai',  label: 'Thương mại' },
+          { key: 'dichVuKhac', label: 'Dịch vụ khác' },
+        ];
+
+
+        const periods = ['1999–2004', '2009–2014', '2019–2024'];
+
+
+        // Estimated from chart image (%)
+        // Group 20–30
+        const data2030 = {
+          thuySan:    [8,  4,  2],
+          nongNghiep: [38, 22, 15],
+          congNghiep: [18, 28, 35],
+          xayDung:    [5,  6,  8],
+          thuongMai:  [12, 14, 12],
+          dichVuKhac: [19, 26, 28],
+        };
+
+
+        // Group 30–40
+        const data3040 = {
+          thuySan:    [10, 5,  3],
+          nongNghiep: [42, 28, 20],
+          congNghiep: [14, 22, 28],
+          xayDung:    [4,  6,  7],
+          thuongMai:  [13, 15, 14],
+          dichVuKhac: [17, 24, 28],
+        };
+
+
+        function makeDatasets(dataObj) {
+          return SECTORS.map(s => ({
+            label: s.label,
+            data: dataObj[s.key],
+            backgroundColor: COLORS[s.key],
+            borderColor: 'transparent',
+            borderWidth: 0,
+          }));
+        }
+
+
+        const sharedOptions = {
+          responsive: true,
+          maintainAspectRatio: false,
+          animation: { duration: 900, easing: 'easeOutQuart' },
+          scales: {
+            x: {
+              stacked: true,
+              grid: { display: false },
+              border: { color: '#c9b98a' },
+              ticks: { color: '#7a5c2e', font: { size: 10, weight: '500' } },
+            },
+            y: {
+              stacked: true,
+              min: 0,
+              max: 100,
+              grid: { color: 'rgba(201,185,138,.35)' },
+              border: { color: '#c9b98a', dash: [4,3] },
+              ticks: {
+                color: '#7a5c2e',
+                callback: v => v + '%',
+                stepSize: 20,
+              }
+            }
+          },
+          plugins: {
+            legend: { display: false },
+            tooltip: {
+              backgroundColor: '#1d4a2e',
+              titleColor: '#f0c94e',
+              bodyColor: '#f5efe0',
+              borderColor: '#d4a017',
+              borderWidth: 1,
+              padding: 10,
+              cornerRadius: 2,
+              callbacks: {
+                label: ctx => ` ${ctx.dataset.label}: ${ctx.raw}%`
+              }
+            }
+          }
+        };
+
+
+        // Data-label plugin
+        const dataLabelPlugin = {
+          id: 'dataLabels',
+          afterDatasetsDraw(chart) {
+            const { ctx } = chart;
+            chart.data.datasets.forEach((ds, di) => {
+              const meta = chart.getDatasetMeta(di);
+              if (meta.hidden) return;
+              meta.data.forEach((bar, i) => {
+                const val = ds.data[i];
+                if (val < 6) return;
+                const isWhite = ds.backgroundColor === '#ffffff';
+                ctx.save();
+                ctx.fillStyle = isWhite ? '#1d4a2e' : '#ffffff';
+                ctx.font = "bold 10px 'IBM Plex Sans', sans-serif";
+                ctx.textAlign = 'center';
+                ctx.textBaseline = 'middle';
+                ctx.fillText(val + '%', bar.x, bar.y + bar.height / 2);
+                ctx.restore();
+              });
+            });
+          }
+        };
+
+
+        const ctx1 = document.getElementById('chart1').getContext('2d');
+        new Chart(ctx1, {
+          type: 'bar',
+          data: { labels: periods, datasets: makeDatasets(data2030) },
+          options: sharedOptions,
+          plugins: [dataLabelPlugin],
+        });
+
+
+        const ctx2 = document.getElementById('chart2').getContext('2d');
+        new Chart(ctx2, {
+          type: 'bar',
+          data: { labels: periods, datasets: makeDatasets(data3040) },
+          options: sharedOptions,
+          plugins: [dataLabelPlugin],
+        });
+
+
+        // Build shared legend
+        const legendEl = document.getElementById('sharedLegend');
+        SECTORS.forEach(s => {
+          const item = document.createElement('div');
+          item.className = 'legend-item';
+          item.innerHTML = `<div class="legend-swatch" style="background:${COLORS[s.key]}"></div><span>${s.label}</span>`;
+          legendEl.appendChild(item);
+        });
+        })();
+        </script>
+        </body>
+        </html>
 
       <div class="mm-pullquote">
         <blockquote>
@@ -308,6 +1225,465 @@
       </figure>
 
       <h3>Đa dạng hóa hay bấp bênh hóa?</h3>
+        <!DOCTYPE html>
+      <html lang="vi">
+      <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Biến động thu nhập hộ gia đình – ĐBSCL & Cả nước</title>
+      <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Source+Serif+4:opsz,wght@8..60,300;8..60,400;8..60,600&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+      <style>
+        :root {
+          --ink:        #1e1608;
+          --paper:      #f5efe0;
+          --paper2:     #ede4cc;
+          --rule:       #c9b98a;
+          --brown:      #7a5c2e;
+          --brown-lt:   #b38b4d;
+          --green-dk:   #1d4a2e;
+          --green-md:   #2e7d52;
+          --green-lt:   #5ba87a;
+          --green-pal:  #9ecfb0;
+          --yellow:     #d4a017;
+          --yellow-lt:  #f0c94e;
+          --yellow-pal: #f7e49a;
+          --blue-dk:    #1a3a5c;
+          --blue-md:    #2b6cb0;
+          --blue-lt:    #5fa8d3;
+        }
+
+
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+
+        body {
+          background: var(--paper);
+          color: var(--ink);
+          font-family: 'Source Serif 4', Georgia, serif;
+          min-height: 100vh;
+        }
+
+
+
+
+
+
+        /* ── Article ── */
+        .article {
+          max-width: 960px;
+          margin: 0 auto;
+          padding: 32px 24px 48px;
+        }
+
+
+        .article-kicker {
+          font-family: 'IBM Plex Sans', sans-serif;
+          font-size: .7rem;
+          font-weight: 600;
+          letter-spacing: .14em;
+          text-transform: uppercase;
+          color: var(--yellow);
+          background: var(--green-dk);
+          display: inline-block;
+          padding: 2px 8px;
+          margin-bottom: 12px;
+        }
+
+
+        .article-headline {
+          font-family: 'Playfair Display', Georgia, serif;
+          font-size: clamp(1.3rem, 3vw, 2rem);
+          font-weight: 700;
+          line-height: 1.25;
+          color: var(--green-dk);
+          margin-bottom: 8px;
+        }
+        .article-headline em { font-style: italic; color: var(--brown); }
+
+
+        .article-deck {
+          font-size: .95rem;
+          color: var(--brown);
+          border-left: 3px solid var(--yellow);
+          padding-left: 12px;
+          margin-bottom: 28px;
+          line-height: 1.6;
+        }
+
+
+        /* ── Stat row ── */
+        .stat-row {
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          gap: 0;
+          border: 1.5px solid var(--rule);
+          margin-bottom: 28px;
+          overflow: hidden;
+        }
+        .stat-box {
+          padding: 14px 16px;
+          border-right: 1px solid var(--rule);
+          background: var(--paper2);
+        }
+        .stat-box:last-child { border-right: none; }
+        .stat-val {
+          font-family: 'Playfair Display', serif;
+          font-size: clamp(1.05rem, 1.5vw, 1.45rem);
+          font-weight: 900;
+          line-height: 1;
+          margin-bottom: 4px;
+          white-space: nowrap;
+        }
+        .stat-lbl {
+          font-family: 'IBM Plex Sans', sans-serif;
+          font-size: .55rem;
+          color: var(--brown-lt);
+          line-height: 1.35;
+        }
+        .c-green  { color: var(--green-dk); }
+        .c-yellow { color: var(--yellow); }
+        .c-brown  { color: var(--brown); }
+        .c-blue   { color: var(--brown); }
+
+
+        /* ── Chart panel ── */
+        .chart-panel {
+          background: var(--paper2);
+          border: 1.5px solid var(--rule);
+          padding: 28px 28px 20px;
+        }
+
+
+        .panel-label {
+          font-family: 'IBM Plex Sans', sans-serif;
+          font-size: .68rem;
+          font-weight: 600;
+          letter-spacing: .1em;
+          text-transform: uppercase;
+          color: var(--brown-lt);
+          margin-bottom: 4px;
+        }
+
+
+        .panel-title {
+          font-family: 'Playfair Display', serif;
+          font-size: 1.05rem;
+          font-weight: 700;
+          color: var(--green-dk);
+          line-height: 1.35;
+          margin-bottom: 20px;
+          padding-bottom: 10px;
+          border-bottom: 1px solid var(--rule);
+        }
+
+
+        .canvas-wrap {
+          position: relative;
+          height: 400px;
+        }
+
+
+        /* ── Legend ── */
+        .legend {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 8px 20px;
+          margin-top: 18px;
+          padding-top: 14px;
+          border-top: 1px solid var(--rule);
+        }
+        .legend-item {
+          display: flex;
+          align-items: center;
+          gap: 7px;
+          font-family: 'IBM Plex Sans', sans-serif;
+          font-size: .7rem;
+          color: var(--ink);
+          line-height: 1.2;
+        }
+        .legend-swatch {
+          width: 13px;
+          height: 13px;
+          flex-shrink: 0;
+          border-radius: 2px;
+        }
+
+
+        /* ── Source / note ── */
+        .source-block {
+          background: var(--green-dk);
+          color: var(--yellow-pal);
+          font-family: 'IBM Plex Sans', sans-serif;
+          font-size: .68rem;
+          padding: 10px 16px;
+          border-top: 2px solid var(--yellow);
+          line-height: 1.65;
+        }
+        .source-block strong { color: var(--yellow-lt); }
+        .source-block .note { opacity: .8; margin-top: 4px; }
+
+
+        /* ── Divider rule between VN / ĐBSCL groups ── */
+        .group-divider {
+          position: absolute;
+          top: 0; bottom: 40px;
+          width: 2px;
+          background: repeating-linear-gradient(
+            to bottom,
+            var(--brown-lt) 0px, var(--brown-lt) 6px,
+            transparent 6px, transparent 12px
+          );
+          pointer-events: none;
+        }
+
+
+        @media (max-width: 640px) {
+          .stat-row { grid-template-columns: 1fr 1fr; }
+          .nameplate { flex-direction: column; }
+          .canvas-wrap { height: 320px; }
+        }
+      </style>
+      </head>
+      <body>
+
+
+      <div class="article">
+        <h1 class="article-headline">
+          Biến động thu nhập hộ gia đình theo năm:<br>
+          <em>ĐBSCL và cả nước</em>
+        </h1>
+        <p class="article-deck">
+          Giai đoạn 2010–2022, thu nhập từ tiền công tăng mạnh tại cả Việt Nam và ĐBSCL,
+          trong khi thu nhập nông nghiệp sụt giảm đáng kể — phản ánh quá trình
+          chuyển dịch lao động từ nông nghiệp sang phi nông nghiệp.
+        </p>
+
+
+        <!-- Stat callouts -->
+        <div class="stat-row">
+          <div class="stat-box">
+            <div class="stat-val c-blue">31% → 48%</div>
+            <div class="stat-lbl">Tiền công · Việt Nam<br>2010 → 2022</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-val c-green">38% → 18%</div>
+            <div class="stat-lbl">Nông nghiệp · Việt Nam<br>2010 → 2022</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-val c-brown">29% → 41%</div>
+            <div class="stat-lbl">Tiền công · ĐBSCL<br>2010 → 2022</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-val c-yellow">41% → 23%</div>
+            <div class="stat-lbl">Nông nghiệp · ĐBSCL<br>2010 → 2022</div>
+          </div>
+        </div>
+
+
+        <!-- Chart -->
+        <div class="chart-panel">
+          <div class="panel-label">Biểu đồ cột chồng · So sánh 4 nhóm</div>
+          <div class="panel-title">
+            Cơ cấu nguồn thu nhập hộ gia đình (%) — Việt Nam & ĐBSCL, 2010 và 2022
+          </div>
+          <div class="canvas-wrap" style="position:relative;">
+            <canvas id="barChart"></canvas>
+          </div>
+          <div class="legend" id="legend"></div>
+        </div>
+
+
+        <div class="source-block">
+          <strong>Nguồn:</strong> Tính toán của chuyên gia NHTG dựa trên dữ liệu KSMSDC.<br>
+          <div class="note">
+            <strong>Ghi chú:</strong> Thu nhập bình quân đầu người hàng năm ở Việt Nam (USD theo ngang giá sức mua 2017):
+            6.496 USD (2010) và 8.692 USD (2022). Tại ĐBSCL: 6.479 USD (2010) và 7.875 USD (2022).
+          </div>
+        </div>
+      </div>
+
+
+      <script>
+      Chart.defaults.font.family = "'IBM Plex Sans', sans-serif";
+      Chart.defaults.font.size   = 11;
+      Chart.defaults.color       = '#1e1608';
+
+
+      // Colours mapped to the newspaper palette
+      const COLORS = {
+        tienCong:     '#7a5c2e',   // brown-dk   — tiền công (wages)
+        nongnghiep:   '#5ba87a',   // green-lt   — nông nghiệp
+        phiNN:        '#b38b4d',   // brown-lt   — phi nông nghiệp
+        tienGui:      '#2e7d52',   // green-md   — tiền gửi về
+        hoTro:        '#1d4a2e',   // green-dk   — hỗ trợ nhà nước
+        luongHuu:     '#d4a017',   // yellow     — lương hưu
+        khac:         '#1e1608',   // ink/black  — khác
+      };
+
+
+      const labels = ['Việt Nam\n(2010)', 'Việt Nam\n(2022)', 'ĐBSCL\n(2010)', 'ĐBSCL\n(2022)'];
+
+
+      // Data from the chart image (values are %)
+      const datasets = [
+        {
+          label: 'Thu nhập từ tiền công',
+          data: [31, 48, 29, 41],
+          backgroundColor: COLORS.tienCong,
+        },
+        {
+          label: 'Thu nhập nông nghiệp',
+          data: [38, 18, 41, 23],
+          backgroundColor: COLORS.nongnghiep,
+        },
+        {
+          label: 'Thu nhập phi nông nghiệp',
+          data: [19, 20, 20, 21],
+          backgroundColor: COLORS.phiNN,
+        },
+        {
+          label: 'Tiền gửi về',
+          data: [6, 8, 7, 10],
+          backgroundColor: COLORS.tienGui,
+        },
+        {
+          label: 'Hỗ trợ từ nhà nước',
+          data: [3, 3, 2, 3],
+          backgroundColor: COLORS.hoTro,
+        },
+        {
+          label: 'Lương hưu',
+          data: [2, 2, 1, 1],
+          backgroundColor: COLORS.luongHuu,
+        },
+        {
+          label: 'Khác',
+          data: [1, 1, 0, 1],
+          backgroundColor: COLORS.khac,
+        },
+      ];
+
+
+      const ctx = document.getElementById('barChart').getContext('2d');
+
+
+      new Chart(ctx, {
+        type: 'bar',
+        data: { labels, datasets },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          animation: { duration: 1000, easing: 'easeOutQuart' },
+          scales: {
+            x: {
+              stacked: true,
+              grid: { display: false },
+              border: { color: '#c9b98a' },
+              ticks: {
+                font: { size: 11, weight: '500' },
+                color: '#7a5c2e',
+                callback: function(val) {
+                  return this.getLabelForValue(val).split('\n');
+                }
+              }
+            },
+            y: {
+              stacked: true,
+              min: 0,
+              max: 100,
+              grid: { color: 'rgba(201,185,138,.35)' },
+              border: { color: '#c9b98a', dash: [4,3] },
+              ticks: {
+                color: '#7a5c2e',
+                callback: v => v + '%',
+                stepSize: 10,
+              }
+            }
+          },
+          plugins: {
+            legend: { display: false },
+            tooltip: {
+              backgroundColor: '#1d4a2e',
+              titleColor: '#f0c94e',
+              bodyColor: '#f5efe0',
+              borderColor: '#d4a017',
+              borderWidth: 1,
+              padding: 10,
+              cornerRadius: 2,
+              callbacks: {
+                title: ctx => ctx[0].label.replace('\n', ' '),
+                label: ctx => ` ${ctx.dataset.label}: ${ctx.raw}%`
+              }
+            },
+          },
+          // Draw data labels inside bars
+          layout: { padding: 0 },
+        },
+        plugins: [{
+          id: 'dataLabels',
+          afterDatasetsDraw(chart) {
+            const { ctx } = chart;
+            chart.data.datasets.forEach((ds, di) => {
+              const meta = chart.getDatasetMeta(di);
+              if (meta.hidden) return;
+              meta.data.forEach((bar, i) => {
+                const val = ds.data[i];
+                if (val < 3) return; // skip tiny segments
+                ctx.save();
+                ctx.fillStyle = '#ffffff';
+                ctx.font = "bold 12px 'IBM Plex Sans', sans-serif";
+                ctx.textAlign = 'center';
+                ctx.textBaseline = 'middle';
+                ctx.fillText(val + '%', bar.x, bar.y + bar.height / 2);
+                ctx.restore();
+              });
+            });
+          }
+        },
+        // Draw vertical divider between VN and ĐBSCL groups
+        {
+          id: 'groupDivider',
+          afterDraw(chart) {
+            const { ctx, scales: { x, y } } = chart;
+            // midpoint between bar index 1 and 2
+            const x1 = x.getPixelForValue(1);
+            const x2 = x.getPixelForValue(2);
+            const midX = (x1 + x2) / 2;
+            ctx.save();
+            ctx.setLineDash([6, 5]);
+            ctx.strokeStyle = '#b38b4d';
+            ctx.lineWidth = 1.5;
+            ctx.beginPath();
+            ctx.moveTo(midX, y.top);
+            ctx.lineTo(midX, y.bottom);
+            ctx.stroke();
+            // Labels above divider
+            ctx.fillStyle = '#7a5c2e';
+            ctx.font = "600 10px 'IBM Plex Sans', sans-serif";
+            ctx.textAlign = 'center';
+            ctx.setLineDash([]);
+            const topY = y.top - 10;
+            ctx.fillText('Việt Nam', (x.getPixelForValue(0) + x1) / 2, topY);
+            ctx.fillText('ĐBSCL', (x2 + x.getPixelForValue(3)) / 2, topY);
+            ctx.restore();
+          }
+        }]
+      });
+
+
+      // Build legend
+      const legendEl = document.getElementById('legend');
+      datasets.forEach(ds => {
+        const item = document.createElement('div');
+        item.className = 'legend-item';
+        item.innerHTML = `<div class="legend-swatch" style="background:${ds.backgroundColor}"></div><span>${ds.label}</span>`;
+        legendEl.appendChild(item);
+      });
+      </script>
+      </body>
+      </html>
+
 
       <p>
         Trong nhiều năm trở lại đây, thu nhập từ nông nghiệp giảm mạnh, người dân tìm kiếm sinh kế từ nhiều
