@@ -172,7 +172,7 @@ Mỗi chuyên mục (ngoại trừ `bandoc` và `multimedia`) cần 5 bài báo:
       <h1>[TIÊU ĐỀ BÀI VIẾT]</h1>
       
       <div class="article-meta">
-        <span>[NGÀY], 2024</span>
+        <span>[NGÀY], 2026</span>
         <span>Chuyên mục: [TÊN CHUYÊN MỤC]</span>
         <span>Tác giả: [TÁC GIẢ]</span>
       </div>
@@ -225,7 +225,7 @@ Mỗi chuyên mục (ngoại trừ `bandoc` và `multimedia`) cần 5 bài báo:
       </div>
     </div>
     <div class="footer-bottom">
-      <p>&copy; 2024 VietNews. Bản quyền thuộc về VietNews. Mọi nội dung trên trang web được bảo vệ theo luật pháp Việt Nam.</p>
+      <p>&copy; 2026 VietNews. Bản quyền thuộc về VietNews. Mọi nội dung trên trang web được bảo vệ theo luật pháp Việt Nam.</p>
     </div>
   </footer>
 
