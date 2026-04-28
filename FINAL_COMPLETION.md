@@ -193,11 +193,11 @@ Tất cả headings, paragraph, quotes đều có spacing chuyên nghiệp như 
 | Loại | Font | Size | Weight | Color |
 |---|---|---|---|---|
 | Hero Title | Playfair Display | 72px | 900 | White |
-| Hero Subtitle | Lora | 22px | 300 | White |
-| Main Heading | Playfair Display | 42px | 700 | #31511E |
-| Card Title | Playfair Display | 18px | 600 | #333 |
-| Body Text | Lora | 18px | 400 | #333 |
-| Footer Title | Poppins | 13px | 600 | #8B7355 |
+| Hero Subtitle | Lora | 30px | 300 | White |
+| Main Heading | Playfair Display | 50px | 700 | #31511E |
+| Card Title | Playfair Display | 20px | 600 | #333 |
+| Body Text | Lora | 20px | 400 | #333 |
+| Footer Title | Poppins | 15px | 600 | #8B7355 |
 
 ---
 
