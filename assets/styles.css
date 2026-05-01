@@ -1972,7 +1972,9 @@ footer {
   width: 100%;
 }
 
-.mm-body h2 .num-line { display: block; }
+.mm-body h2 .num-line { 
+  display: block;
+text-align: center; }
 
 .mm-body h3 {
   font-family: 'Playfair Display', serif;
