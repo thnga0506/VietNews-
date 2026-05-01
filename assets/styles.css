@@ -1962,12 +1962,14 @@ footer {
 
 .mm-body h2 .num {
   display: inline-block;
-  font-size: 25px;
+  font-size: 35px;
   color: #ac0000;
   font-weight: 600;
   letter-spacing: 0px;
   text-transform: uppercase;
   margin-bottom: 10px;
+ text-align: center;
+  width: 100%;
 }
 
 .mm-body h2 .num-line { display: block; }
