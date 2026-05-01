@@ -573,7 +573,132 @@
         <strong>một phần tư đến hai phần ba</strong>. Ngược lại, tại Bến Tre hay Long An, con số này vẫn ở mức
         khá khiêm tốn.
       </div>
+    <!DOCTYPE html>
+    <html lang="vi">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xâm nhập mặn ĐBSCL 2021–2023</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+    <style>
+      :root {
+        --ink:#1e1608;--paper:#f5efe0;--paper2:#ede4cc;--rule:#c9b98a;
+        --brown:#7a5c2e;--brown-lt:#b38b4d;
+        --green-dk:#1d4a2e;--green-md:#2e7d52;
+        --yellow:#d4a017;--yellow-lt:#f0c94e;--yellow-pal:#f7e49a;
+      }
+      *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+      body{background:var(--paper);color:var(--ink);font-family:'IBM Plex Sans',sans-serif}
+      .article{max-width:780px;margin:0 auto;padding:28px 24px 40px}
+      .fig-title{font-family:'Playfair Display',serif;font-size:clamp(2.2rem,5vw,3.1rem);font-weight:700;color:var(--green-dk);line-height:1.25;margin-bottom:6px}
+      .fig-title em{font-style:italic;color:var(--brown)}
+      .fig-source{font-size:.7rem;color:var(--brown-lt);margin-bottom:20px;font-style:italic}
+      .chart-panel{background:var(--paper2);padding:20px 20px 16px}
+      .canvas-wrap{position:relative;height:560px}
+      .xnm-legend{display:flex;gap:6px 20px;flex-wrap:wrap;margin-top:14px;padding-top:10px;border-top:1px solid var(--rule);justify-content:flex-end}
+      .xnm-legend-item{display:flex;align-items:center;gap:6px;font-size:.72rem;color:var(--ink)}
+      .xnm-legend-swatch{width:14px;height:14px;border-radius:2px;flex-shrink:0}
+      .source-block{background:var(--green-dk);color:var(--yellow-pal);font-size:.68rem;padding:8px 16px;border-top:2px solid var(--yellow);line-height:1.6}
+      .source-block strong{color:var(--yellow-lt)}
+      .footnote{font-size:.67rem;color:var(--brown);font-style:italic;margin-top:10px;padding-top:8px;border-top:1px solid var(--rule);line-height:1.5}
+    </style>
+    </head>
+    <body>
+    <div class="article">
+      <h1 class="fig-title">
+        Tỉ lệ người trả lời cho biết đã xảy ra <em>xâm nhập mặn</em><br>
+        ở địa phương, từng tỉnh/thành phố thuộc Đồng bằng sông Cửu Long
+      </h1>
+      <div class="fig-source">Giai đoạn 2021–2023 &nbsp;·&nbsp; Nguồn: PAPI 2023</div>
+      <div class="chart-panel">
+        <div class="canvas-wrap"><canvas id="xnm2023Chart"></canvas></div>
+        <div class="xnm-legend" id="xnm2023Legend"></div>
+        <div class="footnote">* Số liệu thống kê trước khi sáp nhập các tỉnh miền Tây</div>
+      </div>
+    </div>
 
+    <script>
+    (function(){
+      const DS = [
+        { label:'2023', color:'#1d4a2e', data:[53.4,41.5,17.1,14.8,14.2,12.6,8.6,8.5,7.5,6.5,1.9,0.8,0.4] },
+        { label:'2022', color:'#d4a017', data:[63.6,36.1,7.1,11.9,11.1,6.7,7.7,19.6,7.8,2.8,2.2,0.5,1.0] },
+        { label:'2021', color:'#b38b4d', data:[26.3,18.5,3.1,6.7,2.6,4.1,2.1,3.1,3.6,0.0,0.3,0.0,0.0] },
+      ];
+      const provinces = ['Bến Tre','Tiền Giang','Bạc Liêu','Vĩnh Long','Kiên Giang','Cà Mau','Hậu Giang','Sóc Trăng','Trà Vinh','Long An','Cần Thơ','Đồng Tháp','An Giang'];
+
+      const canvasEl = document.getElementById('xnm2023Chart');
+      // Destroy existing Chart instance on this canvas if any
+      const existingChart = Chart.getChart(canvasEl);
+      if (existingChart) existingChart.destroy();
+      const ctx = canvasEl.getContext('2d');
+      new Chart(ctx,{
+        type:'bar',
+        data:{
+          labels:provinces,
+          datasets:DS.map(d=>({
+            label:d.label, data:d.data,
+            backgroundColor:d.color, borderWidth:0,
+            borderRadius:2, barPercentage:0.8, categoryPercentage:0.75,
+          }))
+        },
+        options:{
+          indexAxis:'y', responsive:true, maintainAspectRatio:false,
+          animation:{duration:900,easing:'easeOutQuart'},
+          layout:{padding:{right:50}},
+          scales:{
+            x:{
+              min:0, max:70,
+              grid:{color:'rgba(201,185,138,.35)'},
+              border:{color:'#c9b98a'},
+              ticks:{color:'#7a5c2e',font:{size:10},stepSize:20}
+            },
+            y:{
+              grid:{display:false},
+              border:{color:'#c9b98a'},
+              ticks:{color:'#1d4a2e',font:{size:11,weight:'500'}}
+            }
+          },
+          plugins:{
+            legend:{display:false},
+            tooltip:{
+              backgroundColor:'#1d4a2e',titleColor:'#f0c94e',bodyColor:'#f5efe0',
+              borderColor:'#d4a017',borderWidth:1,padding:10,cornerRadius:2,
+              callbacks:{label:c=>` ${c.dataset.label}: ${c.raw}%`}
+            }
+          }
+        },
+        plugins:[{
+          id:'dataLabels',
+          afterDatasetsDraw(chart){
+            const {ctx}=chart;
+            chart.data.datasets.forEach((ds,di)=>{
+              chart.getDatasetMeta(di).data.forEach((bar,i)=>{
+                const val=ds.data[i];
+                if(val===0) return;
+                ctx.save();
+                ctx.fillStyle='#1e1608';
+                ctx.font="500 9px 'IBM Plex Sans',sans-serif";
+                ctx.textAlign='left'; ctx.textBaseline='middle';
+                ctx.fillText(String(val).replace('.',','), bar.x+4, bar.y);
+                ctx.restore();
+              });
+            });
+          }
+        }]
+      });
+
+      const el=document.getElementById('xnm2023Legend');
+      DS.forEach(d=>{
+        const item=document.createElement('div');
+        item.className='xnm-legend-item';
+        item.innerHTML=`<div class="xnm-legend-swatch" style="background:${d.color}"></div><span>${d.label}</span>`;
+        el.appendChild(item);
+      });
+    })();
+    </script>
+    </body>
+    </html>
 <figure class="mm-figure-full figcaption">
     <img src="images/Tỉ lệ người trả lời cho biết đã xảy ra xâm nhập mặn ở địa phương ở từng tỉnh, thành phố thuộc Đồng bằng sông Cửu Long, 2021 đến 2023 - Nguồn PAPI 2023.webp" alt="Vuông tôm miền Tây">
     <figcaption>Tỉ lệ người trả lời cho biết đã xảy ra xâm nhập mặn ở địa phương ở từng tỉnh, thành phố thuộc Đồng bằng sông Cửu Long, 2021 đến 2023.</figcaption>
