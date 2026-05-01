@@ -2054,26 +2054,76 @@ footer {
 
 /* Figure with caption */
 .mm-figure {
-  margin: 50px -40px;
+    margin: 50px -40px;
 }
 
-.mm-figure img {
-  width: 100%;
-  height: auto;
-  max-height: 540px;
-  object-fit: cover;
-  border-radius: 6px;
+    .mm-figure img {
+        width: 100%;
+        height: auto;
+        max-height: 540px;
+        object-fit: cover;
+        border-radius: 6px;
+    }
+
+    .mm-figure figcaption {
+        font-size: 13px;
+        color: #6b6051;
+        line-height: 1.5;
+        margin-top: 14px;
+        padding-left: 16px;
+        border-left: 3px solid #914F1E;
+        font-style: italic;
+    }
+
+/* Style mới - hiển thị full ảnh không bị cắt */
+.mm-figure-full {
+    overflow: visible;
+    width: calc(70% + 300px);
 }
 
-.mm-figure figcaption {
-  font-size: 13px;
-  color: #6b6051;
-  line-height: 1.5;
-  margin-top: 14px;
-  padding-left: 16px;
-  border-left: 3px solid #914F1E;
-  font-style: italic;
+    .mm-figure-full img {
+        width: 100%;
+        height: auto;
+        max-height: none; /* bỏ giới hạn chiều cao */
+        object-fit: contain; /* không crop ảnh */
+        border-radius: 6px;
+    }
+
+    .mm-figure-full figcaption {
+        /* Giữ nguyên style cũ, chỉ điều chỉnh padding cho đúng vị trí */
+        font-size: 13px;
+        color: #6b6051;
+        line-height: 1.5;
+        margin-top: 14px;
+        padding-left: 16px;
+        border-left: 3px solid #914F1E;
+        font-style: italic;
+    }
+
+    /* Style mới - hiển thị full ảnh không bị cắt */
+.mm-figure-full b {
+    overflow: visible;
+    width: calc(70% + 100px);
 }
+
+    .mm-figure-full img b {
+        width: 100%;
+        height: auto;
+        max-height: none; /* bỏ giới hạn chiều cao */
+        object-fit: contain; /* không crop ảnh */
+        border-radius: 6px;
+    }
+
+    .mm-figure-full figcaption b {
+        /* Giữ nguyên style cũ, chỉ điều chỉnh padding cho đúng vị trí */
+        font-size: 13px;
+        color: #6b6051;
+        line-height: 1.5;
+        margin-top: 14px;
+        padding-left: 16px;
+        border-left: 3px solid #914F1E;
+        font-style: italic;
+    }
 
 /* Split image (2 columns side by side) */
 .mm-split {
@@ -3010,3 +3060,4 @@ header * {
 .mm-chapter-hero-inner {
   z-index: 2 !important;
 }
+fonts.googleapis.com
