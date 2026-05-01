@@ -1962,10 +1962,10 @@ footer {
 
 .mm-body h2 .num {
   display: inline-block;
-  font-size: 18px;
-  color: #859F3D;
+  font-size: 25px;
+  color: #ac0000;
   font-weight: 600;
-  letter-spacing: 4px;
+  letter-spacing: 0px;
   text-transform: uppercase;
   margin-bottom: 10px;
 }
@@ -2007,49 +2007,81 @@ footer {
 
 .mm-highlight strong { color: #31511E; font-weight: 700; }
 
-/* Pull quote with green bg */
+/* ===== PULLQUOTE NÂNG CẤP ===== */
 .mm-pullquote {
-  margin: 60px -40px;
-  padding: 60px 50px;
-  background: linear-gradient(135deg, #31511E 0%, #859F3D 100%);
+  margin: 50px 0;           /* bỏ margin âm, khung gọn hơn */
+  padding: 40px 48px;       /* padding nhỏ hơn */
+  background: linear-gradient(135deg, #3d2314 0%, #6B3A2A 60%, #3d2314 100%);
   color: #fff;
-  border-radius: 8px;
+  border-radius: 6px;
   text-align: center;
   position: relative;
   overflow: hidden;
+  border-left: 5px solid #f0c040;    /* đường vàng nổi bật bên trái */
+  box-shadow: 0 12px 36px rgba(90, 30, 10, 0.35);
 }
 
+/* Dấu ngoặc kép trang trí */
 .mm-pullquote::before {
-  content: '"';
+  content: '\201C';
   position: absolute;
-  top: -30px; left: 30px;
+  top: -20px;
+  left: 20px;
   font-family: 'Playfair Display', serif;
-  font-size: 200px;
-  color: rgba(255,255,255,0.12);
+  font-size: 140px;
+  color: rgba(255, 255, 255, 0.08);
   line-height: 1;
+  pointer-events: none;
+}
+
+/* Đường trang trí trên/dưới */
+.mm-pullquote::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #f0c040, transparent);
 }
 
 .mm-pullquote blockquote {
   font-family: 'Playfair Display', serif;
-  font-size: 28px;
+  font-size: 22px;          /* nhỏ hơn một chút */
   font-weight: 600;
-  line-height: 1.4;
+  line-height: 1.6;
   font-style: italic;
   margin-bottom: 18px;
   position: relative;
   z-index: 1;
-  letter-spacing: 0.3px;
+  color: #fff5e6;
+  max-width: 680px;         /* giới hạn chiều rộng */
+  margin-left: auto;
+  margin-right: auto;
+  letter-spacing: 0.2px;
 }
 
 .mm-pullquote cite {
-  display: block;
-  font-family: 'Lora', serif;
-  font-size: 13px;
-  letter-spacing: 3px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 12px;
+  letter-spacing: 2.5px;
   text-transform: uppercase;
-  color: #cbdba0;
+  color: #f0d39b;
   font-style: normal;
   font-weight: 600;
+  position: relative;
+  z-index: 1;
+}
+
+/* Gạch ngang trước cite */
+.mm-pullquote cite::before {
+  content: '';
+  display: inline-block;
+  width: 28px;
+  height: 1.5px;
+  background: #f0d39b;
+  flex-shrink: 0;
 }
 
 /* Figure with caption */
@@ -3061,3 +3093,4 @@ header * {
   z-index: 2 !important;
 }
 fonts.googleapis.com
+
