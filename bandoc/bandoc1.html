@@ -58,146 +58,82 @@
   </style>
 </head>
 <body>
- <header>
-  <!-- TOP BAR -->
-  <div class="header-top">
-
-    <!-- LOGO -->
-    <div class="brand-block">
-      <a href="../index.html" class="logo">Viet<em>News</em></a>
-      <span class="brand-slogan">Tiếng nói · Sự thật · Thời đại</span>
+  <header>
+    <div class="header-top">
+      <a href="../index.html" class="logo">VIETNEWS</a>
+      <div class="header-date" id="currentDate"></div>
     </div>
-
-    <!-- NGÀY THÁNG (giữa) -->
-    <div class="header-center">
-      <span class="header-date" id="header-date"></span>
-    </div>
-
-    <!-- TIỆN ÍCH (phải) -->
-    <div class="header-utils">
-      <button class="util-btn" id="search-toggle" title="Tìm kiếm">
-        <svg width="17" height="17" viewBox="0 0 24 24" fill="none"
-             stroke="currentColor" stroke-width="2">
-          <circle cx="11" cy="11" r="8"/>
-          <path d="m21 21-4.35-4.35"/>
-        </svg>
-      </button>
-
-      <button class="util-btn notif-btn" title="Thông báo">
-        <svg width="17" height="17" viewBox="0 0 24 24" fill="none"
-             stroke="currentColor" stroke-width="2">
-          <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
-          <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
-        </svg>
-        <span class="notif-dot"></span>
-      </button>
-
-      <button class="btn-login" id="btn-login">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
-             stroke="currentColor" stroke-width="2">
-          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-          <circle cx="12" cy="7" r="4"/>
-        </svg>
-        Đăng nhập
-      </button>
-    </div>
-  </div>
-
-  <!-- SEARCH BAR (ẩn mặc định) -->
-  <div class="search-bar" id="search-bar">
-    <div class="search-bar-inner">
-      <input type="text" placeholder="Tìm kiếm tin tức..."
-             id="search-input" autocomplete="off"/>
-      <button class="search-submit">
-        <svg width="17" height="17" viewBox="0 0 24 24" fill="none"
-             stroke="currentColor" stroke-width="2">
-          <circle cx="11" cy="11" r="8"/>
-          <path d="m21 21-4.35-4.35"/>
-        </svg>
-      </button>
-      <button class="search-close" id="search-close">✕</button>
-    </div>
-  </div>
-
-  <!-- NAV -->
-  <nav>
-  <ul>
-    <li><a href="../index.html">Trang chủ</a></li>
-    <li><a href="../thoisu/thoisu.html">Thời sự</a></li>
-    <li><a href="../giaoduc/giaoduc.html">Giáo dục</a></li>
-    <li><a href="../suckhoe/suckhoe.html">Sức khỏe</a></li>
-    <li><a href="../vanhoa/vanhoa.html">Văn hóa</a></li>
-    <li><a href="../thethao/thethao.html">Thể thao</a></li>
-    <li><a href="../congnghe/congnghe.html">Công nghệ</a></li>
-    <li><a href="../doisong/doisong.html">Đời sống</a></li>
-    <li><a href="../bandoc/bandoc.html">Bạn đọc</a></li>
-    <li><a href="../dulich/dulich.html">Du lịch</a></li>
-    <li><a href="../multimedia/multimedia.html">Multimedia</a></li>
-  </ul>
-</nav>
-
-  <!-- MODAL ĐĂNG NHẬP -->
- <div class="modal-overlay" id="modal-overlay" style="display:none">
-    <div class="modal">
-      <button class="modal-close" id="modal-close">✕</button>
-      <div class="modal-logo">Viet<em>News</em></div>
-      <p class="modal-sub">Đăng nhập để trải nghiệm đầy đủ tính năng</p>
-      <div class="modal-body">
-        <input type="text"
-               placeholder="Email hoặc số điện thoại"
-               class="modal-input"/>
-        <input type="password"
-               placeholder="Mật khẩu"
-               class="modal-input"/>
-        <button class="modal-btn-primary">Đăng nhập</button>
-        <div class="modal-divider"><span>hoặc</span></div>
-        <button class="modal-btn-google">
-          <svg width="18" height="18" viewBox="0 0 24 24">
-            <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
-            <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
-            <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"/>
-            <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
-          </svg>
-          Tiếp tục với Google
-        </button>
-        <p class="modal-register">
-          Chưa có tài khoản? <a href="#">Đăng ký ngay</a>
-        </p>
-      </div>
-    </div>
-  </div>
-</header>
+    <nav>
+      <ul>
+        <li><a href="../index.html">Trang Chủ</a></li>
+        <li><a href="../thoisu/thoisu.html">Thời Sự</a></li>
+        <li><a href="../giaoduc/giaoduc.html">Giáo Dục</a></li>
+        <li><a href="../suckhoe/suckhoe.html">Sức Khỏe</a></li>
+        <li><a href="../vanhoa/vanhoa.html">Văn Hóa</a></li>
+        <li><a href="../thethao/thethao.html">Thể Thao</a></li>
+        <li><a href="../congnghe/congnghe.html">Công Nghệ</a></li>
+        <li><a href="../doisong/doisong.html">Đời Sống</a></li>
+        <li><a href="bandoc.html">Bạn Đọc</a></li>
+        <li><a href="../dulich/dulich.html">Du Lịch</a></li>
+        <li><a href="../multimedia/multimedia.html">Multimedia</a></li>
+      </ul>
+    </nav>
+  </header>
 
   <main>
     <div class="article-detail">
-      <h1>Độc giả chia sẻ câu chuyện xúc động về cuộc sống thứ hai</h1>
+      <h1>Tiền điện nhà trọ - gánh nặng vô hình của người thuê nhà</h1>
       
       <div class="article-meta">
-        <span>18 Tháng 4, 2024</span>
+        <span>08 Tháng 6, 2026</span>
         <span>Chuyên mục: Bạn Đọc</span>
-        <span>Tác giả: Bạn đọc VietNews</span>
+        <span>Tác giả: Như Quỳnh</span>
       </div>
 
-      <div class="article-content">
-        <p>Kính gửi Tòa soạn VietNews,</p>
+      <div >
+        <h3><strong><em>Giá điện 4.000 đồng/kWh tại các khu nhà trọ hay căn hộ dịch vụ từ lâu đã trở thành chủ đề gây tranh cãi giữa người thuê và chủ nhà. Trong khi nhiều sinh viên, người lao động cho rằng mức giá này quá cao so với biểu giá điện sinh hoạt của Nhà nước, không ít chủ trọ lại khẳng định họ cũng phải gánh những khoản chi phí không nhỏ khi vận hành cả một dãy phòng cho thuê.</em></strong></h3>
         
-        <p>Tôi tên là Lan, hiện sống tại Hà Nội. Hôm nay tôi muốn chia sẻ với độc giả một câu chuyện đầy ý nghĩa về cuộc sống thứ hai của mình sau khi thay đổi công việc và lối sống.</p>
+  
+    <figure class="mm-figure">
+      <img src="../assets/doi-song-media/tiendien.jpg" alt="tiền điện" width="700">
+        <figcaption>
+          Bảng giá điện sinh hoạt 2024. Nguồn: Bộ Công thương.
+        </figcaption>
+    </figure>
 
-        <p>Mười năm trước, tôi là một nhân viên văn phòng với mức lương ổn định nhưng cuộc sống không có gì vui vẻ. Mỗi ngày tôi lặp lại công việc cơ khí, ngồi trước máy tính từ 8 giờ sáng đến 5 giờ chiều, rồi về nhà kiệt sức. Tôi thấy mình đang dần mất đi những gì quan trọng nhất: sức khỏe, gia đình và đặc biệt là niềm vui.</p>
+        <h2 style="font-family: 'Times New Roman', Times, serif;">
+    <strong>Gánh nặng tiền điện của người thuê</strong>
+      </h2>
 
-        <img src="https://via.placeholder.com/700x400/8B7355/ffffff?text=Cuộc+sống+thứ+hai" alt="Cuộc sống thứ hai">
+        <p>19 giờ, căn phòng trọ rộng chưa đầy 20 m² của Minh Anh (23 tuổi, sinh viên tại TP.HCM) vẫn sáng đèn. Chiếc quạt quay liên tục giữa những ngày nắng nóng, bên cạnh là chiếc laptop phục vụ việc học tập và làm thêm.</p>
+        <br>
+    
+        <p>Mỗi tháng, hóa đơn tiền điện của Minh Anh dao động từ 120 đến 150 kWh. Theo cách tính của tôi, lượng điện này chỉ tương đương các bậc giá thấp trong biểu giá điện sinh hoạt, khoảng 2.050 đồng đến 2.380 đồng/kWh.</p>
+<br>
+        <p>"Mình gần như không dùng máy lạnh nên nếu tính theo điện sinh hoạt thì số tiền phải đóng thấp hơn khá nhiều. Nhưng chủ trọ thu cố định 4.000 đồng/kWh nên cuối tháng  mình vẫn phải trả gần gấp đôi." Minh Anh chia sẻ.</p>
+<br>
+        <p>Không chỉ sinh viên, nhiều người lao động thuê trọ cũng có chung thắc mắc. Họ cho rằng mức tiêu thụ điện của từng phòng không quá cao, nhưng khi thanh toán lại phải chịu một mức giá cố định vượt xa các bậc điện phổ biến mà hộ gia đình đang sử dụng.</p>
+<br>
+        <p>Với những người có thu nhập hạn chế, khoản chênh lệch vài trăm nghìn đồng mỗi tháng không phải là con số nhỏ và dần trở thành một gánh nặng. Nhiều người cho biết họ phải hạn chế sử dụng quạt, máy lạnh hoặc các thiết bị điện khác để giảm bớt chi phí sinh hoạt.</p>
 
-        <p>Năm 2015, sau một lần bệnh nặng, tôi quyết định từ bỏ công việc và bắt đầu một cuộc sống mới. Tôi quyết định mở một quán cà phê nhỏ gần công viên. Những người bạn nhiều người bảo tôi điên, nhưng tôi biết rằng mình cần làm gì để sống thực sự.</p>
+      <br>
+         <h2 style="font-family: 'Times New Roman', Times, serif;">
+    <strong>Lắng nghe từ chiều ngược lại</strong>
+      </h2>
 
-        <p>Những năm sau đó không dễ dàng. Tôi phải học cách quản lý tài chính, làm quen với khách hàng, xử lý những tình huống khó khăn. Nhưng điều khác biệt là, tôi yêu công việc tôi làm. Mỗi sáng khi thức dậy, tôi không cảm thấy nặng nề nữa.</p>
-
-        <p>Bây giờ, sau gần 10 năm, quán cà phê của tôi đã trở thành một nơi quen thuộc với rất nhiều khách hàng trung thành. Nhưng điều quý báu nhất là tôi có thời gian cho gia đình, cho sức khỏe, và tôi hạnh phúc. Lương có thể không bằng lúc trước, nhưng chất lượng cuộc sống tôi tốt hơn rất nhiều.</p>
-
-        <p>Tôi viết bức thư này không phải để khuyên bất kỳ ai từ bỏ công việc, mà là để nói rằng cuộc sống có rất nhiều con đường. Chúng ta không nhất thiết phải theo con đường mà xã hội dẫn dắt. Nếu bạn cảm thấy không hạnh phúc, hãy có can đảm để thay đổi.</p>
-
-        <p>Xin chân thành cảm ơn VietNews đã cho phép tôi chia sẻ câu chuyện này với độc giả.</p>
-
-        <p>Trân trọng,<br>Lan</p>
+        <p>Ở chiều ngược lại, ông Công Hậu, chủ một căn hộ dịch vụ gần khu vực Ngã tư Thủ Đức tại TP.HCM, cho biết việc so sánh lượng điện của từng phòng với biểu giá điện sinh hoạt của hộ gia đình là chưa hoàn toàn phù hợp.</p>
+<br>
+        <p>Theo ông Hậu, mỗi tháng dãy trọ gồm 10 phòng tiêu thụ lượng điện rất lớn. Khi điện năng của cả tòa nhà được cộng dồn trên cùng một công tơ, phần lớn sản lượng điện đều rơi vào các bậc giá cao nhất.</p>
+<br>
+        <p>"Nhiều người nghĩ chủ nhà mua điện 2.000 đồng rồi bán lại 4.000 đồng là lời lớn. Thực tế không phải vậy. Tôi đóng tiền điện cho cả dãy trọ, mức giá bình quân đã lên tới khoảng 3.460 đồng/kWh," ông chia sẻ.</p>
+<br>
+        <p>Ngoài tiền điện, chủ trọ còn phải chi trả cho những khoản phát sinh như: hệ thống dây dẫn, bảo trì thiết bị điện, điện chiếu sáng hành lang, máy bơm nước và các hao hụt trong quá trình vận hành.</p>
+<br>
+        <p>Ông Hậu bức xúc “Nếu thu 4.000 đồng/kWh thì phần chênh lệch thực tế không quá lớn như nhiều người vẫn nghĩ. "Có lãi nhưng không nhiều. Khoản này chủ yếu để bù cho các chi phí vận hành và rủi ro phát sinh”.</p>
+<br>
+        <p>Giữa người thuê trọ và chủ nhà, mỗi bên đều có những lý lẽ riêng. Một bên mong muốn được sử dụng điện với mức giá sát thực tế tiêu dùng của mình, trong khi bên còn lại phải tính toán chi phí dựa trên tổng lượng điện của cả khu trọ.</p>
+<br>
+        <p>Khi giá điện và chi phí sinh hoạt ngày càng tăng, câu chuyện về mức giá điện tại các khu nhà trọ có lẽ sẽ vẫn tiếp tục là chủ đề được nhiều người quan tâm, bởi nó liên quan trực tiếp đến đời sống của hàng triệu sinh viên, công nhân và người lao động đang thuê nhà trên cả nước.</p>
       </div>
 
       <a href="bandoc.html" class="back-link">← Quay lại chuyên mục</a>
@@ -257,33 +193,5 @@
     }
     updateDate();
   </script>
-  <script>
-  // Hiển thị ngày tháng tiếng Việt
-  const days = ['Chủ nhật','Thứ hai','Thứ ba','Thứ tư','Thứ năm','Thứ sáu','Thứ bảy'];
-  const now = new Date();
-  document.getElementById('header-date').textContent =
-    `${days[now.getDay()]}, ${now.getDate()} tháng ${now.getMonth()+1}, ${now.getFullYear()}`;
-
-  // Search toggle
-  const searchToggle = document.getElementById('search-toggle');
-  const searchBar = document.getElementById('search-bar');
-  const searchClose = document.getElementById('search-close');
-  searchToggle.addEventListener('click', () => {
-    searchBar.classList.toggle('open');
-    if (searchBar.classList.contains('open'))
-      document.getElementById('search-input').focus();
-  });
-  searchClose.addEventListener('click', () => searchBar.classList.remove('open'));
-
-  // Login modal
-  const btnLogin = document.getElementById('btn-login');
-  const overlay = document.getElementById('modal-overlay');
-  const modalClose = document.getElementById('modal-close');
-  btnLogin.addEventListener('click', () => overlay.classList.add('open'));
-  modalClose.addEventListener('click', () => overlay.classList.remove('open'));
-  overlay.addEventListener('click', (e) => {
-    if (e.target === overlay) overlay.classList.remove('open');
-  });
-</script>
 </body>
 </html>
