@@ -9,7 +9,7 @@
   <script defer src="../assets/site.js"></script>
 </head>
 <body>
- <header>
+  <header>
   <!-- TOP BAR -->
   <div class="header-top">
 
@@ -127,26 +127,26 @@
         </div>
         <div class="articles-grid">
           <div class="article-card" onclick="window.location.href='bandoc1.html'">
-            <img src="../assets/doi-song-media/tiendien.jpg" alt="tiền điện" width="700">
+            <img src="https://via.placeholder.com/400x250/8B7355/ffffff?text=Tâm+Sự" alt="Tâm sự">
             <div class="article-card-content">
               <div class="article-card-category">Bạn Đọc</div>
-              <h3>Tiền điện nhà trọ - gánh nặng vô hình của người thuê nhà</h3>
-              <p>Giá điện 4.000 đồng/kWh tại các khu nhà trọ hay căn hộ dịch vụ từ lâu đã trở thành chủ đề gây tranh cãi giữa người thuê và chủ nhà. Trong khi nhiều sinh viên, người lao động cho rằng mức giá này quá cao so với biểu giá điện sinh hoạt của Nhà nước, không ít chủ trọ lại khẳng định họ cũng phải gánh những khoản chi phí không nhỏ khi vận hành cả một dãy phòng cho thuê.</p>
+              <h3>Độc giả chia sẻ câu chuyện xúc động về cuộc sống thứ hai</h3>
+              <p>Một độc giả gửi bài viết tâm sự về những thay đổi tích cực trong cuộc sống sau khi thay đổi công việc...</p>
               <div class="article-card-footer">
-                <span class="article-card-date">08 Tháng 6</span>
+                <span class="article-card-date">18 Tháng 4</span>
                 <a href="#" class="read-more">Đọc Thêm →</a>
               </div>
             </div>
           </div>
 
           <div class="article-card" onclick="window.location.href='bandoc2.html'">
-            <img src="https://via.placeholder.com/400x250/8B7355/ffffff?text=Góc+Nhìn" alt="Góc nhìn">
+            <img src="nha sach 2.jpg" alt="Góc nhìn">
             <div class="article-card-content">
               <div class="article-card-category">Bạn Đọc</div>
-              <h3>Bạn đọc bình luận về vấn đề giáo dục hiện nay</h3>
-              <p>Một giáo viên gửi bài viết phân tích sâu sắc về những thách thức trong giáo dục hiện đại...</p>
+              <h3>Hơn 15.000 lượt khách ghé nhà sách Cá Chép sau thông báo đóng cửa</h3>
+              <p>Chỉ sau hơn một tuần thông báo ngừng hoạt động, nhà sách Cá Chép trên đường Võ Văn Tần (TP.HCM) đã đón hơn 15.000 lượt khách đến tham quan...</p>
               <div class="article-card-footer">
-                <span class="article-card-date">17 Tháng 4</span>
+                <span class="article-card-date">11 Tháng 6</span>
                 <a href="#" class="read-more">Đọc Thêm →</a>
               </div>
             </div>
@@ -235,7 +235,7 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <p>&copy; 2024 VietNews. Bản quyền thuộc về VietNews. Mọi nội dung trên trang web được bảo vệ theo luật pháp Việt Nam.</p>
+      <p>&copy; 2026 VietNews. Bản quyền thuộc về VietNews. Mọi nội dung trên trang web được bảo vệ theo luật pháp Việt Nam.</p>
     </div>
   </footer>
 
@@ -248,34 +248,6 @@
     }
     updateDate();
   </script>
-  <script>
-  // Hiển thị ngày tháng tiếng Việt
-  const days = ['Chủ nhật','Thứ hai','Thứ ba','Thứ tư','Thứ năm','Thứ sáu','Thứ bảy'];
-  const now = new Date();
-  document.getElementById('header-date').textContent =
-    `${days[now.getDay()]}, ${now.getDate()} tháng ${now.getMonth()+1}, ${now.getFullYear()}`;
-
-  // Search toggle
-  const searchToggle = document.getElementById('search-toggle');
-  const searchBar = document.getElementById('search-bar');
-  const searchClose = document.getElementById('search-close');
-  searchToggle.addEventListener('click', () => {
-    searchBar.classList.toggle('open');
-    if (searchBar.classList.contains('open'))
-      document.getElementById('search-input').focus();
-  });
-  searchClose.addEventListener('click', () => searchBar.classList.remove('open'));
-
-  // Login modal
-  const btnLogin = document.getElementById('btn-login');
-  const overlay = document.getElementById('modal-overlay');
-  const modalClose = document.getElementById('modal-close');
-  btnLogin.addEventListener('click', () => overlay.classList.add('open'));
-  modalClose.addEventListener('click', () => overlay.classList.remove('open'));
-  overlay.addEventListener('click', (e) => {
-    if (e.target === overlay) overlay.classList.remove('open');
-  });
-</script>
   <script>
   // Hiển thị ngày tháng tiếng Việt
   const days = ['Chủ nhật','Thứ hai','Thứ ba','Thứ tư','Thứ năm','Thứ sáu','Thứ bảy'];
