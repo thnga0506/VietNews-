@@ -66,6 +66,11 @@
     }
   </style>
 </head>
+<script>
+  document.getElementById('hamburger-btn').addEventListener('click', () => {
+    document.querySelector('nav').classList.toggle('open');
+  });
+</script>
 <body>
  <header>
   <!-- TOP BAR -->
@@ -75,7 +80,7 @@
     <!-- LOGO -->
     <div class="brand-block">
       <a href="../index.html" class="logo">Viet<em>News</em></a>
-      <span class="brand-slogan">Tiếng nói · Sự thật · Thời đại</span>
+      <span class="brand-slogan">Tin tức nhanh · Góc nhìn mở</span>
     </div>
 
 
@@ -87,6 +92,9 @@
 
     <!-- TIỆN ÍCH (phải) -->
     <div class="header-utils">
+      <button class="hamburger" id="hamburger-btn" aria-label="Menu">
+  <span></span><span></span><span></span>
+</button>
       <button class="util-btn" id="search-toggle" title="Tìm kiếm">
         <svg width="17" height="17" viewBox="0 0 24 24" fill="none"
              stroke="currentColor" stroke-width="2">
@@ -189,29 +197,28 @@
   <main>
     <div class="article-detail">
       <h1>Bảng thi đấu bóng đá World Cup 2026</h1>
-
+      
       <div class="article-meta">
         <span>4 Tháng 6, 2026</span>
         <span>Chuyên mục: Thể Thao</span>
         <span>Tác giả: Quỳnh Mai</span>
       </div>
 
-      <div class="article-detail-body"></div>
       <div class="article-detail-body">
-      <h4>Với lịch thi đấu kéo dài từ 11/6 đến 19/7/2026, người hâm mộ sẽ được theo dõi hành trình dày đặc gồm 104 trận đấu, 
-          từ vòng bảng đến chung kết.</h4>
+      <h3>Với lịch thi đấu kéo dài từ 11/6 đến 19/7/2026, người hâm mộ sẽ được theo dõi hành trình dày đặc gồm 104 trận đấu, 
+          từ vòng bảng đến chung kết.</h3>
           <img src="hinh-nen-world-cup-2026-33.jpg" alt="Bảng thi đấu World Cup 2026">
-
+          
         <p>Kỳ World Cup 2026, giải đấu lớn nhất hành tinh do FIFA tổ chức hứa hẹn mang đến mùa hè bùng nổ khi lần đầu tiên có tới 
           48 đội tuyển tranh tài trên khắp Mỹ, Canada và Mexico.</p>
-
+        
         <p>Việc cập nhật lịch thi đấu chi tiết theo giờ Việt Nam giúp khán giả dễ dàng theo dõi, 
           là chìa khóa để không bỏ lỡ những đại chiến đỉnh cao ngay từ vòng bảng cho tới các trận knock-out căng thẳng.</p>
 <figure class="mm-figure">
         <img src="lich thi dau.jpg" alt="Thời Sự">
       </figure>
 
-          <h2>12 bảng đấu World Cup 2026 gồm:</h2>
+          <h3>12 bảng đấu World Cup 2026 gồm:</h3>
  <p>Bảng A: Mexico, Nam Phi, Hàn Quốc, Play-off UEFA Nhánh D (CH Séc / Ireland / Đan Mạch / Bắc Macedonia).</p>
  <p>Bảng B: Canada, Qatar, Thụy Sĩ, Play-off UEFA Nhánh A (Xứ Wales / Bosnia & Herzegovina / Italy / Bắc Ireland).</p>
  <p>Bảng C: Brazil, Maroc, Haiti, Scotland.</p>
@@ -225,7 +232,7 @@
  <p>Bảng K: Bồ Đào Nha, Uzbekistan, Colombia, Play-off FIFA 1 (New Caledonia / Jamaica / Congo).</p>
  <p>Bảng L: Anh, Croatia, Ghana, Panama.</p>
 
-
+        
       </div>
 
       <a href="thethao.html" class="back-link">← Quay lại chuyên mục</a>
@@ -272,7 +279,7 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <p>&copy; 2024 VietNews. Bản quyền thuộc về VietNews. Mọi nội dung trên trang web được bảo vệ theo luật pháp Việt Nam.</p>
+      <p>&copy; 2026 VietNews. Bản quyền thuộc về VietNews. Mọi nội dung trên trang web được bảo vệ theo luật pháp Việt Nam.</p>
     </div>
   </footer>
 
