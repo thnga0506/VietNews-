@@ -2,7 +2,7 @@
 <html lang="vi">
 <head>
 
- <!-- Google tag (gtag.js) -->
+  <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-DWQ0P512WY"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -76,7 +76,7 @@
     <!-- LOGO -->
     <div class="brand-block">
       <a href="../index.html" class="logo">Viet<em>News</em></a>
-      <span class="brand-slogan">Tiếng nói · Sự thật · Thời đại</span>
+      <span class="brand-slogan">Tin tức nhanh · Góc nhìn mở</span>
     </div>
 
     <!-- NGÀY THÁNG (giữa) -->
@@ -86,6 +86,9 @@
 
     <!-- TIỆN ÍCH (phải) -->
     <div class="header-utils">
+      <button class="hamburger" id="hamburger-btn" aria-label="Menu">
+  <span></span><span></span><span></span>
+</button>
       <button class="util-btn" id="search-toggle" title="Tìm kiếm">
         <svg width="17" height="17" viewBox="0 0 24 24" fill="none"
              stroke="currentColor" stroke-width="2">
@@ -184,7 +187,7 @@
       <h1>Độc giả chia sẻ câu chuyện xúc động về cuộc sống thứ hai</h1>
       
       <div class="article-meta">
-        <span>18 Tháng 4, 2024</span>
+        <span>18 Tháng 4, 2026</span>
         <span>Chuyên mục: Bạn Đọc</span>
         <span>Tác giả: Bạn đọc VietNews</span>
       </div>
@@ -294,6 +297,11 @@
   modalClose.addEventListener('click', () => overlay.classList.remove('open'));
   overlay.addEventListener('click', (e) => {
     if (e.target === overlay) overlay.classList.remove('open');
+  });
+</script>
+<script>
+  document.getElementById('hamburger-btn').addEventListener('click', () => {
+    document.querySelector('nav').classList.toggle('open');
   });
 </script>
 </body>
