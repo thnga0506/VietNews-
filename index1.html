@@ -83,11 +83,7 @@
     }
   </style>
 </head>
-  <script>
-  document.getElementById('hamburger-btn').addEventListener('click', () => {
-    document.querySelector('nav').classList.toggle('open');
-  });
-</script>
+  
 <body>
   <header>
   <!-- TOP BAR -->
@@ -334,6 +330,11 @@
   modalClose.addEventListener('click', () => overlay.classList.remove('open'));
   overlay.addEventListener('click', (e) => {
     if (e.target === overlay) overlay.classList.remove('open');
+  });
+</script>
+  <script>
+  document.getElementById('hamburger-btn').addEventListener('click', () => {
+    document.querySelector('nav').classList.toggle('open');
   });
 </script>
 </body>
