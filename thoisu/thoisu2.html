@@ -66,6 +66,11 @@
     }
   </style>
 </head>
+<script>
+  document.getElementById('hamburger-btn').addEventListener('click', () => {
+    document.querySelector('nav').classList.toggle('open');
+  });
+</script>
 <body>
   <header>
   <!-- TOP BAR -->
@@ -75,7 +80,7 @@
     <!-- LOGO -->
     <div class="brand-block">
       <a href="../index.html" class="logo">Viet<em>News</em></a>
-      <span class="brand-slogan">Tiếng nói · Sự thật · Thời đại</span>
+      <span class="brand-slogan">Tin tức nhanh · Góc nhìn mở</span>
     </div>
 
 
@@ -87,6 +92,9 @@
 
     <!-- TIỆN ÍCH (phải) -->
     <div class="header-utils">
+      <button class="hamburger" id="hamburger-btn" aria-label="Menu">
+  <span></span><span></span><span></span>
+</button>
       <button class="util-btn" id="search-toggle" title="Tìm kiếm">
         <svg width="17" height="17" viewBox="0 0 24 24" fill="none"
              stroke="currentColor" stroke-width="2">
@@ -197,10 +205,10 @@
 
       <div class="article-detail-body">
         
-        <h4>Trong bối cảnh dân số già hóa và các bệnh mạn tính gia tăng, 
+        <h3>Trong bối cảnh dân số già hóa và các bệnh mạn tính gia tăng, 
           việc chăm sóc sức khỏe cần bắt đầu từ ý thức chủ động của mỗi người dân. Chuyển từ tư duy “khám bệnh” sang 
           “phòng bệnh” là thông điệp xuyên suốt tại Hội thảo Vì sức khỏe cộng đồng lần 1 do Bệnh viện Phục hồi chức năng - 
-          Điều trị bệnh nghề nghiệp tổ chức.</h4>
+          Điều trị bệnh nghề nghiệp tổ chức.</h3>
 
           <figure class="mm-figure">
         <img src="5.JPG" alt="Giáo Dục">
