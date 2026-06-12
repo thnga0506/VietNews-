@@ -12,7 +12,7 @@
 </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hơn 15.000 lượt khách ghé nhà sách Cá Chép sau thông báo đóng cửa - VietNews</title>
+  <title>Đếm ngược 04 ngày chia tay nhà sách Cá Chép - VietNews</title>
   <link rel="stylesheet" href="../assets/styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,800;0,900;1,400&family=Lora:ital,wght@0,400;0,600;1,400&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <script defer src="../assets/site.js"></script>
@@ -74,7 +74,7 @@
     <!-- LOGO -->
     <div class="brand-block">
       <a href="../index.html" class="logo">Viet<em>News</em></a>
-      <span class="brand-slogan">Tiếng nói · Sự thật · Thời đại</span>
+      <span class="brand-slogan">Tin tức nhanh · Góc nhìn mở</span>
     </div>
 
     <!-- NGÀY THÁNG (giữa) -->
@@ -84,6 +84,9 @@
 
     <!-- TIỆN ÍCH (phải) -->
     <div class="header-utils">
+      <button class="hamburger" id="hamburger-btn" aria-label="Menu">
+  <span></span><span></span><span></span>
+</button>
       <button class="util-btn" id="search-toggle" title="Tìm kiếm">
         <svg width="17" height="17" viewBox="0 0 24 24" fill="none"
              stroke="currentColor" stroke-width="2">
@@ -178,7 +181,7 @@
 </header>
   <main>
     <div class="article-detail">
-      <h1>Hơn 15.000 lượt khách ghé nhà sách <br> Cá Chép sau thông báo đóng cửa</h1>
+      <h1>Đếm ngược 04 ngày chia tay nhà sách <br> Cá Chép</h1>
       
       <div class="article-meta">
         <span>11 Tháng 6, 2026</span>
@@ -188,18 +191,13 @@
 
 <div class="article-detail-body">
         
-        <h3>Chỉ sau hơn một tuần thông báo ngừng hoạt động, nhà sách Cá Chép trên đường Võ Văn Tần (TP.HCM) 
-          đã đón hơn 15.000 lượt khách đến tham quan, 
-          mua sách và lưu giữ kỷ niệm với không gian gắn bó nhiều năm qua.</h3>
+        <h3><strong><em>Nhà sách Cá Chép trên đường Võ Văn Tần (TP.HCM) sẽ đóng cửa, 
+          tạm biệt những người đam mê sách vào ngày 16 tháng 6 này.</em></strong></h3>
 
 <figure class="mm-figure">
         <img src="nha sach 2.jpg" alt="Giáo Dục">
-        <figcaption>Nhà sách Cá Chép Võ Văn Tần hoạt động từ năm 2013, thu hút độc giả với phong cách nhà sách nghệ thuật. Ảnh: V.T.</figcaption>
+        <figcaption>Nhà sách Cá Chép Võ Văn Tần hoạt động từ năm 2013, thu hút độc giả với phong cách nhà sách nghệ thuật. Ảnh: NVCC</figcaption>
       </figure>
-
-        
-        <p>Theo ông Trần Đại Thắng, Giám đốc Đông A - đơn vị sở hữu nhà sách Cá Chép, chi nhánh Võ Văn Tần đã ghi nhận 15.111 lượt khách chỉ trong vòng một tuần. 
-          “Cảm giác như cả Sài Gòn biết tới Cá Chép”, ông chia sẻ.</p>
 
         <p>Những ngày gần đây, nhiều thời điểm nhà sách rơi vào tình trạng đông kín khách, khu vực giữ xe quá tải. Nhiều người tìm đến để mua sách giảm giá, chụp ảnh và dành thời gian trong 
           không gian quen thuộc trước khi nơi đây chính thức khép lại hành trình hoạt động vào giữa tháng 6/2026.</p>
@@ -216,6 +214,9 @@
 
         <p>Dù thương hiệu sắp khép lại chặng đường hơn một thập kỷ hoạt động, ông Trần Đại Thắng cho biết bản thân không hối tiếc về hành trình đã qua. “Nếu được quay lại mà biết trước kết quả là đóng cửa thì tôi vẫn sẽ làm, không hề hối hận. 
           Điều tốt nhất mà nhà sách Cá Chép mang lại là để lại hình ảnh tốt trong lòng mỗi độc giả”, ông nói.</p>
+
+        <p>Khép lại chặng đường hơn 13 năm phát triển, Cá Chép nói riêng và những tiệm sách khác nói chung trong thời đại độc giả chuộng mua sắm online đã phải dần tạm biệt thị trường. Song, giá trị mà những tiệm sách ấy để lại cho độc giả thật quý giá, đặc biệt. Dẫu ngày mai, văn hóa đọc hay văn hóa nhà sách có mai một đi thì vẫn còn những độc giả trung thành ở đây, 
+            xem mỗi lần ghé nhà sách là một cuộc hẹn không thể thiếu với tuổi trẻ và những giấc mơ.</p>
       </div>
 
       <a href="bandoc.html" class="back-link">← Quay lại chuyên mục</a>
@@ -301,6 +302,11 @@
   modalClose.addEventListener('click', () => overlay.classList.remove('open'));
   overlay.addEventListener('click', (e) => {
     if (e.target === overlay) overlay.classList.remove('open');
+  });
+</script>
+<script>
+  document.getElementById('hamburger-btn').addEventListener('click', () => {
+    document.querySelector('nav').classList.toggle('open');
   });
 </script>
 </body>
