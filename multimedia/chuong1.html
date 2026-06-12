@@ -18,6 +18,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,800;0,900;1,400;1,700&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <script defer src="../assets/site.js"></script>
 </head>
+<script>
+  document.getElementById('hamburger-btn').addEventListener('click', () => {
+    document.querySelector('nav').classList.toggle('open');
+  });
+</script>
 <body>
   <div class="reading-progress" id="readProg"></div>
 
@@ -28,7 +33,7 @@
     <!-- LOGO -->
     <div class="brand-block">
       <a href="../index.html" class="logo">Viet<em>News</em></a>
-      <span class="brand-slogan">Tiếng nói · Sự thật · Thời đại</span>
+      <span class="brand-slogan">Tin tức nhanh · Góc nhìn mở</span>
     </div>
 
     <!-- NGÀY THÁNG (giữa) -->
@@ -38,6 +43,9 @@
 
     <!-- TIỆN ÍCH (phải) -->
     <div class="header-utils">
+      <button class="hamburger" id="hamburger-btn" aria-label="Menu">
+  <span></span><span></span><span></span>
+</button>
       <button class="util-btn" id="search-toggle" title="Tìm kiếm">
         <svg width="17" height="17" viewBox="0 0 24 24" fill="none"
              stroke="currentColor" stroke-width="2">
@@ -134,7 +142,7 @@
   <div class="mm-chapter-wrapper">
 
     <section class="mm-chapter-hero">
-      <img class="mm-hero-img" src="images/hero-mekong.jpg" alt="Đất phù sa đồng bằng sông Cửu Long">
+      <img src="images/1772975419131-mekong-delta-rice-fields.webp" alt="Đất phù sa đồng bằng sông Cửu Long">
       <div class="mm-chapter-hero-inner">
         <div class="mm-chapter-label">
           <span class="num">01</span>
@@ -288,7 +296,7 @@
 
     </article>
 
-   <!-- Chapter nav -->
+    <!-- Chapter nav -->
     <nav class="mm-nav">
       <a href="multimedia.html" class="">
         <span class="direction">&larr; Về trang chủ </span>
@@ -305,14 +313,14 @@
       <h3>Các chương khác</h3>
       <div class="mm-alsoread-grid">
         <a href="chuong3.html" class="mm-alsoread-card">
-          <img src="images/chương 3.jpg" alt="Ba cú đánh vào sinh kế miền Tây">
+          <img src="images/daniel-klein-Ujcwgj1xdbA-unsplash.jpg" alt="Ba cú đánh vào sinh kế miền Tây">
           <div class="mm-alsoread-card-body">
             <div class="kicker">Chương 3</div>
             <h4>Ba cú đánh vào sinh kế miền Tây</h4>
           </div>
         </a>
         <a href="chuong4.html" class="mm-alsoread-card">
-          <img src="images/chương 4.jpg" alt="Những lựa chọn không dễ dàng của người dân miền Tây">
+          <img src="images/farmer-harvests-crop-on-boat-1440x450.jpg" alt="Những lựa chọn không dễ dàng của người dân miền Tây">
           <div class="mm-alsoread-card-body">
             <div class="kicker">Chương 4</div>
             <h4>Ở lại hay rời đi: Những lựa chọn không dễ dàng</h4>
