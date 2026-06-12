@@ -17,6 +17,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,800;0,900;1,400;1,700&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <script defer src="../assets/site.js"></script>
 </head>
+<script>
+  document.getElementById('hamburger-btn').addEventListener('click', () => {
+    document.querySelector('nav').classList.toggle('open');
+  });
+</script>
 <body>
   <div class="reading-progress" id="readProg"></div>
 
@@ -27,7 +32,7 @@
     <!-- LOGO -->
     <div class="brand-block">
       <a href="../index.html" class="logo">Viet<em>News</em></a>
-      <span class="brand-slogan">Tiếng nói · Sự thật · Thời đại</span>
+      <span class="brand-slogan">Tin tức nhanh · Góc nhìn mở</span>
     </div>
 
     <!-- NGÀY THÁNG (giữa) -->
@@ -37,6 +42,9 @@
 
     <!-- TIỆN ÍCH (phải) -->
     <div class="header-utils">
+      <button class="hamburger" id="hamburger-btn" aria-label="Menu">
+  <span></span><span></span><span></span>
+</button>
       <button class="util-btn" id="search-toggle" title="Tìm kiếm">
         <svg width="17" height="17" viewBox="0 0 24 24" fill="none"
              stroke="currentColor" stroke-width="2">
@@ -187,6 +195,7 @@
         <cite>Thực trạng 2012-2022</cite>
       </div>
 
+
       <h2>
         <span class="num num-line">Tấm đệm sinh tồn đang biến mất</span>
       </h2>
@@ -240,6 +249,7 @@
         margin-bottom: 20px;
         padding-bottom: 12px;
         border-bottom: 2px solid var(--green-dk);
+        text-align: center;
       }
       .tbl-title em { font-style: italic; color: var(--brown); }
 
@@ -655,14 +665,12 @@
       }
       .tbl-title {
         font-family: 'Playfair Display', serif;
-        font-size: clamp(1.8rem, 4vw, 2.6rem);
+        font-size: clamp(1.5rem, 3.5vw, 2.2rem);
         font-weight: 700;
         color: var(--green-dk);
         line-height: 1.25;
-        margin-bottom: 20px;
-        padding-bottom: 12px;
-        border-bottom: 2px solid var(--green-dk);
-        text-align: center;
+        margin-bottom: 6px;
+        width: 100%;
       }
       .tbl-title em { font-style: italic; color: var(--brown); }
 
