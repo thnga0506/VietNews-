@@ -19,6 +19,11 @@
 <link rel="stylesheet" href="../assets/styles.css" />
 <script defer src="../assets/site.js"></script>
 </head>
+<script>
+  document.getElementById('hamburger-btn').addEventListener('click', () => {
+    document.querySelector('nav').classList.toggle('open');
+  });
+</script>
 <body class="mm-chapter-wrapper">
 
 <div class="reading-progress" id="readingProgress"></div>
@@ -30,7 +35,7 @@
     <!-- LOGO -->
     <div class="brand-block">
       <a href="../index.html" class="logo">Viet<em>News</em></a>
-      <span class="brand-slogan">Tiếng nói · Sự thật · Thời đại</span>
+      <span class="brand-slogan">Tin tức nhanh · Góc nhìn mở</span>
     </div>
 
     <!-- NGÀY THÁNG (giữa) -->
@@ -40,6 +45,9 @@
 
     <!-- TIỆN ÍCH (phải) -->
     <div class="header-utils">
+      <button class="hamburger" id="hamburger-btn" aria-label="Menu">
+  <span></span><span></span><span></span>
+</button>
       <button class="util-btn" id="search-toggle" title="Tìm kiếm">
         <svg width="17" height="17" viewBox="0 0 24 24" fill="none"
              stroke="currentColor" stroke-width="2">
@@ -302,9 +310,10 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <p>&copy; 2024 VietNews. Bản quyền thuộc về Báo điện tử VietNews.</p>
+      <p>&copy; 2026 VietNews. Bản quyền thuộc về Báo điện tử VietNews.</p>
     </div>
   </footer>
+
 <script>
 window.addEventListener('scroll', () => {
   const h = document.documentElement;
