@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DWQ0P512WY"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-DWQ0P512WY');
+</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>VietNews - Trang Chủ</title>
@@ -13,6 +22,12 @@
     }
     </style>
 </head>
+<script>
+  document.getElementById('hamburger-btn').addEventListener('click', () => {
+    document.querySelector('nav').classList.toggle('open');
+  });
+</script>
+
 <body>
   <script src="assets/scroll-animations.js"></script>
   <script src="assets/header-scroll.js"></script>
@@ -36,6 +51,9 @@
 
     <!-- TIỆN ÍCH (phải) -->
     <div class="header-utils">
+      <button class="hamburger" id="hamburger-btn" aria-label="Menu">
+  <span></span><span></span><span></span>
+</button>
       <button class="util-btn" id="search-toggle" title="Tìm kiếm">
         <svg width="17" height="17" viewBox="0 0 24 24" fill="none"
              stroke="currentColor" stroke-width="2">
@@ -147,17 +165,17 @@
 
         <div class="featured-sidebar">
           <div class="sidebar-article" onclick="window.location.href='index2.html'">
-            <div class="sidebar-article-date">17 Tháng 4</div>
+            <div class="sidebar-article-date">17 Tháng 5</div>
             <h3>Khám phá vẻ đẹp tự nhiên của Vịnh Hạ Long</h3>
           </div>
 
           <div class="sidebar-article" onclick="window.location.href='index3.html'">
-            <div class="sidebar-article-date">16 Tháng 4</div>
+            <div class="sidebar-article-date">16 Tháng 5</div>
             <h3>Sức khỏe tâm thần: Một cuộc chiến không ai nên phải chiến một mình</h3>
           </div>
 
           <div class="sidebar-article" onclick="window.location.href='index4.html'">
-            <div class="sidebar-article-date">15 Tháng 4</div>
+            <div class="sidebar-article-date">15 Tháng 5</div>
             <h3>Giáo dục STEM: Chìa khóa cho tương lai</h3>
           </div>
         </div>
@@ -185,7 +203,7 @@
             <div class="article-card-content">
               <h3>Khám phá vẻ đẹp tự nhiên của Vịnh Hạ Long</h3>
               <div class="article-card-footer">
-                <span class="article-card-date">17 Tháng 4</span>
+                <span class="article-card-date">17 Tháng 5</span>
                 <a href="#" class="read-more">Đọc Thêm →</a>
               </div>
             </div>
@@ -208,7 +226,7 @@
             <div class="article-card-content">
               <h3>Sức khỏe tâm thần: Một cuộc chiến không ai nên phải chiến một mình</h3>
               <div class="article-card-footer">
-                <span class="article-card-date">16 Tháng 4</span>
+                <span class="article-card-date">16 Tháng 5</span>
                 <a href="#" class="read-more">Đọc Thêm →</a>
               </div>
             </div>
@@ -219,7 +237,7 @@
             <div class="article-card-content">
               <h3>Sự trở lại của thời trang truyền thống Việt Nam</h3>
               <div class="article-card-footer">
-                <span class="article-card-date">14 Tháng 4</span>
+                <span class="article-card-date">14 Tháng 5</span>
                 <a href="#" class="read-more">Đọc Thêm →</a>
               </div>
             </div>
@@ -239,7 +257,7 @@
         <h3>Trí tuệ nhân tạo đạt mức mới trong y tế chẩn đoán</h3>
         
         <div class="article-card-footer">
-          <span class="article-card-date">10 Tháng 4</span>
+          <span class="article-card-date">10 Tháng 5</span>
           <a href="congnghe/congnghe.html" class="read-more">Đọc Thêm →</a>
         </div>
       </div>
@@ -251,7 +269,7 @@
         <h3>Smartphone mới với chip xử lý siêu mạnh sắp ra mắt</h3>
         
         <div class="article-card-footer">
-          <span class="article-card-date">9 Tháng 4</span>
+          <span class="article-card-date">9 Tháng 5</span>
           <a href="congnghe/congnghe.html" class="read-more">Đọc Thêm →</a>
         </div>
       </div>
@@ -263,7 +281,7 @@
         <h3>Dịch vụ đám mây trở thành xu hướng chủ yếu trong doanh nghiệp</h3>
         
         <div class="article-card-footer">
-          <span class="article-card-date">8 Tháng 4</span>
+          <span class="article-card-date">8 Tháng 5</span>
           <a href="congnghe/congnghe.html" class="read-more">Đọc Thêm →</a>
         </div>
       </div>
@@ -287,7 +305,7 @@
         <h3>Phát hiện công nghệ pin sạc nhanh nhân 10 lần</h3>
         
         <div class="article-card-footer">
-          <span class="article-card-date">6 Tháng 4</span>
+          <span class="article-card-date">6 Tháng 5</span>
           <a href="congnghe/congnghe.html" class="read-more">Đọc Thêm →</a>
         </div>
       </div>
