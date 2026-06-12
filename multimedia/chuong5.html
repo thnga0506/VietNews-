@@ -19,11 +19,7 @@
 <link rel="stylesheet" href="../assets/styles.css" />
 <script defer src="../assets/site.js"></script>
 </head>
-<script>
-  document.getElementById('hamburger-btn').addEventListener('click', () => {
-    document.querySelector('nav').classList.toggle('open');
-  });
-</script>
+
 <body class="mm-chapter-wrapper">
 
 <div class="reading-progress" id="readingProgress"></div>
@@ -347,6 +343,11 @@ window.addEventListener('scroll', () => {
   modalClose.addEventListener('click', () => overlay.classList.remove('open'));
   overlay.addEventListener('click', (e) => {
     if (e.target === overlay) overlay.classList.remove('open');
+  });
+</script>
+  <script>
+  document.getElementById('hamburger-btn').addEventListener('click', () => {
+    document.querySelector('nav').classList.toggle('open');
   });
 </script>
 </body>
