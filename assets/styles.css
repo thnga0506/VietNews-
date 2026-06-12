@@ -3099,3 +3099,76 @@ header * {
 }
 fonts.googleapis.com
 
+/* ===== HAMBURGER MENU (MOBILE) ===== */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 36px;
+  height: 36px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: #1a1a1a;
+  border-radius: 2px;
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  /* Ẩn nav theo mặc định, chỉ hiện khi có class .open */
+  nav {
+    display: none;
+  }
+
+  nav.open {
+    display: block;
+  }
+
+  nav ul {
+    flex-direction: column;
+    padding: 0 !important;
+  }
+
+  nav li {
+    min-width: 100%;
+  }
+
+  nav a {
+    padding: 14px 20px !important;
+    text-align: left !important;
+    border-right: none !important;
+    border-bottom: 1px solid rgba(255,255,255,0.08) !important;
+  }
+
+  /* Header center (ngày tháng) xuống dòng riêng, không đè chữ */
+  .header-top {
+    flex-wrap: wrap;
+    padding: 12px 16px !important;
+  }
+
+  .header-center {
+    order: 3;
+    width: 100%;
+    flex-basis: 100%;
+    padding: 6px 0 0 !important;
+  }
+
+  .brand-slogan {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+    display: block;
+  }
+}
