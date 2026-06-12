@@ -17,6 +17,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,800;0,900;1,400&family=Lora:ital,wght@0,400;0,600;1,400&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <script defer src="../assets/site.js"></script>
 </head>
+<script>
+  document.getElementById('hamburger-btn').addEventListener('click', () => {
+    document.querySelector('nav').classList.toggle('open');
+  });
+</script>
 <body>
   <header>
   <!-- TOP BAR -->
@@ -26,7 +31,7 @@
     <!-- LOGO -->
     <div class="brand-block">
       <a href="../index.html" class="logo">Viet<em>News</em></a>
-      <span class="brand-slogan">Tiếng nói · Sự thật · Thời đại</span>
+      <span class="brand-slogan">Tin tức nhanh · Góc nhìn mở</span>
     </div>
 
 
@@ -38,6 +43,9 @@
 
     <!-- TIỆN ÍCH (phải) -->
     <div class="header-utils">
+      <button class="hamburger" id="hamburger-btn" aria-label="Menu">
+  <span></span><span></span><span></span>
+</button>
       <button class="util-btn" id="search-toggle" title="Tìm kiếm">
         <svg width="17" height="17" viewBox="0 0 24 24" fill="none"
              stroke="currentColor" stroke-width="2">
@@ -252,7 +260,7 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <p>&copy; 2024 VietNews. Bản quyền thuộc về VietNews. Mọi nội dung trên trang web được bảo vệ theo luật pháp Việt Nam.</p>
+      <p>&copy; 2026 VietNews. Bản quyền thuộc về VietNews. Mọi nội dung trên trang web được bảo vệ theo luật pháp Việt Nam.</p>
     </div>
   </footer>
 
