@@ -22,19 +22,16 @@
   <!-- TOP BAR -->
   <div class="header-top">
 
-
     <!-- LOGO -->
     <div class="brand-block">
       <a href="../index.html" class="logo">Viet<em>News</em></a>
       <span class="brand-slogan">Tin tức nhanh · Góc nhìn mở</span>
     </div>
 
-
     <!-- NGÀY THÁNG (giữa) -->
     <div class="header-center">
       <span class="header-date" id="header-date"></span>
     </div>
-
 
     <!-- TIỆN ÍCH (phải) -->
     <div class="header-utils">
@@ -49,7 +46,6 @@
         </svg>
       </button>
 
-
       <button class="util-btn notif-btn" title="Thông báo">
         <svg width="17" height="17" viewBox="0 0 24 24" fill="none"
              stroke="currentColor" stroke-width="2">
@@ -58,7 +54,6 @@
         </svg>
         <span class="notif-dot"></span>
       </button>
-
 
       <button class="btn-login" id="btn-login">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
@@ -70,7 +65,6 @@
       </button>
     </div>
   </div>
-
 
   <!-- SEARCH BAR (ẩn mặc định) -->
   <div class="search-bar" id="search-bar">
@@ -88,7 +82,6 @@
     </div>
   </div>
 
-
   <!-- NAV -->
   <nav>
   <ul>
@@ -105,7 +98,6 @@
     <li><a href="../multimedia/multimedia.html">Multimedia</a></li>
   </ul>
 </nav>
-
 
   <!-- MODAL ĐĂNG NHẬP -->
  <div class="modal-overlay" id="modal-overlay" style="display:none">
@@ -161,13 +153,13 @@
           </div>
 
           <div class="article-card" onclick="window.location.href='thethao2.html'">
-            <img src="https://via.placeholder.com/400x250/8B7355/ffffff?text=Cầu+Lông" alt="Cầu lông">
+            <img src="../assets/doi-song-media/quanvot.jpg" alt="quần vợt" width="700">
             <div class="article-card-content">
               <div class="article-card-category">Thể Thao</div>
-              <h3>Vận động viên cầu lông Việt Nam vô địch giải quốc tế</h3>
-              <p>Giải quốc tế cầu lông vừa kết thúc với chiến thắng của vận động viên Việt Nam khi đánh bại...</p>
+              <h3>Zverev lần đầu vô địch Grand Slam sau chiến thắng tại Roland Garros 2026 </h3>
+              <p>Tay vợt người Đức Alexander Zverev đã giành danh hiệu Grand Slam đầu tiên trong sự nghiệp sau khi...</p>
               <div class="article-card-footer">
-                <span class="article-card-date">17 Tháng 4</span>
+                <span class="article-card-date">08 Tháng 6</span>
                 <a href="#" class="read-more">Đọc Thêm →</a>
               </div>
             </div>
@@ -177,7 +169,7 @@
             <img src="https://via.placeholder.com/400x250/8B7355/ffffff?text=Bóng+Rổ" alt="Bóng rổ">
             <div class="article-card-content">
               <div class="article-card-category">Thể Thao</div>
-              <h3>Giải bóng rổ VBA 2026 khởi động với những màn trình diễn ấn tượng</h3>
+              <h3>Giải bóng rổ VBA 2024 khởi động với những màn trình diễn ấn tượng</h3>
               <p>Mùa giải bóng rổ chuyên nghiệp Việt Nam bắt đầu với những trận đấu hấp dẫn giữa các đội...</p>
               <div class="article-card-footer">
                 <span class="article-card-date">16 Tháng 4</span>
@@ -256,7 +248,7 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <p>&copy; 2026 VietNews. Bản quyền thuộc về VietNews. Mọi nội dung trên trang web được bảo vệ theo luật pháp Việt Nam.</p>
+      <p>&copy; 2024 VietNews. Bản quyền thuộc về VietNews. Mọi nội dung trên trang web được bảo vệ theo luật pháp Việt Nam.</p>
     </div>
   </footer>
 
@@ -299,7 +291,7 @@
     if (e.target === overlay) overlay.classList.remove('open');
   });
 </script>
-  <script>
+<script>
   document.getElementById('hamburger-btn').addEventListener('click', () => {
     document.querySelector('nav').classList.toggle('open');
   });
