@@ -77,14 +77,14 @@
   </style>
 </head>
 <body>
-  <header>
+ <header>
   <!-- TOP BAR -->
   <div class="header-top">
 
     <!-- LOGO -->
     <div class="brand-block">
       <a href="../index.html" class="logo">Viet<em>News</em></a>
-      <span class="brand-slogan">Tiếng nói · Sự thật · Thời đại</span>
+      <span class="brand-slogan">Tin tức nhanh · Góc nhìn mở</span>
     </div>
 
     <!-- NGÀY THÁNG (giữa) -->
@@ -94,6 +94,9 @@
 
     <!-- TIỆN ÍCH (phải) -->
     <div class="header-utils">
+      <button class="hamburger" id="hamburger-btn" aria-label="Menu">
+  <span></span><span></span><span></span>
+</button>
       <button class="util-btn" id="search-toggle" title="Tìm kiếm">
         <svg width="17" height="17" viewBox="0 0 24 24" fill="none"
              stroke="currentColor" stroke-width="2">
@@ -186,12 +189,13 @@
     </div>
   </div>
 </header>
+
   <main>
     <div class="article-detail">
       <h1>VietNews tổ chức cuộc gặp mặt bạn đọc tháng 4</h1>
       
       <div class="article-meta">
-        <span>14 Tháng 4, 2024</span>
+        <span>14 Tháng 4, 2026</span>
         <span>Chuyên mục: Bạn Đọc</span>
         <span>Tác giả: Tòa soạn VietNews</span>
       </div>
@@ -207,7 +211,7 @@
 
         <div class="event-details">
           <h3>Thông tin chi tiết sự kiện:</h3>
-          <p><strong>Thời gian:</strong> Chủ Nhật, 28 tháng 4 năm 2024, 14:00 - 17:00</p>
+          <p><strong>Thời gian:</strong> Chủ Nhật, 28 tháng 4 năm 2026, 14:00 - 17:00</p>
           <p><strong>Địa điểm:</strong> Tòa nhà VietNews, 456 Đường Nguyễn Trãi, Hà Nội</p>
           <p><strong>Điều kiện tham dự:</strong> Miễn phí, ai cũng có thể tham dự</p>
           <p><strong>Đăng ký:</strong> Vui lòng gửi email tới ban@vietnews.com với tiêu đề "Đăng ký gặp mặt bạn đọc tháng 4"</p>
@@ -268,7 +272,7 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <p>&copy; 2024 VietNews. Bản quyền thuộc về VietNews. Mọi nội dung trên trang web được bảo vệ theo luật pháp Việt Nam.</p>
+      <p>&copy; 2026 VietNews. Bản quyền thuộc về VietNews. Mọi nội dung trên trang web được bảo vệ theo luật pháp Việt Nam.</p>
     </div>
   </footer>
 
@@ -307,6 +311,11 @@
   modalClose.addEventListener('click', () => overlay.classList.remove('open'));
   overlay.addEventListener('click', (e) => {
     if (e.target === overlay) overlay.classList.remove('open');
+  });
+</script>
+<script>
+  document.getElementById('hamburger-btn').addEventListener('click', () => {
+    document.querySelector('nav').classList.toggle('open');
   });
 </script>
 </body>
