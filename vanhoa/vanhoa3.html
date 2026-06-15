@@ -68,7 +68,7 @@
 </head>
 
 <body>
-  <header>
+ <header>
   <!-- TOP BAR -->
   <div class="header-top">
 
@@ -89,7 +89,7 @@
     <!-- TIỆN ÍCH (phải) -->
     <div class="header-utils">
       <button class="hamburger" id="hamburger-btn" aria-label="Menu">
-  <span></span><span></span><span></span>
+  ☰
 </button>
       <button class="util-btn" id="search-toggle" title="Tìm kiếm">
         <svg width="17" height="17" viewBox="0 0 24 24" fill="none"
@@ -145,13 +145,10 @@
     <li><a href="../index.html">Trang chủ</a></li>
     <li><a href="../thoisu/thoisu.html">Thời sự</a></li>
     <li><a href="../giaoduc/giaoduc.html">Giáo dục</a></li>
-    <li><a href="../suckhoe/suckhoe.html">Sức khỏe</a></li>
     <li><a href="../vanhoa/vanhoa.html">Văn hóa</a></li>
     <li><a href="../thethao/thethao.html">Thể thao</a></li>
-    <li><a href="../congnghe/congnghe.html">Công nghệ</a></li>
     <li><a href="../doisong/doisong.html">Đời sống</a></li>
     <li><a href="../bandoc/bandoc.html">Bạn đọc</a></li>
-    <li><a href="../dulich/dulich.html">Du lịch</a></li>
     <li><a href="../multimedia/multimedia.html">Multimedia</a></li>
   </ul>
 </nav>
@@ -201,13 +198,10 @@
 
       <div class="article-detail-body">
         
-        <h3><strong><em>  Đường đua phim Việt mùa hè sắp tới sẽ đón thêm một tác phẩm kinh dị mới mang tên Ma Xó, 
+        <h3><strong><em> Đường đua phim Việt mùa hè sắp tới sẽ đón thêm một tác phẩm kinh dị mới mang tên Ma Xó, 
           dự kiến khởi chiếu trên toàn quốc vào 5/6. 
           Bộ phim gây chú ý khi tiếp tục khai thác yếu tố tâm linh và truyền thuyết dân gian - 
           dòng đề tài đang nhận được nhiều sự quan tâm từ khán giả trong những năm gần đây.</em></strong></h3>
-
-          
-      <br>
 
       <p>Ngay từ khi tung những hình ảnh và đoạn trailer đầu tiên, 
         bộ phim đã thu hút sự chú ý của cộng đồng yêu thích thể loại kinh dị. 
@@ -215,7 +209,7 @@
         
         <figure class="mm-figure">
         <img src="../assets/doi-song-media/maxo.jpg" alt="Văn Hóa">
-        <figcaption>Phân cảnh sao chổi xuất hiện trên bầu trời là một trong những hình ảnh được mong chờ lên màn hình khổng lồ IMAX - <br> Ảnh: IMDb</figcaption>
+        <figcaption>Trong Ma Xó, Avin Lu và Tín Nguyễn lần lượt đảm nhận vai Phú và Thảo - một cặp vợ chồng sống tại vùng quê yên bình trước khi bị cuốn vào những hiện tượng tâm linh bí ẩn - Ảnh: NSX</figcaption>
       </figure>
 
         <p>Sự xuất hiện của Ma Xó tiếp tục cho thấy xu hướng khai thác chất liệu văn hóa bản địa trong điện ảnh kinh dị Việt Nam. Trước đó, nhiều tác phẩm như Quỷ Cẩu, Kẻ Ăn Hồn hay Linh Miêu đã tạo được tiếng vang nhờ đưa các yếu tố truyền thuyết, tín ngưỡng dân gian lên màn ảnh rộng.</p>
@@ -317,7 +311,7 @@
     if (e.target === overlay) overlay.classList.remove('open');
   });
 </script>
-  <script>
+<script>
   document.getElementById('hamburger-btn').addEventListener('click', () => {
     document.querySelector('nav').classList.toggle('open');
   });
