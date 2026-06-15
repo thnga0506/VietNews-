@@ -2089,78 +2089,74 @@ text-align: center; }
   flex-shrink: 0;
 }
 
-/* Figure with caption */
+//* ===== FIGURE - FIX TRÀN VIỀN ===== */
 .mm-figure {
-    margin: 50px -40px;
+  margin: 40px 0;          /* bỏ margin âm -40px */
+  width: 100%;
+  overflow: hidden;
 }
 
-    .mm-figure img {
-        width: 100%;
-        height: auto;
-        max-height: 540px;
-        object-fit: cover;
-        border-radius: 6px;
-    }
+.mm-figure img {
+  width: 100%;
+  height: auto;
+  max-height: 600px;
+  object-fit: contain;     /* hiện full ảnh, không crop */
+  border-radius: 6px;
+  display: block;
+}
 
-    .mm-figure figcaption {
-        font-size: 13px;
-        color: #6b6051;
-        line-height: 1.5;
-        margin-top: 14px;
-        padding-left: 16px;
-        border-left: 3px solid #914F1E;
-        font-style: italic;
-    }
+.mm-figure figcaption {
+  font-size: 13px;
+  color: #6b6051;
+  line-height: 1.5;
+  margin-top: 10px;
+  padding-left: 14px;
+  border-left: 3px solid #914F1E;
+  font-style: italic;
+  text-align: left;
+}
 
-/* Style mới - hiển thị full ảnh không bị cắt */
+/* ===== FIGURE FULL (ảnh đề thi, bảng biểu) ===== */
 .mm-figure-full {
-    overflow: visible;
-    width: calc(70% + 300px);
+  margin: 40px 0;
+  width: 100%;
+  overflow: hidden;
 }
 
-    .mm-figure-full img {
-        width: 100%;
-        height: auto;
-        max-height: none; /* bỏ giới hạn chiều cao */
-        object-fit: contain; /* không crop ảnh */
-        border-radius: 6px;
-    }
-
-    .mm-figure-full figcaption {
-        /* Giữ nguyên style cũ, chỉ điều chỉnh padding cho đúng vị trí */
-        font-size: 13px;
-        color: #6b6051;
-        line-height: 1.5;
-        margin-top: 14px;
-        padding-left: 16px;
-        border-left: 3px solid #914F1E;
-        font-style: italic;
-    }
-
-    /* Style mới - hiển thị full ảnh không bị cắt */
-.mm-figure-full b {
-    overflow: visible;
-    width: calc(70% + 100px);
+.mm-figure-full img {
+  width: 100%;
+  height: auto;
+  max-height: none;        /* hiện toàn bộ chiều cao */
+  object-fit: contain;
+  border-radius: 6px;
+  display: block;
 }
 
-    .mm-figure-full img b {
-        width: 100%;
-        height: auto;
-        max-height: none; /* bỏ giới hạn chiều cao */
-        object-fit: contain; /* không crop ảnh */
-        border-radius: 6px;
-    }
+.mm-figure-full figcaption {
+  font-size: 13px;
+  color: #6b6051;
+  line-height: 1.5;
+  margin-top: 10px;
+  padding-left: 14px;
+  border-left: 3px solid #914F1E;
+  font-style: italic;
+}
 
-    .mm-figure-full figcaption b {
-        /* Giữ nguyên style cũ, chỉ điều chỉnh padding cho đúng vị trí */
-        font-size: 13px;
-        color: #6b6051;
-        line-height: 1.5;
-        margin-top: 14px;
-        padding-left: 16px;
-        border-left: 3px solid #914F1E;
-        font-style: italic;
-    }
+/* ===== FIX TRÀN TRÊN MOBILE ===== */
+@media (max-width: 768px) {
+  .mm-figure,
+  .mm-figure-full {
+    margin: 24px 0 !important;
+    width: 100% !important;
+  }
+
+  .mm-figure img,
+  .mm-figure-full img {
+    width: 100% !important;
+    max-height: none !important;
+    border-radius: 4px;
+  }
+}
 
 /* Split image (2 columns side by side) */
 .mm-split {
@@ -3172,3 +3168,25 @@ fonts.googleapis.com
     display: block;
   }
 }
+
+/* ===== HAMBURGER 3 GẠCh ===== */
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
+  color: #1a1a1a;
+  padding: 4px 8px;
+  line-height: 1;
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+    align-items: center;
+  }
+}
+
+
+
