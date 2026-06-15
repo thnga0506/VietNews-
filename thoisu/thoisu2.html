@@ -66,7 +66,11 @@
     }
   </style>
 </head>
-
+<script>
+  document.getElementById('hamburger-btn').addEventListener('click', () => {
+    document.querySelector('nav').classList.toggle('open');
+  });
+</script>
 <body>
   <header>
   <!-- TOP BAR -->
@@ -89,7 +93,7 @@
     <!-- TIỆN ÍCH (phải) -->
     <div class="header-utils">
       <button class="hamburger" id="hamburger-btn" aria-label="Menu">
-  <span></span><span></span><span></span>
+  ☰
 </button>
       <button class="util-btn" id="search-toggle" title="Tìm kiếm">
         <svg width="17" height="17" viewBox="0 0 24 24" fill="none"
@@ -145,13 +149,10 @@
     <li><a href="../index.html">Trang chủ</a></li>
     <li><a href="../thoisu/thoisu.html">Thời sự</a></li>
     <li><a href="../giaoduc/giaoduc.html">Giáo dục</a></li>
-    <li><a href="../suckhoe/suckhoe.html">Sức khỏe</a></li>
     <li><a href="../vanhoa/vanhoa.html">Văn hóa</a></li>
     <li><a href="../thethao/thethao.html">Thể thao</a></li>
-    <li><a href="../congnghe/congnghe.html">Công nghệ</a></li>
     <li><a href="../doisong/doisong.html">Đời sống</a></li>
     <li><a href="../bandoc/bandoc.html">Bạn đọc</a></li>
-    <li><a href="../dulich/dulich.html">Du lịch</a></li>
     <li><a href="../multimedia/multimedia.html">Multimedia</a></li>
   </ul>
 </nav>
@@ -199,60 +200,61 @@
         <span>Tác giả: Song Nguyên</span>
       </div>
 
-      <div>
-        
-        <h3><strong><em>Trong bối cảnh dân số già hóa và các bệnh mạn tính gia tăng, 
+<div class="article-detail-body">
+  
+        <h3><em><strong> Trong bối cảnh dân số già hóa và các bệnh mạn tính gia tăng, 
           việc chăm sóc sức khỏe cần bắt đầu từ ý thức chủ động của mỗi người dân. Chuyển từ tư duy “khám bệnh” sang 
           “phòng bệnh” là thông điệp xuyên suốt tại Hội thảo Vì sức khỏe cộng đồng lần 1 do Bệnh viện Phục hồi chức năng - 
-          Điều trị bệnh nghề nghiệp tổ chức.</strong></h3></em>
+          Điều trị bệnh nghề nghiệp tổ chức.</strong></em></h3>
 
           <figure class="mm-figure">
-        <img src="5.JPG" alt="Giáo Dục">
+        <img src="5.JPG" alt="THỜI SỰ">
       </figure>
-<br>
+
         <p>Ngày 4/6, Bệnh viện Phục hồi chức năng - Điều trị bệnh nghề nghiệp TP.HCM phối hợp 
           cùng UBND phường Chánh Hưng tổ chức Hội thảo Vì sức khỏe cộng đồng lần thứ nhất năm 2026. 
           Chuỗi hội thảo hướng tới cung cấp kiến thức nền tảng về chăm sóc sức khỏe cho người dân.</p>
-<br>
+
         <p>Chương trình quy tụ các lãnh đạo Sở Y tế và phường Chánh Hưng, 
           cùng nhiều đại diện từ 85 khu phố thuộc địa bàn.</p>
-<br>
+
         <figure class="mm-figure">
-        <img src="1.JPG" alt="Giáo Dục">
+        <img src="1.JPG" alt="THỜI SỰ">
         <figcaption>Người dân thích thú trước món quà tặng bất ngờ khi tham dự hội thảo - Ảnh: Song Nguyên.</figcaption>
       </figure>
-<br>
+
         <p>Phát biểu tại hội thảo, BS. CKII Trần Ngọc Triệu - Phó Giám đốc Sở Y tế TP. HCM đề cao 
           những bước đi tiên phong của bệnh viện. Theo ông, việc đẩy mạnh y tế dự phòng và nâng cao nhận thức của người dân về chăm sóc sức khỏe chủ động là một trong những giải pháp quan trọng 
           nhằm phát hiện sớm bệnh tật, quản lý sức khỏe người dân liên tục, toàn diện và hiệu quả.</p>
 
       <figure class="mm-figure">
-        <img src="2.JPG" alt="Giáo Dục">
+        <img src="2.JPG" alt="THỜI SỰ">
         <figcaption>BS. CKII Trần Ngọc Triệu đại diện Sở Y tế phát biểu tại hội thảo - Ảnh: Song Nguyên.</figcaption>
       </figure>
-<br>
+
         <p>Ông Dương Văn Dân - Phó Chủ tịch UBND phường Chánh Hưng, TP.HCM chia sẻ: "Chúng tôi hướng tới xây dựng ý thức chăm sóc sức khỏe chủ động trong cộng đồng, 
           để mỗi người dân trở thành một 'nhân viên y tế' cho chính mình và gia đình”, ông Dân nhấn mạnh.</p>
         <figure class="mm-figure">
-        <img src="3.JPG" alt="Giáo Dục">
+        <img src="3.JPG" alt="THỜI SỰ">
         <figcaption>Ông Dương Văn Dân chia sẻ về định hướng của bệnh viện  - Ảnh: Song Nguyên.</figcaption>
       </figure>
-<br>
+
          <p>Tại hội thảo, các kiến thức y khoa như sơ cứu chấn thương 
           hay dinh dưỡng đã được các chuyên gia biến thành những câu chuyện dí dỏm, dễ tiếp nhận.</p> 
-<br>
+
       <figure class="mm-figure">
-        <img src="4.jpg" alt="Giáo Dục">
+        <img src="4.jpg" alt="THỜI SỰ">
         <figcaption>Nhiều người dân tích cực tham gia trao đổi và chia sẻ ý kiến trong suốt hội thảo - Ảnh: Song Nguyên.</figcaption>
       </figure>
-<br>
+
       <p>Dịp này, Bệnh viện Phục hồi chức năng - Điều trị bệnh nghề nghiệp cũng chính thức ra mắt phòng Khám và Tư vấn sức khỏe. Mô hình mới được xây dựng nhằm giúp người dân thuận tiện hơn trong việc tiếp cận các dịch vụ tư vấn sức khỏe và tầm soát bệnh tật. Ngay sau lễ ra mắt, 
         nhiều người dân đã trực tiếp tham quan, tìm hiểu và nhận tư vấn từ đội ngũ y bác sĩ tại phòng khám mới.</p>
-     <br>
+     
         <figure class="mm-figure">
-        <img src="6.jpg" alt="Giáo Dục">
-        <figcaption>Phòng Khám và Tư vấn sức khỏe được kỳ vọng góp phần đáp ứng nhu cầu khám sức khỏe, tầm soát và tư vấn y tế của người dân. - Ảnh: Song Nguyên.</figcaption>
+        <img src="6.jpg" alt="THỜI SỰ">
+        <figcaption>Phòng Khám và Tư vấn sức khỏe được kỳ vọng góp phần đáp ứng nhu cầu khám sức khỏe, tầm soát và tư vấn y tế của người dân - Ảnh: Song Nguyên.</figcaption>
       </figure>
+    </div>
 
       <a href="thoisu.html" class="back-link">← Quay lại chuyên mục</a>
     </div>
@@ -339,11 +341,6 @@
   modalClose.addEventListener('click', () => overlay.classList.remove('open'));
   overlay.addEventListener('click', (e) => {
     if (e.target === overlay) overlay.classList.remove('open');
-  });
-</script>
-  <script>
-  document.getElementById('hamburger-btn').addEventListener('click', () => {
-    document.querySelector('nav').classList.toggle('open');
   });
 </script>
 </body>
