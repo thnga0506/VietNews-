@@ -168,6 +168,7 @@
 
   // ==================== 1. ENHANCE LOGO WITH SLOGAN ====================
   function enhanceLogo() {
+    return; //
     var logo = $('.logo');
     if (!logo || logo.dataset.enhanced) return;
     logo.dataset.enhanced = '1';
@@ -184,6 +185,7 @@
       }
       return;
     }
+
 
     // Otherwise wrap logo in a .brand-block and add slogan
     var wrapper = el('<div class="brand-block"></div>');
